@@ -1,0 +1,952 @@
+.about-doctor-section {
+  background: #fcfff2;
+  padding: 120px 0 100px;
+}
+
+.about-doctor-section .container {
+  width: 82%;
+  max-width: 1420px;
+  margin: 0 auto;
+}
+
+.about-doctor-section h2 {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #0067a8;
+  margin-bottom: 90px;
+}
+
+.about-doctor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 100px;
+}
+
+.doctor-image-wrap {
+  position: relative;
+  width: 520px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.doctor-image-wrap {
+  position: relative;
+}
+
+.doctor-bg-card {
+  position: absolute;
+  inset: 35px 35px 0 0;
+  background: #d3ee55;
+  transform: rotate(-4deg);
+  z-index: 1;
+  transition: transform 0.45s ease;
+}
+
+.doctor-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: block;
+  transform: rotate(4deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* hover effect */
+.doctor-image-wrap:hover .doctor-bg-card {
+  transform: rotate(0deg);
+}
+
+.doctor-image-wrap:hover .doctor-img {
+  transform: rotate(0deg);
+  box-shadow: 0 28px 55px rgba(0, 103, 168, 0.16);
+}
+
+.doctor-content {
+  padding-top: 30px;
+}
+
+.doctor-content h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1.3;
+  font-style: italic;
+  font-weight: 400;
+  color: #99c900;
+  margin-bottom: 4px;
+}
+
+.doctor-content h4 {
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #0067a8;
+  margin-bottom: 42px;
+}
+
+.doctor-content p {
+  font-size: 19px;
+  line-height: 1.45;
+  color: #18324a;
+  margin-bottom: 28px;
+  max-width: 720px;
+}
+
+.learn-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  background: #a7d900;
+  color: #0067a8;
+  text-decoration: none;
+  padding: 13px 28px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .about-doctor-section {
+    padding: 80px 0;
+  }
+
+  .about-doctor-section .container {
+    width: 88%;
+  }
+
+  .about-doctor-section h2 {
+    margin-bottom: 55px;
+  }
+
+  .about-doctor-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .doctor-content {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .about-doctor-section {
+    padding: 60px 0;
+  }
+
+  .about-doctor-section h2 {
+    font-size: 30px;
+  }
+
+  .doctor-content h3 {
+    font-size: 21px;
+  }
+
+  .doctor-content h4,
+  .doctor-content p {
+    font-size: 16px;
+  }
+
+  .learn-btn {
+    margin-top: 30px;
+  }
+}
+
+
+.spine-explained-section {
+  background: #fcfff2;
+  padding: 90px 0 120px;
+  overflow: hidden;
+}
+
+.spine-explained-section .container {
+  width: 92%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.spine-explained-section h2 {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #0067a8;
+  margin-bottom: 40px;
+}
+
+.spine-visual-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1380px;
+  height: 850px;
+  margin: 0 auto;
+}
+
+.spine-explained-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1180px;
+  max-width: 88%;
+  /* transform: translate(-50%, -50%); */
+  display: block;
+  z-index: 1;
+}
+
+.spine-label {
+  position: absolute;
+  z-index: 3;
+  width: 190px;
+}
+
+.spine-label h3 {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #0067a8;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.spine-label p {
+  font-size: 15px;
+  line-height: 1.15;
+  color: #24394c;
+}
+
+.spine-label span {
+  display: block;
+  width: 1px;
+  height: 90px;
+  background: #c8e600;
+  position: relative;
+}
+
+.spine-label span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -13px;
+  width: 24px;
+  height: 24px;
+  background: #b6db00;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 6px rgba(182, 219, 0, 0.3);
+}
+
+/* EXACT DESKTOP POSITIONS */
+.label-vertebrae {
+  left: 7%;
+  top: 37%;
+}
+
+.label-vertebrae span {
+  margin-top: 16px;
+  margin-left: 24px;
+}
+
+.label-joints {
+  left: 44%;
+  top: 8%;
+}
+
+.label-joints span {
+  margin-top: 18px;
+  margin-left: 24px;
+  height: 90px;
+}
+
+.label-disc {
+  left: 24%;
+  bottom: 10%;
+}
+
+.label-disc span {
+  height: 82px;
+  margin-bottom: 26px;
+  margin-left: 24px;
+}
+
+.label-disc span::after {
+  top: -13px;
+  bottom: auto;
+}
+
+.label-muscles {
+  right: 6%;
+  top: 33%;
+}
+
+.label-muscles span {
+  margin-top: 18px;
+  margin-left: 42px;
+  height: 88px;
+}
+
+.label-nerves {
+  right: 10%;
+  bottom: 5%;
+}
+
+.label-nerves span {
+  height: 105px;
+  margin-bottom: 26px;
+  margin-left: 26px;
+}
+
+.label-nerves span::after {
+  top: -13px;
+  bottom: auto;
+}
+
+@media (max-width: 1200px) {
+  .spine-visual-wrap {
+    height: 760px;
+  }
+
+  .spine-explained-img {
+    width: 1050px;
+  }
+
+  .label-vertebrae {
+    left: 3%;
+  }
+
+  .label-muscles {
+    right: 2%;
+  }
+
+  .label-nerves {
+    right: 5%;
+  }
+}
+
+@media (max-width: 991px) {
+  .spine-explained-section {
+    padding: 70px 0;
+  }
+
+  .spine-visual-wrap {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .spine-explained-img {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    order: 1;
+  }
+
+  .spine-label {
+    position: relative;
+    width: 100%;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    order: 2;
+    padding-left: 22px;
+    border-left: 2px solid #c8e600;
+  }
+
+  .spine-label span {
+    display: none;
+  }
+}
+
+.spine-visual-wrap {
+  height: 850px;
+}
+@media (max-width:1000px) {
+ .spine-visual-wrap {
+  height: auto !important;
+}
+}
+@media (max-width:1000px) {
+ .spine-visual-wrap img {
+ transform: translate(0, 0) !important;
+}
+}
+.spine-explained-img {
+  top: 50%;
+  width: 1180px;
+}
+
+.symptoms-horizontal-section {
+  position: relative;
+  background: #fcfff2;
+  overflow: hidden;
+  padding: 85px 0 55px;
+  min-height: auto;
+  height: auto;
+}
+
+.symptoms-heading-wrap {
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.symptoms-heading-wrap h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #0067a8;
+  font-weight: 700;
+}
+
+.symptoms-scroll-area {
+  width: 100%;
+  overflow: hidden;
+}
+
+.symptoms-track {
+  display: flex;
+  width: max-content;
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+.symptom-card {
+  width: 430px;
+  min-height: 285px;
+  padding: 32px 28px;
+  border: 1px solid #cfe969;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 255, 217, 0.95) 0%,
+    rgba(218, 240, 93, 0.72) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.symptom-card + .symptom-card {
+  border-left: 0;
+}
+
+.symptom-icon {
+  width: 72px;
+  height: 72px;
+  background: #d3f052;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 44px;
+}
+
+.symptom-icon span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.symptom-card h3 {
+  font-size: 24px;
+  line-height: 1.15;
+  color: #0c3048;
+  font-weight: 400;
+  margin-bottom: 38px;
+}
+
+.symptom-card p {
+  font-size: 16px;
+  line-height: 1.22;
+  color: #4b5e64;
+  max-width: 350px;
+}
+
+.symptoms-bottom {
+  text-align: center;
+  margin-top: 42px;
+}
+
+.symptoms-bottom p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 23px;
+  line-height: 1.4;
+  color: #233847;
+  margin-bottom: 34px;
+}
+
+.symptoms-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #a7d900;
+  color: #0067a8;
+  text-decoration: none;
+  padding: 13px 28px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .symptoms-horizontal-section {
+    min-height: auto;
+    padding: 70px 0;
+  }
+
+  .symptoms-heading-wrap {
+    margin-bottom: 50px;
+    padding: 0 24px;
+  }
+
+  .symptoms-heading-wrap h2 {
+    font-size: 30px;
+  }
+
+  .symptoms-scroll-area {
+    overflow-x: auto;
+  }
+
+  .symptoms-track {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .symptom-card {
+    width: 320px;
+    min-height: 260px;
+  }
+
+  .symptoms-bottom {
+    padding: 0 24px;
+  }
+
+  .symptoms-bottom p {
+    font-size: 20px;
+  }
+}
+
+
+
+.spine-conditions-section {
+  background: #fcfff2;
+  padding: 90px 0 80px;
+  overflow: hidden;
+}
+
+.spine-conditions-section .container {
+  width: 92%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.spine-conditions-section h2 {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  color: #0067a8;
+  margin-bottom: 60px;
+}
+
+.conditions-visual-wrap {
+  position: relative;
+  width: 100%;
+  height: 880px;
+}
+
+.conditions-body-img {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  max-width: 42vw;
+  z-index: 1;
+}
+
+.condition-point {
+  position: absolute;
+  z-index: 4;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.point-dot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #b6db00;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(182, 219, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.condition-point:hover .point-dot {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 12px rgba(182, 219, 0, 0.25);
+}
+
+.point-line {
+  position: absolute;
+  height: 1px;
+  background: #b6db00;
+}
+
+.point-title {
+  position: absolute;
+  font-size: 21px;
+  line-height: 1.25;
+  color: #20394d;
+  white-space: nowrap;
+}
+
+/* point positions */
+.point-degenerative {
+  left: 17%;
+  top: 21%;
+}
+
+.point-degenerative .point-dot {
+  left: 390px;
+  top: 0;
+}
+
+.point-degenerative .point-line {
+  left: 230px;
+  top: 15px;
+  width: 170px;
+}
+
+.point-degenerative .point-title {
+  right: -215px;
+  top: -4px;
+}
+
+.point-neck {
+  left: 50%;
+  top: 26%;
+}
+
+.point-neck .point-dot {
+  left: 0;
+  top: 0;
+}
+
+.point-neck .point-line {
+  left: 20px;
+  top: 15px;
+  width: 135px;
+}
+
+.point-neck .point-title {
+  display: block;
+  left: 165px;
+  top: -8px;
+  width: 280px;
+  white-space: normal;
+  text-align: left;
+}
+
+.point-neck .point-title {
+  display: block;
+  left: 165px;
+  top: -8px;
+  width: 280px;
+  white-space: normal;
+  text-align: left;
+}
+
+.point-scoliosis {
+  left: 22%;
+  top: 52%;
+}
+
+.point-scoliosis .point-dot {
+  left: 395px;
+  top: 0;
+}
+
+.point-scoliosis .point-line {
+  left: 100px;
+  top: 15px;
+  width: 305px;
+}
+
+.point-scoliosis .point-title {
+  left: 0;
+  top: -4px;
+}
+
+.point-trauma {
+  right: 16%;
+  top: 61%;
+}
+
+.point-trauma .point-dot {
+  left: -260px;
+  top: 0;
+}
+
+.point-trauma .point-line {
+  left: -250px;
+  top: 15px;
+  width: 250px;
+}
+
+.point-trauma .point-title {
+  left: 15px;
+  top: -4px;
+}
+
+.point-slipped {
+  left: 19%;
+  top: 75%;
+}
+
+.point-slipped .point-dot {
+  left: 425px;
+  top: 0;
+}
+
+.point-slipped .point-line {
+  left: 190px;
+  top: 15px;
+  width: 245px;
+}
+
+.point-slipped .point-title {
+  left: 0;
+  top: -4px;
+}
+
+.point-sciatica {
+  left: 49%;
+  top: 82%;
+}
+
+.point-sciatica .point-dot {
+  left: 0;
+  top: -85px;
+}
+
+.point-sciatica .point-line {
+  left: 15px;
+  top: -75px;
+  width: 1px;
+  height: 90px;
+}
+
+.point-sciatica .point-title {
+  left: -35px;
+  top: 18px;
+}
+
+.condition-hover-card {
+  position: absolute;
+  width: 350px;
+  background: rgba(211, 238, 85, 0.92);
+  z-index: 8;
+  padding: 0 16px 18px;
+  opacity: 0;
+
+  /* this centers the card vertically from its top value */
+  translate: 0 -50%;
+
+  transform: scale(0.96);
+  animation: conditionCardIn 0.35s ease forwards;
+  pointer-events: none;
+  box-shadow: 0 18px 35px rgba(0, 103, 168, 0.12);
+}
+
+@keyframes conditionCardIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.condition-hover-card h3 {
+  font-size: 22px;
+  font-weight: 400;
+  color: #0067a8;
+  padding: 18px 10px 20px;
+  text-align: center;
+}
+
+.condition-hover-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.condition-hover-card p {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #0067a8;
+  text-align: center;
+  padding: 20px 8px 0;
+}
+
+.conditions-bottom-text {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.4;
+  font-style: italic;
+  color: #24394c;
+  margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+  .conditions-visual-wrap {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .conditions-body-img {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .condition-point {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100%;
+    min-height: 50px;
+    text-align: left;
+    padding-left: 50px;
+  }
+
+  .point-dot {
+    left: 10px !important;
+    top: 8px !important;
+  }
+
+  .point-line {
+    display: none;
+  }
+
+  .point-title {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    display: block !important;
+    font-size: 18px;
+    white-space: normal;
+  }
+
+  .condition-hover-card {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+.treatment-approach-section {
+  background: #fcfff2;
+  padding: 90px 0 150px;
+  text-align: center;
+}
+
+.treatment-approach-section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.treatment-approach-section h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  line-height: 1.2;
+  color: #0067a8;
+  margin-bottom: 60px;
+}
+
+.treatment-intro {
+  font-size: 20px;
+  line-height: 1.45;
+  color: #172f45;
+  margin-bottom: 58px;
+}
+
+.treatment-image-wrap {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto 32px;
+  /* border: 4px solid #9b45ff; */
+}
+
+.treatment-image-wrap img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  display: block;
+}
+
+.treatment-approach-section h3 {
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #0067a8;
+  margin-bottom: 62px;
+}
+
+.treatment-description {
+  /* max-width: 980px;
+  margin: 0 auto; */
+  font-size: 20px;
+  line-height: 1.45;
+  color: #172f45;
+}
+
+@media (max-width: 767px) {
+  .treatment-approach-section {
+    padding: 70px 0 100px;
+  }
+
+  .treatment-approach-section h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  .treatment-intro,
+  .treatment-description {
+    font-size: 17px;
+  }
+
+  .treatment-image-wrap img {
+    height: 230px;
+  }
+
+  .treatment-approach-section h3 {
+    font-size: 23px;
+    margin-bottom: 35px;
+  }
+}
