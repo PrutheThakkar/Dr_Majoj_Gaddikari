@@ -1,18 +1,32 @@
-// /**
-//  * Implement Gatsby's Node APIs in this file.
-//  *
-//  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
-//  */
+// gatsby-node.js
+const path = require("path");
 
-// /**
-//  * @type {import('gatsby').GatsbyNode['createPages']}
-//  */
-// exports.createPages = async ({ actions }) => {
-//   const { createPage } = actions
-//   createPage({
-//     path: "/using-dsg",
-//     component: require.resolve("./src/templates/using-dsg.js"),
-//     context: {},
-//     defer: true,
-//   })
-// }
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(`
+    query {
+      allWpSpineCondition {
+        nodes {
+          slug
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    throw result.errors;
+  }
+
+  const conditions = result.data.allWpSpineCondition.nodes;
+
+  conditions.forEach((condition) => {
+    createPage({
+      path: `/spine-condition/${condition.slug}`, // Dynamic URL for each condition
+      component: path.resolve(`./src/templates/TemplatePage.js`), // Path to your TemplatePage
+      context: {
+        slug: condition.slug, // Pass the slug to query the condition in the template
+      },
+    });
+  });
+};
