@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+import "swiper/css";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -89,11 +93,16 @@ const SymptomsHorizontal = () => {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    const track = trackRef.current;
+ useEffect(() => {
+  const section = sectionRef.current;
+  const track = trackRef.current;
 
-    const ctx = gsap.context(() => {
+  let ctx;
+
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 769px)", () => {
+    ctx = gsap.context(() => {
       const getScrollAmount = () => {
         return -(track.scrollWidth - section.offsetWidth);
       };
@@ -112,9 +121,34 @@ const SymptomsHorizontal = () => {
         },
       });
     }, section);
+  });
 
-    return () => ctx.revert();
-  }, []);
+  mm.add("(max-width: 768px)", () => {
+    ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".symptom-card");
+      let index = 0;
+
+      gsap.set(track, { x: 0 });
+
+      const autoplay = setInterval(() => {
+        index = (index + 1) % cards.length;
+
+        gsap.to(track, {
+          x: -index * track.parentElement.offsetWidth,
+          duration: 0.8,
+          ease: "power2.inOut",
+        });
+      }, 2500);
+
+      return () => clearInterval(autoplay);
+    }, section);
+  });
+
+  return () => {
+    mm.revert();
+    if (ctx) ctx.revert();
+  };
+}, []);
 
   return (
     <section className="symptoms-horizontal-section" ref={sectionRef}>

@@ -37,31 +37,31 @@ const diagnosisSteps = [
     number: "1",
     title: "Detailed Discussion Of Symptoms",
     image:
-      "https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1200&q=80",
+      "https://drmanoj.studiosentientdemo.com/wp-content/uploads/2026/05/detailed-discussion-symptoms.webp",
   },
   {
     number: "2",
     title: "Physical Examination",
     image:
-      "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1200&q=80",
+      "https://drmanoj.studiosentientdemo.com/wp-content/uploads/2026/05/physical-examination.webp",
   },
   {
     number: "3",
     title: "Review Of MRI Or CT Scans",
     image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+      "https://drmanoj.studiosentientdemo.com/wp-content/uploads/2026/05/review-MRI-CT-scans.webp",
   },
   {
     number: "4",
     title: "Explanation Of Diagnosis",
     image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+      "https://drmanoj.studiosentientdemo.com/wp-content/uploads/2026/05/review-MRI-CT-scans.webp",
   },
   {
     number: "5",
     title: "Discussion Of Treatment Options",
     image:
-      "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=1200&q=80",
+      "https://drmanoj.studiosentientdemo.com/wp-content/uploads/2026/05/discussiontreatment-options.webp",
   },
 ];
 

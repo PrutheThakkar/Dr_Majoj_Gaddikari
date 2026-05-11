@@ -531,6 +531,36 @@
   }
 }
 
+@media (max-width: 768px) {
+  .symptoms-horizontal-section {
+    height: auto !important;
+    overflow: hidden;
+  }
+
+  .symptoms-scroll-area {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .symptoms-track {
+    display: flex;
+    gap: 0 !important;
+    width: 100%;
+  }
+
+  .symptom-card {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    box-sizing: border-box;
+    padding: 60px 28px !important;
+  }
+
+  .symptom-card .icon-wrap,
+  .symptom-card svg {
+    margin-bottom: 35px;
+  }
+}
 
 
 .spine-conditions-section {

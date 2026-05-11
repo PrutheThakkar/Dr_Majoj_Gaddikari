@@ -110,7 +110,7 @@
 }
 
 .about-doctor-copy {
-  max-width: 860px;
+  /* max-width: 860px; */
   margin: 0 auto ;
 }
 
@@ -332,7 +332,7 @@
 }
 
 .medical-bg-copy {
-  max-width: 880px;
+  /* max-width: 880px; */
   margin: 0 auto;
   text-align: center;
   /* padding-top: 145px; */
@@ -539,9 +539,9 @@
 }
 
 .about-treatment-intro {
-  max-width: 980px;
+  /* max-width: 980px; */
   margin: 0 auto 46px;
-  font-size: 24px;
+  font-size: 19px;
   line-height: 1.45;
   color: #172f45;
 }
@@ -590,7 +590,7 @@
 }
 
 .surgery-considered-card h4 {
-  font-size: 31px;
+  font-size: 20px;
   line-height: 1.15;
   font-weight: 400;
   color: #0067a8;
