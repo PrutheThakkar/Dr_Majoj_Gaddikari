@@ -1,25 +1,56 @@
 import React from "react";
+import { Link } from "gatsby";
+import { useLocation } from "@reach/router";
 import logo from "../images/Manoj-Website-Logo.svg";
 
 const Header = () => {
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path || location.pathname.startsWith(path);
+  };
+
   return (
     <header className="site-header">
       <div className="header-inner">
-        <a href="/" className="logo-wrap">
+        <Link to="/" className="logo-wrap">
           <img src={logo} alt="Dr. Manojkumar Gaddikeri" />
-        </a>
+        </Link>
 
         <nav className="main-nav">
-          <a href="/about">About</a>
-          <a href="#spine-conditions">Spine Conditions</a>
-          <a href="#treatments">Treatments</a>
-          <a href="#patient-journey">Patient Journey</a>
-          <a href="#insights">Insights</a>
+          <Link to="/about/" activeClassName="active">
+            About
+          </Link>
+
+          <Link
+            to="/spine-conditions/"
+            className={isActive("/spine-conditions/") ? "active" : ""}
+          >
+            Spine Conditions
+          </Link>
+
+         <Link to="/treatments/" activeClassName="active" partiallyActive={true}>
+  Treatments
+</Link>
+
+          <Link to="/patient-journey/" activeClassName="active">
+            Patient Journey
+          </Link>
+
+          <Link
+            to="/insights/"
+            className={isActive("/insights/") ? "active" : ""}
+          >
+            Insights
+          </Link>
         </nav>
 
-        <a href="#contact" className="header-btn">
+        <Link
+          to="/contact/"
+          className={`header-btn ${isActive("/contact/") ? "active" : ""}`}
+        >
           Reach Out
-        </a>
+        </Link>
       </div>
     </header>
   );

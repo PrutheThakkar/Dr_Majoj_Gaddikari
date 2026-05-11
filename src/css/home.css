@@ -11,7 +11,7 @@
 
 .about-doctor-section h2 {
   text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 34px;
   line-height: 1.2;
   color: #0067a8;
@@ -70,7 +70,7 @@
 }
 
 .doctor-content h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 24px;
   line-height: 1.3;
   font-style: italic;
@@ -170,7 +170,7 @@
 
 .spine-explained-section h2 {
   text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 34px;
   line-height: 1.2;
   color: #0067a8;
@@ -396,7 +396,7 @@
 }
 
 .symptoms-heading-wrap h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 34px;
   line-height: 1.2;
   color: #0067a8;
@@ -454,7 +454,7 @@
 .symptom-card h3 {
   font-size: 24px;
   line-height: 1.15;
-  color: #0c3048;
+  color: 005899;
   font-weight: 400;
   margin-bottom: 38px;
 }
@@ -472,7 +472,7 @@
 }
 
 .symptoms-bottom p {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-style: italic;
   font-size: 23px;
   line-height: 1.4;
@@ -547,7 +547,7 @@
 
 .spine-conditions-section h2 {
   text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 34px;
   color: #0067a8;
   margin-bottom: 60px;
@@ -803,7 +803,7 @@
 
 .conditions-bottom-text {
   text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 22px;
   line-height: 1.4;
   font-style: italic;
@@ -882,7 +882,7 @@
 }
 
 .treatment-approach-section h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 36px;
   line-height: 1.2;
   color: #0067a8;

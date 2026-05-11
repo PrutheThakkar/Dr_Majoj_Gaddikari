@@ -40,10 +40,10 @@ const Footer = () => {
         <div className="footer-links-wrap">
           <div className="footer-col">
             <h3>Home</h3>
-            <a href="#about">About</a>
-            <a href="#spine-conditions">Spine Conditions</a>
-            <a href="#treatments">Treatments</a>
-            <a href="#patient-journey">Patient Journey</a>
+            <a href="/about">About</a>
+            <a href="/spine-conditions">Spine Conditions</a>
+            <a href="/treatments">Treatments</a>
+            <a href="/patient-journey">Patient Journey</a>
           </div>
 
           <div className="footer-col">

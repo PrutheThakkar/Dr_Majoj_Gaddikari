@@ -107,6 +107,7 @@ body::-webkit-scrollbar {
 body {
   margin: 0;
   padding: 0;
+  line-height: 1.7em;
   font-family: "Raleway-Regular.ttf";
   color: #2F3A36;
   background: #F6F7F5;
@@ -114,7 +115,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
-
+p{
+  margin-bottom: 40px;
+}
 img {
   width: 100%;
 }
@@ -285,6 +288,14 @@ textarea {
 
 .clearfix::after {
   clear: both;
+}
+
+.container{
+  max-width: 90%;
+  margin: 0 auto;
+}
+section {
+  padding: 100px 0;
 }
 
 /* ==========================================================================
@@ -492,6 +503,31 @@ body {
   font-size: 15px;
   font-weight: 400;
   white-space: nowrap;
+}
+
+.main-nav a.active {
+  color: #0067a8;
+  font-weight: 600;
+}
+
+.main-nav a.active::after {
+  width: 100%;
+}
+
+.main-nav a.active,
+.main-nav a[aria-current="page"] {
+  color: #0067a8 !important;
+  font-weight: 700 !important;
+}
+
+.main-nav a.active::after,
+.main-nav a[aria-current="page"]::after {
+  width: 100% !important;
+}
+
+.header-btn.active {
+  background: #0067a8;
+  color: #fff;
 }
 
 .header-btn {
@@ -806,4 +842,19 @@ font-size: clamp(2.188rem, 0.1858rem + 2.3451vw, 3rem);
   .footer-brand p {
     font-size: 17px;
   }
+}
+
+
+
+.section-title-wrp h2{
+  font-family: "PlayfairDisplay-SemiBold";
+      font-size: 34px;
+      line-height: 1.2;
+      color: #0067a8;
+      text-align: center;
+      margin-bottom: 42px;
+}
+
+.section-title-wrp p{
+text-align: center;
 }

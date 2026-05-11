@@ -72,25 +72,29 @@ const SpineConditionsPage = ({ data }) => {
                   <div className="condition-right">
                     <h4>Major Treatment Approaches</h4>
 
-                    {/* Link to subcategory or child page */}
-                    <div className="treatment-option-list">
-                      {condition.spineConditionsPost.description &&
-                        condition.spineConditionsPost.description.map((item, itemIndex) => (
-                          <Link
-                            to={`/spine-condition/${condition.slug}/${item.slug}`} // Dynamic subcategory page
-                            className="treatment-option"
-                            key={itemIndex}
-                          >
-                            <span>{item}</span>
-                            <span className="arrow">→</span>
-                          </Link>
-                        ))}
-                    </div>
+                    <ul className="treatment-option-list">
+                      <li className="treatment-option">
+                        <span>Slip Disc / Disc Herniation Treatment</span>
+                        <span className="arrow">→</span>
+                      </li>
 
-                   <Link to={`/spine-condition/${condition.slug}`} className="view-treatment-btn">
-                    View All Treatment Options
-                  </Link>
-                  
+                      <li className="treatment-option">
+                        <span>Endoscopic Surgery</span>
+                        <span className="arrow">→</span>
+                      </li>
+
+                      <li className="treatment-option">
+                        <span>Minimally Invasive Spine Surgery (MISS)</span>
+                        <span className="arrow">→</span>
+                      </li>
+                    </ul>
+
+                    <Link
+                      to={`/spine-condition/${condition.slug}/`}
+                      className="view-treatment-btn"
+                    >
+                      View All Treatment Options
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -115,7 +119,7 @@ export const query = graphql`
         menuOrder
         spineConditionsPost {
           svgCode
-         
+         desciption
         }
       }
     }

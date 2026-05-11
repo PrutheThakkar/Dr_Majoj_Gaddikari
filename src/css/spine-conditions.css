@@ -46,7 +46,7 @@
 }
 
 .conditions-hero-content h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 42px;
   line-height: 1.05;
   font-weight: 400;
@@ -75,7 +75,7 @@
 }
 
 .conditions-list-section h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 34px;
   line-height: 1.2;
   color: #0067a8;
@@ -132,7 +132,7 @@
   font-size: 30px;
   line-height: 1.2;
   font-weight: 400;
-  color: #0c3048;
+  color: #005899;
   margin-bottom: 34px;
 }
 
@@ -306,5 +306,364 @@
   .treatment-option {
     font-size: 14px;
     padding: 0 12px;
+  }
+}
+
+
+.treatments-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.treatments-grid .treatment-card-wrapper{
+ width: 30%;
+}
+
+.treatment-card {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.treatment-card:hover {
+  transform: translateY(-4px);
+}
+
+.treatment-card-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.treatment-card-title {
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* ── Condition Switcher ─────────────────────────── */
+.condition-switcher-section {
+  /* background: #fff; */
+  border-bottom: 1px solid #e5e7eb;
+  /* position: sticky; */
+  top: 0;
+  z-index: 50;
+}
+
+/* Desktop tabs */
+.condition-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 0;
+}
+
+.condition-tab {
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #005899;
+  text-decoration: none;
+  border: 1.5px solid #a7d900;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.condition-tab:hover {
+  border-color: #005899;
+  background: #f0f4f8;
+}
+
+.condition-tab.active {
+  background: #005899;
+  color: #fff;
+  border-color: #005899;
+}
+
+/* Mobile dropdown */
+.condition-dropdown {
+  display: none;
+  position: relative;
+  padding: 12px 0;
+}
+
+.condition-dropdown-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1.5px solid #005899;
+  border-radius: 8px;
+  background: #fff;
+  color: #005899;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 11px;
+  transition: transform 0.2s;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.condition-dropdown-menu {
+  position: absolute;
+  top: calc(100% - 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.condition-dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #005899;
+  font-size: 14px;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.15s;
+}
+
+.condition-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.condition-dropdown-item:hover,
+.condition-dropdown-item.active {
+  background: #f0f4f8;
+  font-weight: 600;
+}
+
+/* Show dropdown only on mobile */
+@media (max-width: 768px) {
+  .condition-tabs {
+    display: none;
+  }
+
+  .condition-dropdown {
+    display: block;
+  }
+}
+
+.condition-switcher-section{
+  padding: 50px 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* ── Treatment Detail Page ────────────────────────── */
+.treatment-detail-content {
+  padding: 60px 0 80px;
+}
+
+.treatment-detail-content .container {
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.85;
+  color: #12324a;
+}
+
+.treatment-detail-wrap{
+   max-width: 90%;
+     margin: 0 auto;
+}
+/* Headings */
+.treatment-detail-content h1,
+.treatment-detail-content h2,
+.treatment-detail-content h3,
+.treatment-detail-content h4,
+.treatment-detail-content h5,
+.treatment-detail-content h6 {
+  font-family: "PlayfairDisplay-SemiBold", serif;
+  color: #0c3048;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.treatment-detail-content h2 {
+  font-size: 28px;
+}
+
+.treatment-detail-content h3 {
+  font-size: 22px;
+}
+
+.treatment-detail-content h4 {
+  font-size: 18px;
+}
+
+/* Paragraphs */
+.treatment-detail-content p {
+  margin-bottom: 20px;
+}
+
+/* Links */
+.treatment-detail-content a {
+  color: #7ab648;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.treatment-detail-content a:hover {
+  color: #0c3048;
+}
+
+/* Unordered list */
+.treatment-detail-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.treatment-detail-content ul li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+}
+
+.treatment-detail-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7ab648;
+  flex-shrink: 0;
+}
+
+/* Ordered list */
+.treatment-detail-content ol {
+  padding-left: 24px;
+  margin: 0 0 24px 0;
+}
+
+.treatment-detail-content ol li {
+  margin-bottom: 12px;
+  padding-left: 8px;
+}
+
+.treatment-detail-content ol li::marker {
+  color: #7ab648;
+  font-weight: 700;
+}
+
+/* Nested lists */
+.treatment-detail-content ul ul,
+.treatment-detail-content ol ol,
+.treatment-detail-content ul ol,
+.treatment-detail-content ol ul {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+/* Strong */
+.treatment-detail-content strong,
+.treatment-detail-content b {
+  font-weight: 700;
+  color: #0c3048;
+}
+
+/* Blockquote */
+.treatment-detail-content blockquote {
+  border-left: 4px solid #7ab648;
+  margin: 32px 0;
+  padding: 16px 24px;
+  background: #f7faf3;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #0c3048;
+}
+
+.treatment-detail-content blockquote p {
+  margin: 0;
+}
+
+/* Images */
+.treatment-detail-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 24px 0;
+  display: block;
+}
+
+/* HR */
+.treatment-detail-content hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 40px 0;
+}
+
+/* Table */
+.treatment-detail-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 32px 0;
+  font-size: 15px;
+}
+
+.treatment-detail-content th {
+  background: #0c3048;
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.treatment-detail-content td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.treatment-detail-content tr:nth-child(even) td {
+  background: #f7faf3;
+}
+
+/* ── Mobile ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .treatment-detail-content {
+    padding: 40px 0 60px;
+  }
+
+  .treatment-detail-content .container {
+    font-size: 16px;
+  }
+
+  .treatment-detail-content h2 {
+    font-size: 22px;
+  }
+
+  .treatment-detail-content h3 {
+    font-size: 18px;
   }
 }

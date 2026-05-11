@@ -3,6 +3,7 @@ import Header from "../components/header";
 import "../css/common.css";
 import "../css/home.css";
 import "../css/about.css";
+import "../css/blog.css";
 import "../css/spine-conditions.css";
 import "../css/patient-journey.css";
 import "../css/contact.css";

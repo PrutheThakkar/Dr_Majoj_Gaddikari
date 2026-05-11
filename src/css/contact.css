@@ -46,7 +46,7 @@
 }
 
 .contact-hero-content h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 42px;
   line-height: 1.08;
   font-weight: 400;
@@ -81,7 +81,7 @@
 }
 
 .book-consultation-heading h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 34px;
   line-height: 1.2;
   color: #0067a8;
@@ -167,7 +167,7 @@
 }
 
 .contact-main-left h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 22px;
   line-height: 1.3;
   font-weight: 400;
@@ -206,7 +206,7 @@
 /* FORM */
 
 .contact-main-right h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "PlayfairDisplay-SemiBold";
   font-size: 42px;
   line-height: 1.15;
   font-weight: 400;
