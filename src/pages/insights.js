@@ -1,8 +1,9 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
+import Breadcrumb from "../components/Breadcrumb";
 
-const placeholderImage = "https://placehold.co/600x400?text=No+Image";
+const placeholderImage = "https://drmanoj.studiosentientdemo.com/wp-content/uploads/2026/05/about-hero.webp";
 
 const BlogPage = ({ data }) => {
   const posts = data.allWpPost.edges;
@@ -20,6 +21,8 @@ const BlogPage = ({ data }) => {
             <h1>Insights</h1>
             <p>Expert perspectives on spine health, treatments, and recovery.</p>
           </div>
+          <Breadcrumb items={[{ label: "Insights" }]} />
+
         </section>
 
         {/* Blog Grid */}
@@ -43,7 +46,7 @@ const BlogPage = ({ data }) => {
                       />
                     </div>
                     <div className="blog-card-content">
-                      <h2 dangerouslySetInnerHTML={{ __html: post.title }} />
+                      <h3 dangerouslySetInnerHTML={{ __html: post.title }} />
                       <span className="read-more">Read More →</span>
                     </div>
                   </Link>

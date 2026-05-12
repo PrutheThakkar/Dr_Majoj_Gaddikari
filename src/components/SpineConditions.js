@@ -126,10 +126,9 @@ const SpineConditions = () => {
           )}
         </div>
 
-        <p className="conditions-bottom-text">
-          Each condition affects the spine differently, which is why treatment
-          begins with careful evaluation
-        </p>
+        <h3 className="conditions-bottom-text">
+          Each condition affects the spine differently, which is why treatment begins with careful evaluation
+        </h3>
       </div>
     </section>
   );

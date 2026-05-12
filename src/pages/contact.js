@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 
 import contactHero from "../images/about-hero.webp";
 import consultationImg from "../images/about-hero.webp";
+import Breadcrumb from "../components/Breadcrumb";
 
 const contactCards = [
   {
@@ -125,6 +126,8 @@ ${formValues.message}
               consultation support.
             </p>
           </div>
+          <Breadcrumb items={[{ label: "Contact" }]} />
+
         </section>
 
         {/* Book Consultation */}

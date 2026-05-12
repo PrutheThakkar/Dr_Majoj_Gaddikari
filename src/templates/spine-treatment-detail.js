@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import Breadcrumb from "../components/Breadcrumb";
 
 const placeholderImage = "https://placehold.co/600x400?text=No+Image";
 
@@ -23,6 +24,11 @@ const SpineTreatmentDetailTemplate = ({ data }) => {
           <div className="about-hero-content">
             <h1>{treatment.title}</h1>
           </div>
+
+          <Breadcrumb items={[
+            { label: "Spine Conditions", link: "/spine-conditions" },
+            { label: treatment.title }
+          ]} />
         </section>
 
         {/* Content */}

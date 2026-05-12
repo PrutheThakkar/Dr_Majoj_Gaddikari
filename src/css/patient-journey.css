@@ -1,8 +1,7 @@
 /* PATIENT JOURNEY PAGE */
 
 .patient-journey-page {
-  background: #fcfff2;
-  color: #172f45;
+  background: #FCFEF3;
 }
 
 /* HERO */
@@ -40,25 +39,17 @@
   position: relative;
   z-index: 2;
   width: 88%;
-  max-width: 1320px;
+  max-width: 1520px;
   margin: 0 auto;
   padding-top: 70px;
 }
 
 .patient-journey-hero-content h1 {
-  font-family: "PlayfairDisplay-SemiBold";
-  font-size: 40px;
-  line-height: 1.08;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #0067a8;
+  /* text-transform: uppercase; */
   margin-bottom: 22px;
 }
 
 .patient-journey-hero-content p {
-  font-size: 16px;
-  line-height: 1.35;
-  color: #20394d;
   max-width: 580px;
 }
 
@@ -66,7 +57,7 @@
 
 .patient-journey-page .container {
   width: 88%;
-  max-width: 1320px;
+  max-width: 1520px;
   margin: 0 auto;
 }
 
@@ -74,7 +65,7 @@
 .patient-outcomes-section,
 .long-term-health-section {
   text-align: center;
-  background: #fcfff2;
+  background: #FCFEF3;
 }
 
 .journey-listening-section {
@@ -84,10 +75,6 @@
 .journey-listening-section h2,
 .patient-outcomes-section h2,
 .long-term-health-section h2 {
-  font-family: "PlayfairDisplay-SemiBold";
-  font-size: 30px;
-  line-height: 1.25;
-  color: #0067a8;
   margin-bottom: 42px;
 }
 
@@ -97,18 +84,11 @@
 }
 
 .journey-listening-copy p {
-  font-size: 15px;
-  line-height: 1.5;
-  color: #172f45;
   margin-bottom: 12px;
 }
 
 .journey-listening-copy strong {
   display: block;
-  font-size: 15px;
-  line-height: 1.45;
-  color: #172f45;
-  font-weight: 700;
   margin-top: 6px;
 }
 
@@ -119,15 +99,11 @@
 }
 
 .patient-outcomes-intro {
-  font-size: 14px;
-  line-height: 1.45;
-  color: #172f45;
   max-width: 720px;
   margin: 0 auto 42px;
 }
 
 .patient-outcomes-intro strong {
-  color: #0067a8;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -171,20 +147,12 @@
 }
 
 .patient-outcome-card h3 {
-  font-size: 15px;
-  line-height: 1.25;
-  font-weight: 400;
-  color: #172f45;
   margin: 0;
 }
 
 .patient-outcomes-bottom {
   max-width: 650px;
   margin: 0 auto 28px;
-  font-family: "PlayfairDisplay-SemiBold";
-  font-size: 15px;
-  line-height: 1.45;
-  color: #172f45;
 }
 
 /* BUTTON */
@@ -194,13 +162,9 @@
   align-items: center;
   justify-content: center;
   background: #a7d900;
-  color: #0067a8;
   text-decoration: none;
   padding: 11px 24px;
   border-radius: 28px;
-  font-size: 14px;
-  line-height: 1;
-  font-weight: 500;
   transition: transform 0.35s ease, box-shadow 0.35s ease,
     background 0.35s ease;
 }
@@ -218,16 +182,11 @@
 }
 
 .long-term-intro {
-  font-size: 14px;
-  line-height: 1.45;
-  color: #172f45;
   max-width: 720px;
   margin: 0 auto 58px;
 }
 
 .long-term-intro strong {
-  color: #172f45;
-  font-weight: 700;
 }
 
 .long-term-grid {
@@ -248,21 +207,13 @@
   margin: 0 auto 20px;
   border-radius: 50%;
   background: #d3ee55;
-  color: #0067a8;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "PlayfairDisplay-SemiBold";
-  font-size: 20px;
-  font-weight: 700;
   box-shadow: 0 0 0 8px rgba(211, 238, 85, 0.42);
 }
 
 .long-term-card h3 {
-  font-size: 15px;
-  line-height: 1.25;
-  color: #0067a8;
-  font-weight: 400;
   max-width: 220px;
   margin: 0 auto;
 }
@@ -272,7 +223,7 @@
 .patient-journey-cta {
   background: linear-gradient(
     180deg,
-    #fcfff2 0%,
+    #FCFEF3 0%,
     #eefcc1 46%,
     #d8edf0 100%
   );
@@ -281,12 +232,7 @@
 }
 
 .patient-journey-cta h2 {
-  font-family: "PlayfairDisplay-SemiBold";
-  font-size: 27px;
-  line-height: 1.35;
-  font-style: italic;
-  font-weight: 400;
-  color: #0067a8;
+  font-style: initial;
   margin-bottom: 34px;
 }
 
@@ -298,7 +244,6 @@
   }
 
   .patient-journey-hero-content h1 {
-    font-size: 32px;
   }
 
   .journey-listening-section {
@@ -322,7 +267,6 @@
   }
 
   .patient-journey-cta h2 {
-    font-size: 24px;
   }
 }
 
@@ -336,17 +280,14 @@
   }
 
   .patient-journey-hero-content h1 {
-    font-size: 28px;
   }
 
   .patient-journey-hero-content p {
-    font-size: 14px;
   }
 
   .journey-listening-section h2,
   .patient-outcomes-section h2,
   .long-term-health-section h2 {
-    font-size: 26px;
   }
 
   .patient-outcome-strip {
@@ -367,6 +308,9 @@
   }
 
   .patient-journey-cta h2 {
-    font-size: 21px;
   }
+}
+
+.symptoms-description{
+  margin-top: 50px;
 }

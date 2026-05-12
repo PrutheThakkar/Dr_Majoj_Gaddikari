@@ -5,6 +5,11 @@
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+
+html {
+  color: var(--color-body);
+}
+
 @font-face {
   font-family: "PlayfairDisplay-Bold";
   src: url("../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
@@ -40,24 +45,25 @@
   font-style: normal;
   font-display: swap;
 }
-html {
-  color: #545555;
-}
 
 /* Variables */
 :root {
-  --blue-dark: #1a3a5c;
-  --blue-mid: #1e4d7b;
-  --blue-light: #2a6099;
-  --blue-muted: #3a7abf;
-  --accent-green: #4caf50;
-  --text-white: #ffffff;
-  --text-light: rgba(255,255,255,0.85);
-  --text-dim: rgba(255,255,255,0.65);
-  --border-col: rgba(255,255,255,0.18);
-  --btn-border: rgba(255,255,255,0.75);
-  --font-head: 'Raleway', sans-serif;
-  --font-body: 'Lato', sans-serif;
+  --font-primary: 'Raleway-Regular';
+  --font-heading: 'PlayfairDisplay-SemiBold', serif;
+  --color-heading: #0067a8;
+  --color-body: #172f45;
+  --color-primary: #0057b8;
+  --color-secondary: #e31e24;
+  --h1-size: clamp(38px, 4vw, 48px);
+  --h2-size: clamp(32px, 3vw, 36px);
+  --h3-size: clamp(20px, 2.4vw, 24px);
+  --h4-size: clamp(18px, 2vw, 20px);
+  --h5-size: clamp(18px, 1.5vw, 18px);
+  --h6-size: clamp(16px, 1.2vw, 16px);
+  --body-size: clamp(15px, 1vw, 17px);
+  --small-size: 14px;
+  --container-width: 1520px;
+  --container-fluid-width: 90%;
 }
 
 /* =========================
@@ -105,12 +111,13 @@ body::-webkit-scrollbar {
 }
 
 body {
+ font-family: "Raleway-Regular.ttf";
+  font-size: var(--body-size);
+  line-height: 1.6;
+  color: var(--color-body);
   margin: 0;
   padding: 0;
-  line-height: 1.7em;
-  font-family: "Raleway-Regular.ttf";
-  color: #2F3A36;
-  background: #F6F7F5;
+  background: #FCFEF3;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -118,6 +125,73 @@ body {
 p{
   margin-bottom: 40px;
 }
+
+h1, h2, h3, h5, h6 {
+  font-family: "PlayfairDisplay-SemiBold";
+  color: var(--color-heading);
+  line-height: 1.15;
+  font-weight: normal;
+}
+h4{
+  font-family: "Raleway-Regular.ttf";
+  color: var(--color-heading);
+  line-height: 1.15;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.highlight {
+  font-weight: 700;
+  font-family: "Raleway-Medium";
+}
+h3{
+  /* font-family: "Raleway-Regular.ttf"; */
+  color: #02192B;
+ font-family: "PlayfairDisplay-SemiBold";
+}
+
+h1{
+  text-transform: capitalize;
+}
+
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+h4 { font-size: var(--h4-size); }
+h5 { font-size: var(--h5-size); }
+h6 { font-size: var(--h6-size); }
+
+p {
+  font-size: var(--body-size);
+  color: var(--color-body);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+span {
+  color: var(--color-body);
+  font-family: "Raleway-Regular.ttf";
+}
+
+small {
+  font-size: var(--small-size);
+  color: var(--color-body);
+}
+
+button {
+  font-family: "Raleway-Regular.ttf";
+  font-size: var(--body-size);
+  color: var(--color-body);
+}
+
+input, textarea {
+  font-family: "Raleway-Regular.ttf";
+  font-size: var(--body-size);
+  color: var(--color-body);
+}
+
 img {
   width: 100%;
 }
@@ -290,9 +364,11 @@ textarea {
   clear: both;
 }
 
-.container{
-  max-width: 90%;
-  margin: 0 auto;
+.container {
+  width: var(--container-fluid-width);
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 section {
   padding: 100px 0;
@@ -303,9 +379,51 @@ section {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media (max-width: 991px) {
+  :root {
+    --h1-size: 42px;
+    --h2-size: 34px;
+    --h3-size: 28px;
+    --h4-size: 22px;
+    --h5-size: 18px;
+    --h6-size: 16px;
+    --body-size: 16px;
+  }
+
+  .container {
+    width: 92%;
+  }
 }
+
+@media (max-width: 767px) {
+  :root {
+    --h1-size: 34px;
+    --h2-size: 28px;
+    --h3-size: 24px;
+    --h4-size: 20px;
+    --h5-size: 17px;
+    --h6-size: 15px;
+    --body-size: 15px;
+  }
+
+  .container {
+    width: 92%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --h1-size: 30px;
+    --h2-size: 26px;
+    --h3-size: 22px;
+    --h4-size: 19px;
+    --h5-size: 16px;
+    --h6-size: 15px;
+    --body-size: 15px;
+  }
+}
+
 @media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
@@ -376,12 +494,6 @@ ul li a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  background: #fcfff2;
-  font-family: "Raleway-Regular.ttf";
-  color: #12324a;
 }
 
 .site-header {
@@ -576,10 +688,10 @@ font-size: clamp(2.188rem, 0.1858rem + 2.3451vw, 3rem);
 }
 
 .hero-content h1 {
-  font-family: "PlayfairDisplay-Italic";
-  font-size: 46px;
+  /* font-family: "PlayfairDisplay-Italic"; */
+  /* font-size: 46px; */
   line-height: 1.08;
-  font-style: italic;
+  /* font-style: initial; */
   font-weight: 400;
   color: #0067a8;
   margin-bottom: 22px;
@@ -683,7 +795,7 @@ font-size: clamp(2.188rem, 0.1858rem + 2.3451vw, 3rem);
 .site-footer {
   background: linear-gradient(
     180deg,
-    #fcfff2 0%,
+    #FCFEF3 0%,
     #f2ffc9 42%,
     #b9dce4 100%
   );
@@ -700,7 +812,7 @@ font-size: clamp(2.188rem, 0.1858rem + 2.3451vw, 3rem);
  
   font-size: 38px;
   line-height: 1.28;
-  font-style: italic;
+  font-style: initial;
   font-weight: 400;
   color: #0067a8;
   margin-bottom: 48px;
@@ -804,6 +916,46 @@ font-size: clamp(2.188rem, 0.1858rem + 2.3451vw, 3rem);
   height: 1px;
   background: rgba(0, 103, 168, 0.35);
   margin: 48px auto 0;
+}
+
+/* Breadcrumb Styles */
+.breadcrumb-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb-item a,
+.breadcrumb-current {
+  color: #073d59;
+  text-decoration: none;
+  font-size: var(--body-size);
+  font-weight: 400;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  color: #073d59;
+  font-size: var(--body-size);
 }
 
 @media (max-width: 991px) {

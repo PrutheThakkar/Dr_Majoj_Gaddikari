@@ -8,6 +8,7 @@ import treatmentImg from "../images/treatment-approach.webp";
 import SpineExplained from "../components/SpineExplained";
 import SymptomsHorizontal from "../components/SymptomsHorizontal";
 import SpineConditions from "../components/SpineConditions";
+import Breadcrumb from "../components/Breadcrumb";
 
 const HomePage = () => {
   return (
@@ -32,6 +33,8 @@ const HomePage = () => {
             Book a consultation
           </a>
         </div>
+
+        <Breadcrumb items={[]} />
       </section>
 
       <section className="about-doctor-section" id="about">
@@ -96,7 +99,6 @@ const HomePage = () => {
 
           <p className="treatment-description">
             When structural issues in the spine require surgical treatment, minimally invasive techniques can allow smaller incisions and faster recovery compared to traditional approaches.
-            <br />
             Treatment decisions are based on the diagnosis, severity of symptoms, and how the condition is affecting daily life.
           </p>
         </div>

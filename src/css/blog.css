@@ -42,6 +42,7 @@
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+  object-position: 80%;
 }
 
 .blog-card:hover .blog-card-image img {
@@ -58,24 +59,29 @@
 }
 
 .blog-card-content h2 {
-  font-size: 18px;
-  font-family: "PlayfairDisplay-SemiBold", serif;
-  color: #005899;
-  line-height: 1.4;
   margin: 0;
 }
 
 .read-more {
-  font-size: 14px;
-  font-weight: 600;
-  color: #7ab648;
-  margin-top: auto;
   display: inline-block;
-  transition: color 0.2s;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 13px 24px;
+  border-radius: 30px;
+  background: #a7d900;
+  color: #073d59;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
 .blog-card:hover .read-more {
+  background: #d7e96c;
   color: #005899;
+  transform: translateY(-1px);
 }
 
 /* ── Tablet: 2 columns ────────────────────────────── */
@@ -120,43 +126,22 @@
 
 
 /* ── Blog Detail Page ─────────────────────────────── */
-.blog-detail-content {
-  /* padding: 60px 0 ; */
-}
-
 .blog-content-body {
   max-width: 90%;
   margin: 0 auto;
-  font-size: 17px;
-  line-height: 1.85;
-  color: #12324a;
 }
 
-/* Headings */
 .blog-content-body h1,
 .blog-content-body h2,
 .blog-content-body h3,
 .blog-content-body h4,
 .blog-content-body h5,
 .blog-content-body h6 {
-  font-family: "PlayfairDisplay-SemiBold";
-  color: #005899;
   margin-top: 40px;
   margin-bottom: 16px;
-  line-height: 1.3;
 }
 
-.blog-content-body h2 {
-  font-size: 28px;
-}
 
-.blog-content-body h3 {
-  font-size: 22px;
-}
-
-.blog-content-body h4 {
-  font-size: 18px;
-}
 
 /* Paragraphs */
 .blog-content-body p {
@@ -231,7 +216,7 @@
   padding: 16px 24px;
   background: #f7faf3;
   border-radius: 0 8px 8px 0;
-  font-style: italic;
+  font-style: initial;
   color: #005899;
 }
 
@@ -292,7 +277,6 @@
   background: #f3f4f6;
   padding: 2px 6px;
   border-radius: 4px;
-  font-size: 14px;
   color: #005899;
 }
 
@@ -317,15 +301,7 @@
     padding: 40px 0 60px;
   }
 
-  .blog-content-body {
-    font-size: 16px;
-  }
+  /* .blog-content-body responsive */
 
-  .blog-content-body h2 {
-    font-size: 22px;
-  }
-
-  .blog-content-body h3 {
-    font-size: 18px;
-  }
+  /* headings responsive */
 }

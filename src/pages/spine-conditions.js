@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import spineConditionsHero from "../images/about-hero.webp";
+import Breadcrumb from "../components/Breadcrumb";
 
 // Condition Icon Component (Using SVG code from `svgCode`)
 const ConditionIcon = ({ svgCode }) => {
@@ -42,6 +43,8 @@ const SpineConditionsPage = ({ data }) => {
               toward effective treatment and long-term recovery.
             </p>
           </div>
+          <Breadcrumb items={[{ label: "Spine Conditions" }]} />
+
         </section>
 
         {/* Conditions List Section */}
@@ -60,7 +63,7 @@ const SpineConditionsPage = ({ data }) => {
                     {/* Render the icon using the svgCode */}
                     <ConditionIcon svgCode={condition.spineConditionsPost.svgCode} />
 
-                    <h3>{condition.title}</h3>
+                    <h2>{condition.title}</h2>
                     <div
                       className="condition-content"
                       dangerouslySetInnerHTML={{
@@ -75,17 +78,17 @@ const SpineConditionsPage = ({ data }) => {
                     <ul className="treatment-option-list">
                       <li className="treatment-option">
                         <span>Slip Disc / Disc Herniation Treatment</span>
-                        <span className="arrow">→</span>
+                        {/* <span className="arrow">→</span> */}
                       </li>
 
                       <li className="treatment-option">
                         <span>Endoscopic Surgery</span>
-                        <span className="arrow">→</span>
+                        {/* <span className="arrow">→</span> */}
                       </li>
 
                       <li className="treatment-option">
                         <span>Minimally Invasive Spine Surgery (MISS)</span>
-                        <span className="arrow">→</span>
+                        {/* <span className="arrow">→</span> */}
                       </li>
                     </ul>
 

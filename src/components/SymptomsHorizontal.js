@@ -9,7 +9,7 @@ import "swiper/css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const symptoms = [
+const defaultSymptoms = [
   {
     icon: <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_191_167)">
@@ -89,7 +89,12 @@ const symptoms = [
   },
 ];
 
-const SymptomsHorizontal = () => {
+const SymptomsHorizontal = ({
+  heading = "When The Spine Is Affected; Symptoms Appear",
+  bottomText = "Understanding the underlying cause is the first step in choosing the right treatment",
+  description = null,
+  symptoms = defaultSymptoms,
+}) => {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
 
@@ -153,7 +158,8 @@ const SymptomsHorizontal = () => {
   return (
     <section className="symptoms-horizontal-section" ref={sectionRef}>
       <div className="symptoms-heading-wrap">
-        <h2>When The Spine Is Affected; Symptoms Appear</h2>
+        <h2>{heading}</h2>
+        {description && <p className="symptoms-description">{description}</p>}
       </div>
 
       <div className="symptoms-scroll-area">
@@ -165,17 +171,14 @@ const SymptomsHorizontal = () => {
               </div>
 
               <h3>{item.title}</h3>
-              <p>{item.text}</p>
+               {item.text && <p>{item.text}</p>}
             </div>
           ))}
         </div>
       </div>
 
       <div className="symptoms-bottom">
-        <p>
-          Understanding the underlying cause is the first step in choosing the
-          right treatment
-        </p>
+        <h3>{bottomText}</h3>
 
         <a href="#contact" className="symptoms-btn">
           Book a consultation

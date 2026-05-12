@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import Breadcrumb from "../components/Breadcrumb";
 
 const placeholderImage = "https://placehold.co/600x400?text=No+Image";
 
@@ -20,6 +21,11 @@ const BlogDetailTemplate = ({ data }) => {
           <div className="about-hero-content">
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
           </div>
+          <Breadcrumb items={[
+            { label: "Insights", link: "/insights" },
+            { label: post.title }
+          ]} />
+
         </section>
 
         {/* Blog Content */}

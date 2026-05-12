@@ -72,32 +72,32 @@ const SpineExplained = () => {
           />
 
           <div className="spine-label label-vertebrae">
-            <h3>VERTEBRAE</h3>
+            <h4>VERTEBRAE</h4>
             <p>Individual bones that stack and protect the spinal cord</p>
             <span></span>
           </div>
 
           <div className="spine-label label-joints">
-            <h3>JOINTS</h3>
+            <h4>JOINTS</h4>
             <p>Facets that connect vertebrae and guide motion</p>
             <span></span>
           </div>
 
           <div className="spine-label label-disc">
             <span></span>
-            <h3>DISC</h3>
+            <h4>DISC</h4>
             <p>Soft cushions that absorb shock and allow smooth movement</p>
           </div>
 
           <div className="spine-label label-muscles">
-            <h3>MUSCLES</h3>
+            <h4>MUSCLES</h4>
             <p>Strong supportive tissues that stabilize and move the spine</p>
             <span></span>
           </div>
 
           <div className="spine-label label-nerves">
             <span></span>
-            <h3>NERVES</h3>
+            <h4>NERVES</h4>
             <p>Nerve roots that carry signals between the spine and the body</p>
           </div>
         </div>

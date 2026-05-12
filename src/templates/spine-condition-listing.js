@@ -43,6 +43,11 @@ const SpineConditionListingTemplate = ({ data }) => {
               <div dangerouslySetInnerHTML={{ __html: condition.content }} />
             )}
           </div>
+
+          <Breadcrumb items={[
+            { label: "Spine Conditions", link: "/spine-conditions" },
+            { label: showAll ? "All Treatments" : condition.title }
+          ]} />
         </section>
 
         {/* Condition Switcher */}

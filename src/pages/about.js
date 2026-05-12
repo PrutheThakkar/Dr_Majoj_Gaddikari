@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import aboutHero from "../images/about-hero.webp";
 import doctorImg from "../images/about-dr.webp";
+import Breadcrumb from "../components/Breadcrumb";
 
 const expertiseItems = [
   "Slipped Or Herniated Discs",
@@ -199,6 +200,8 @@ const AboutPage = () => {
               minimally invasive, and tailored to long-term recovery.
             </p>
           </div>
+          <Breadcrumb items={[{ label: "About" }]} />
+
         </section>
 
         {/* Doctor Intro Section */}
@@ -284,15 +287,15 @@ const AboutPage = () => {
                       </svg>
                     </span>
 
-                    <h3>{item}</h3>
+                    <h4>{item}</h4>
                   </div>
                 ))}
               </div>
 
-              <p className="expertise-bottom-text">
+              <h3 className="expertise-bottom-text">
                 These conditions often require careful evaluation because
                 multiple structures in the spine may be involved.
-              </p>
+              </h3>
 
               <a href="#contact" className="about-page-btn">
                 Book a consultation
@@ -314,9 +317,9 @@ const AboutPage = () => {
               improve function.
             </p>
 
-            <h3 className="surgery-considered-title">
+            {/* <h3 className="surgery-considered-title">
               Surgery is considered when
-            </h3>
+            </h3> */}
 
             <div className="surgery-considered-grid">
               {surgeryConsideredItems.map((item) => (
