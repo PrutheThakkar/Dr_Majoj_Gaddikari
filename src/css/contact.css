@@ -1,11 +1,12 @@
-/* CONTACT PAGE NEW */
+/* ================================
+   CONTACT PAGE STYLES START
+================================ */
 
 .contact-page {
   background: #FCFEF3;
 }
 
 /* HERO */
-
 .contact-hero-section {
   position: relative;
   min-height: 390px;
@@ -13,7 +14,6 @@
   display: flex;
   align-items: center;
 }
-
 .contact-hero-bg {
   position: absolute;
   inset: 0;
@@ -21,20 +21,13 @@
   height: 100%;
   object-fit: cover;
 }
-
 .contact-hero-section::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(252, 255, 242, 0.58) 0%,
-    rgba(252, 255, 242, 0.32) 45%,
-    rgba(0, 103, 168, 0.04) 100%
-  );
+  background: linear-gradient(90deg, rgba(252, 255, 242, 0.58) 0%, rgba(252, 255, 242, 0.32) 45%, rgba(0, 103, 168, 0.04) 100%);
   z-index: 1;
 }
-
 .contact-hero-content {
   position: relative;
   z-index: 2;
@@ -43,63 +36,47 @@
   margin: 0 auto;
   padding-top: 70px;
 }
-
 .contact-hero-content h1 {
-  /* text-transform: uppercase; */
   margin-bottom: 22px;
 }
-
 .contact-hero-content p {
   max-width: 560px;
 }
 
 /* BOOK CONSULTATION */
-
 .book-consultation-section {
-  padding: 95px 0 120px;
+  padding: clamp(95px, 6vw, 120px) 0 clamp(90px, 5vw, 120px);
   background: #FCFEF3;
 }
-
 .book-consultation-section .container {
   width: 88%;
   max-width: 1520px;
-  margin: 0 auto;
 }
-
 .book-consultation-heading {
   text-align: center;
   margin-bottom: 58px;
 }
-
 .book-consultation-heading h2 {
   margin-bottom: 34px;
 }
-
 .book-consultation-heading p {
   max-width: 660px;
   margin: 0 auto;
 }
 
-/* TOP INFO CARDS */
-
+/* INFO CARDS */
 .consultation-info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   margin-bottom: 48px;
 }
-
 .consultation-info-card {
   min-height: 178px;
   border: 1px solid #cfe969;
   padding: 24px 28px;
-  background: linear-gradient(
-    90deg,
-    rgba(246, 255, 217, 0.98) 0%,
-    rgba(218, 240, 93, 0.7) 100%
-  );
+  background: linear-gradient(90deg, rgba(246, 255, 217, 0.98) 0%, rgba(218, 240, 93, 0.7) 100%);
 }
-
 .consultation-info-icon {
   width: 58px;
   height: 58px;
@@ -110,17 +87,14 @@
   justify-content: center;
   margin-bottom: 26px;
 }
-
 .consultation-info-card h3 {
   margin-bottom: 10px;
 }
-
 .consultation-info-card p {
   margin: 0;
 }
 
 /* MAIN CARD */
-
 .contact-main-card {
   border: 1px solid #cfe969;
   padding: 34px;
@@ -129,12 +103,10 @@
   gap: 44px;
   background: #FCFEF3;
 }
-
 .contact-main-left {
   display: flex;
   flex-direction: column;
 }
-
 .contact-consultation-img {
   width: 100%;
   height: 455px;
@@ -142,52 +114,29 @@
   display: block;
   margin-bottom: 62px;
 }
-
 .contact-main-left h3 {
   max-width: 620px;
   margin-bottom: 34px;
 }
-
 .contact-small-btn,
 .contact-booking-form button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: fit-content;
-  border: 0;
-  border-radius: 28px;
-  background: #a7d900;
-  text-decoration: none;
   padding: 13px 24px;
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease,
-    background 0.35s ease;
-}
-
-.contact-small-btn:hover,
-.contact-booking-form button:hover {
-  background: #b8ec00;
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(167, 217, 0, 0.35);
 }
 
 /* FORM */
-
 .contact-main-right h2 {
   margin-bottom: 34px;
 }
-
 .contact-booking-form {
   width: 100%;
 }
-
 .contact-form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 22px 28px;
   margin-bottom: 22px;
 }
-
 .contact-booking-form input,
 .contact-booking-form textarea {
   width: 100%;
@@ -196,116 +145,68 @@
   background: transparent;
   outline: none;
   padding: 16px 14px;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease,
-    background 0.35s ease;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
-
 .contact-booking-form input {
   height: 52px;
 }
-
 .contact-booking-form textarea {
   min-height: 200px;
-  resize: vertical;
   margin-bottom: 28px;
 }
-
-.contact-booking-form input::placeholder,
-.contact-booking-form textarea::placeholder {
-}
-
 .contact-booking-form input:focus,
 .contact-booking-form textarea:focus {
   background: rgba(255, 255, 255, 0.45);
   box-shadow: 0 0 0 3px rgba(0, 103, 168, 0.08);
 }
-
 .contact-booking-form button:disabled {
   opacity: 0.65;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
-
 .contact-form-message {
   margin-top: 20px;
 }
 
-.contact-form-message.success {
-}
-
-.contact-form-message.error {
-}
-
 /* RESPONSIVE */
-
 @media (max-width: 991px) {
   .contact-hero-section {
     min-height: 340px;
   }
-
-  .contact-hero-content h1 {
-  }
-
   .book-consultation-section {
     padding: 75px 0 90px;
   }
-
   .consultation-info-grid {
     grid-template-columns: 1fr;
   }
-
   .contact-main-card {
     grid-template-columns: 1fr;
     padding: 28px;
   }
-
   .contact-consultation-img {
     height: 360px;
     margin-bottom: 36px;
   }
-
-  .contact-main-right h2 {
-  }
 }
-
 @media (max-width: 575px) {
   .contact-hero-section {
     min-height: 380px;
   }
-
   .contact-hero-content {
     width: 86%;
   }
-
-  .contact-hero-content h1 {
-  }
-
-  .book-consultation-heading h2 {
-  }
-
-  .book-consultation-heading p {
-  }
-
   .contact-main-card {
     padding: 20px;
   }
-
   .contact-form-grid {
     grid-template-columns: 1fr;
   }
-
   .contact-consultation-img {
     height: 280px;
   }
-
-  .contact-main-left h3 {
-  }
-
-  .contact-main-right h2 {
-  }
-
   .contact-booking-form textarea {
     min-height: 160px;
   }
 }
+/* CONTACT PAGE STYLES END */

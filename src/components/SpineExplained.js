@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import spineExplainedImg from "../images/spine-explained.webp";
+import spineExplainedImgmob from "../images/spine-exp.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,6 +102,10 @@ const SpineExplained = () => {
             <p>Nerve roots that carry signals between the spine and the body</p>
           </div>
         </div>
+        <div className="img-wrap">
+          <img src={spineExplainedImgmob} alt="Spine anatomy explained" />
+        </div>
+
       </div>
     </section>
   );

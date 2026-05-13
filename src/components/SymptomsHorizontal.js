@@ -88,72 +88,67 @@ const defaultSymptoms = [
     text: "Reduced flexibility in the neck or back that makes movement difficult",
   },
 ];
-
 const SymptomsHorizontal = ({
   heading = "When The Spine Is Affected; Symptoms Appear",
   bottomText = "Understanding the underlying cause is the first step in choosing the right treatment",
   description = null,
-  symptoms = defaultSymptoms,
+  symptoms,
 }) => {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
 
- useEffect(() => {
-  const section = sectionRef.current;
-  const track = trackRef.current;
+  const symptomItems = symptoms?.length ? symptoms : defaultSymptoms;
 
-  let ctx;
+  useEffect(() => {
+    const section = sectionRef.current;
+    const track = trackRef.current;
 
-  const mm = gsap.matchMedia();
+    if (!section || !track || symptomItems.length === 0) return;
 
-  mm.add("(min-width: 769px)", () => {
-    ctx = gsap.context(() => {
-      const getScrollAmount = () => {
-        return -(track.scrollWidth - section.offsetWidth);
-      };
+    const mm = gsap.matchMedia();
 
-      gsap.to(track, {
-        x: getScrollAmount,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${track.scrollWidth - section.offsetWidth}`,
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-    }, section);
-  });
-
-  mm.add("(max-width: 768px)", () => {
-    ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray(".symptom-card");
-      let index = 0;
-
-      gsap.set(track, { x: 0 });
-
-      const autoplay = setInterval(() => {
-        index = (index + 1) % cards.length;
+    mm.add("(min-width: 821px)", () => {
+      const ctx = gsap.context(() => {
+        const getScrollAmount = () => {
+          return -(track.scrollWidth - section.offsetWidth);
+        };
 
         gsap.to(track, {
-          x: -index * track.parentElement.offsetWidth,
-          duration: 0.8,
-          ease: "power2.inOut",
+          x: getScrollAmount,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${track.scrollWidth - section.offsetWidth}`,
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
         });
-      }, 2500);
+      }, section);
 
-      return () => clearInterval(autoplay);
-    }, section);
-  });
+      return () => ctx.revert();
+    });
 
-  return () => {
-    mm.revert();
-    if (ctx) ctx.revert();
-  };
-}, []);
+    return () => {
+      mm.revert();
+    };
+  }, [symptomItems.length]);
+
+  const renderSymptomCard = (item, index) => (
+    <div className="symptom-card" key={index}>
+      {item.icon && (
+        <div className="symptom-icon">
+          <span>{item.icon}</span>
+        </div>
+      )}
+
+      {item.title && <h3>{item.title}</h3>}
+
+      {item.text && <p>{item.text}</p>}
+    </div>
+  );
 
   return (
     <section className="symptoms-horizontal-section" ref={sectionRef}>
@@ -162,19 +157,34 @@ const SymptomsHorizontal = ({
         {description && <p className="symptoms-description">{description}</p>}
       </div>
 
-      <div className="symptoms-scroll-area">
+      {/* Desktop GSAP horizontal animation */}
+      <div className="symptoms-scroll-area symptoms-desktop-area">
         <div className="symptoms-track" ref={trackRef}>
-          {symptoms.map((item, index) => (
-            <div className="symptom-card" key={index}>
-              <div className="symptom-icon">
-                <span>{item.icon}</span>
-              </div>
-
-              <h3>{item.title}</h3>
-               {item.text && <p>{item.text}</p>}
-            </div>
-          ))}
+          {symptomItems.map((item, index) =>
+            renderSymptomCard(item, index)
+          )}
         </div>
+      </div>
+
+      {/* Mobile Swiper slider from 820px */}
+      <div className="symptoms-mobile-slider">
+        <Swiper
+          modules={[Autoplay]}
+          slidesPerView={1}
+          spaceBetween={18}
+          loop={true}
+          speed={800}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+        >
+          {symptomItems.map((item, index) => (
+            <SwiperSlide key={index}>
+              {renderSymptomCard(item, index)}
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <div className="symptoms-bottom">

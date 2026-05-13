@@ -1,88 +1,75 @@
-/* ABOUT PAGE */
+/* ================================
+   ABOUT PAGE STYLES START
+================================ */
 
 .about-page {
   background: #FCFEF3;
 }
 
-/* Hero */
-
+/* ABOUT HERO */
 .about-hero-section {
   position: relative;
-  height: 500px;
+  min-height: 500px;
   overflow: hidden;
   display: flex;
   align-items: center;
   padding: 120px 7% 90px;
 }
-
 .about-hero-bg {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
-
 .about-hero-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
+@media (max-width:767px) {
+  .about-hero-bg img {
+    object-position: 80%;
+  }
+}
 .about-hero-section::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(252, 255, 242, 0.72) 0%,
-    rgba(252, 255, 242, 0.48) 42%,
-    rgba(0, 103, 168, 0.04) 100%
-  );
+  background: linear-gradient(90deg, rgba(252, 255, 242, 0.72) 0%, rgba(252, 255, 242, 0.48) 42%, rgba(0, 103, 168, 0.04) 100%);
   z-index: 2;
 }
-
 .about-hero-content {
   position: relative;
   z-index: 3;
   max-width: 680px;
   margin-left: 60px;
 }
-
 .about-hero-content h1 {
-  /* font-style: initial; */
-  /* text-transform: uppercase; */
   margin-bottom: 28px;
 }
-
 .about-hero-content p {
   max-width: 650px;
 }
 
-/* Doctor Detail */
-
+/* DOCTOR DETAIL */
 .about-doctor-detail-section {
-  padding: 95px 0 80px;
+  padding: clamp(95px, 6vw, 105px) 0 clamp(80px, 5vw, 90px);
   background: #FCFEF3;
   text-align: center;
 }
-
 .about-doctor-detail-section .container {
   width: 88%;
   max-width: 1300px;
-  margin: 0 auto;
 }
-
 .about-doctor-detail-section h2 {
   max-width: 1100px;
   margin: 0 auto 75px;
 }
-
 .about-doctor-image-wrap {
   width: 100%;
   max-width: 1080px;
   margin: 0 auto 42px;
   overflow: hidden;
 }
-
 .about-doctor-main-img {
   width: 100%;
   height: 610px;
@@ -91,22 +78,17 @@
   display: block;
   transition: transform 0.7s ease;
 }
-
 .about-doctor-image-wrap:hover .about-doctor-main-img {
   transform: scale(1.035);
 }
-
 .about-doctor-copy {
-  /* max-width: 860px; */
-  margin: 0 auto ;
+  margin: 0 auto;
 }
-
 .about-doctor-copy p {
   margin-bottom: 26px;
 }
 
-/* Info Cards */
-
+/* INFO CARDS */
 .about-info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -114,7 +96,6 @@
   max-width: 1080px;
   margin: 0 auto;
 }
-
 .about-info-card {
   background: rgba(211, 238, 85, 0.62);
   padding: 34px 28px 36px;
@@ -122,175 +103,65 @@
   border: 1px solid rgba(182, 219, 0, 0.5);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-
 .about-info-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 24px 48px rgba(0, 103, 168, 0.12);
 }
-
 .about-info-card span {
   display: inline-block;
   margin-bottom: 28px;
 }
-
 .about-info-card h3 {
   margin-bottom: 18px;
 }
 
-
-
-/* Philosophy */
-
+/* PHILOSOPHY */
 .about-philosophy-section {
-  background: linear-gradient(
-    180deg,
-    #FCFEF3 0%,
-    #f1ffc6 58%,
-    #d7edf0 100%
-  );
-  padding: 95px 0 125px;
+  background: linear-gradient(180deg, #FCFEF3 0%, #f1ffc6 58%, #d7edf0 100%);
+  padding: clamp(95px, 6vw, 125px) 0 0;
   text-align: center;
 }
-
 .about-philosophy-section .container {
   width: 88%;
   max-width: 1050px;
-  margin: 0 auto;
 }
-
 .about-philosophy-section h2 {
   margin-bottom: 28px;
 }
-
 .about-philosophy-section p {
   font-style: initial;
   margin: 0 auto 42px;
   max-width: 900px;
 }
-
 .about-page-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #a7d900;
-  text-decoration: none;
   padding: 14px 30px;
-  border-radius: 30px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease,
-    background 0.35s ease;
 }
 
-.about-page-btn:hover {
-  transform: translateY(-3px);
-  background: #b8ec00;
-  box-shadow: 0 14px 30px rgba(167, 217, 0, 0.35);
-}
-
-/* Responsive */
-
-@media (max-width: 991px) {
-  .about-hero-section {
-    min-height: 360px;
-    padding: 110px 6% 70px;
-  }
-
-  .about-hero-content {
-    margin-left: 0;
-  }
-
-  .about-hero-content h1 {
-  }
-
-  .about-doctor-detail-section {
-    padding: 75px 0 65px;
-  }
-
-  .about-doctor-detail-section h2 {
-    margin-bottom: 50px;
-  }
-
-  .about-doctor-main-img {
-    height: 480px;
-  }
-
-  .about-info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-philosophy-section p {
-  }
-}
-
-@media (max-width: 575px) {
-  .about-hero-section {
-    min-height: 420px;
-    padding: 120px 7% 60px;
-  }
-
-  .about-hero-content h1 {
-  }
-
-  .about-hero-content p {
-  }
-
-  .about-doctor-detail-section h2 {
-  }
-
-  .about-doctor-main-img {
-    height: 360px;
-  }
-
-  .about-doctor-copy p {
-  }
-
-  .about-info-card {
-    padding: 28px 22px;
-  }
-
-  .about-philosophy-section h2 {
-  }
-
-  .about-philosophy-section p {
-  }
-}
-
-/* MEDICAL BACKGROUND SECTION */
-
+/* MEDICAL BACKGROUND */
 .medical-background-section {
   background: #FCFEF3;
-  padding: 95px 0 105px;
+  padding: 0 var(--section-padding-sm) var(--section-padding-lg);
   overflow: hidden;
-  padding-top: 0;
 }
-
 .medical-background-section .container {
   width: 88%;
   max-width: 1520px;
-  margin: 0 auto;
 }
-
 .medical-background-section h2 {
   text-align: center;
   margin-bottom: 58px;
 }
-
 .medical-bg-layout {
   position: relative;
-  /* min-height: 470px; */
   margin-bottom: 95px;
 }
-
 .medical-bg-copy {
-  /* max-width: 880px; */
   margin: 0 auto;
   text-align: center;
-  /* padding-top: 145px; */
 }
-
 .medical-bg-copy p {
   margin-bottom: 14px;
 }
-
 .medical-floating-img {
   position: absolute;
   width: 170px;
@@ -299,77 +170,56 @@
   display: block;
   transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
-
 .medical-floating-img:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 20px 40px rgba(0, 103, 168, 0.16);
 }
-
 .medical-img-one {
   left: 8%;
   top: 10px;
 }
-
 .medical-img-two {
   right: 9%;
   top: -15px;
 }
-
 .medical-img-three {
   left: 11%;
   bottom: 20px;
 }
-
 .medical-img-four {
   right: 12%;
   bottom: 50px;
 }
 
 /* EXPERTISE */
-
 .expertise-area-wrap {
   text-align: center;
 }
-
 .expertise-area-wrap h2 {
   margin-bottom: 70px;
 }
-
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 34px 38px;
-  /* max-width: 1160px; */
   margin: 0 auto 52px;
 }
-
 .expertise-card {
   min-height: 92px;
   border: 1px solid #cfe969;
-  background: linear-gradient(
-    90deg,
-    rgba(246, 255, 217, 0.95) 0%,
-    rgba(218, 240, 93, 0.7) 100%
-  );
+  background: linear-gradient(90deg, rgba(246, 255, 217, 0.95) 0%, rgba(218, 240, 93, 0.7) 100%);
   display: flex;
   align-items: center;
   gap: 24px;
   padding: 18px 22px;
   text-align: left;
-  transition: transform 0.35s ease, box-shadow 0.35s ease,
-    background 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
-
 .expertise-card:hover {
   transform: translateY(-6px);
-  background: linear-gradient(
-    90deg,
-    rgba(218, 240, 93, 0.82) 0%,
-    rgba(246, 255, 217, 0.95) 100%
-  );
+  background: linear-gradient(90deg, rgba(218, 240, 93, 0.82) 0%, rgba(246, 255, 217, 0.95) 100%);
   box-shadow: 0 18px 35px rgba(0, 103, 168, 0.12);
 }
-
 .expertise-icon {
   width: 62px;
   height: 62px;
@@ -380,103 +230,29 @@
   align-items: center;
   justify-content: center;
 }
-
-.expertise-card h3 {
-}
-
 .expertise-bottom-text {
-  font-style: initial;
-  max-width: 100%;
   margin: 0 auto 38px;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 991px) {
-  .medical-bg-layout {
-    min-height: auto;
-    margin-bottom: 75px;
-  }
-
-  .medical-bg-copy {
-    padding-top: 0;
-  }
-
-  .medical-floating-img {
-    position: relative;
-    inset: auto;
-    width: 48%;
-    height: 130px;
-    display: inline-block;
-    margin: 0 1% 24px;
-  }
-
-  .expertise-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-}
-
-@media (max-width: 575px) {
-  .medical-background-section {
-    padding: 70px 0 80px;
-  }
-
-  .medical-background-section h2 {
-  }
-
-  .medical-bg-copy p {
-  }
-
-  .medical-floating-img {
-    width: 100%;
-    height: 180px;
-    margin: 0 0 18px;
-  }
-
-  .expertise-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .expertise-card {
-    min-height: 84px;
-  }
-
-  .expertise-bottom-text {
-  }
-}
-
-/* about-treatment-section */
 /* ABOUT TREATMENT SECTION */
-
 .about-treatment-section {
   background: #FCFEF3;
-  padding: 105px 0 120px;
-  padding-bottom: 0;
+  padding: 0 var(--section-padding-sm) var(--section-padding-lg);
   text-align: center;
-  padding-top: 0;
 }
-
 .about-treatment-section .container {
   width: 88%;
   max-width: 1500px;
-  margin: 0 auto;
 }
-
 .about-treatment-section h2 {
-  text-align: center;
   margin-bottom: 70px;
 }
-
 .about-treatment-intro {
-  /* max-width: 100% */
   margin: 0 auto 46px;
 }
-
 .surgery-considered-title {
   margin: 0 auto 70px;
 }
-
 .surgery-considered-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -484,11 +260,9 @@
   max-width: 1400px;
   margin: 0 auto;
 }
-
 .surgery-considered-card {
   text-align: center;
 }
-
 .surgery-number {
   width: 72px;
   height: 72px;
@@ -503,74 +277,16 @@
   font-family: "PlayfairDisplay-Bold";
   font-size: var(--h1-size);
 }
-
 .surgery-considered-card:hover .surgery-number {
   transform: translateY(-6px);
   box-shadow: 0 0 0 14px rgba(201, 234, 51, 0.28);
 }
-
 .surgery-considered-card h4 {
   max-width: 420px;
   margin: 0 auto;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 991px) {
-  .about-treatment-section {
-    padding: 80px 0 90px;
-  }
-
-  .about-treatment-section h2 {
-    margin-bottom: 45px;
-  }
-
-  .about-treatment-intro {
-    margin-bottom: 36px;
-  }
-
-  .surgery-considered-title {
-    margin-bottom: 50px;
-  }
-
-  .surgery-considered-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .surgery-considered-card h4 {
-  }
-}
-
-@media (max-width: 575px) {
-  .about-treatment-section {
-    padding: 65px 0 75px;
-  }
-
-  .about-treatment-section h2 {
-  }
-
-  .about-treatment-intro {
-  }
-
-  .surgery-considered-card h4 {
-  }
-
-  .surgery-number {
-    width: 62px;
-    height: 62px;
-  }
-}
-/* about-treatment-section */
-
-
-
-
-/* ------------------------------ */
-
-
-/* CONSULTATION DIAGNOSIS SCROLL SECTION */
-
+/* CONSULTATION DIAGNOSIS SCROLL */
 .consultation-diagnosis-scroll {
   position: relative;
   background: #FCFEF3;
@@ -579,23 +295,19 @@
   align-items: center;
   overflow: hidden;
 }
-
 .consultation-diagnosis-inner {
   width: 88%;
   max-width: 1520px;
   margin: 0 auto;
   text-align: center;
 }
-
 .consultation-diagnosis-inner h2 {
   margin-bottom: 52px;
 }
-
 .consultation-diagnosis-intro {
   max-width: 100%;
   margin: 0 auto 60px;
 }
-
 .diagnosis-scroll-card {
   background: #d3ee55;
   padding: 42px;
@@ -603,15 +315,12 @@
   grid-template-columns: 1.1fr 0.9fr;
   gap: 65px;
   align-items: center;
-  text-align: left;
 }
-
 .diagnosis-scroll-image-wrap {
   overflow: hidden;
   height: 620px;
   background: #eef7d7;
 }
-
 .diagnosis-scroll-image {
   width: 100%;
   height: 100%;
@@ -619,19 +328,16 @@
   display: block;
   animation: diagnosisImageIn 0.45s ease forwards;
 }
-
 @keyframes diagnosisImageIn {
   from {
     opacity: 0;
     transform: scale(1.04);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
-
 .diagnosis-steps-wrap {
   position: relative;
   display: flex;
@@ -639,8 +345,6 @@
   gap: 70px;
   padding-left: 58px;
 }
-
-/* faint default line */
 .diagnosis-line {
   position: absolute;
   left: 12px;
@@ -650,8 +354,6 @@
   background: rgba(0, 103, 168, 0.16);
   z-index: 1;
 }
-
-/* blue animated progress line */
 .diagnosis-line-progress {
   position: absolute;
   left: 12px;
@@ -662,22 +364,18 @@
   z-index: 2;
   transition: height 0.35s ease;
 }
-
 .diagnosis-step {
   position: relative;
   display: flex;
   align-items: center;
   gap: 52px;
   opacity: 0.28;
-  transform: none;
   transition: opacity 0.45s ease;
   z-index: 3;
 }
-
 .diagnosis-step.is-complete {
   opacity: 1;
 }
-
 .diagnosis-number {
   position: absolute;
   left: -72px;
@@ -690,105 +388,135 @@
   justify-content: center;
   z-index: 4;
   transition: background 0.45s ease;
-    font-size: var(--h1-size);
+  font-size: var(--h1-size);
   font-family: "PlayfairDisplay-SemiBold";
 }
-
 .diagnosis-step.is-complete .diagnosis-number {
   background: #0067a8;
   color: #fff;
-
 }
-
 .diagnosis-step h3 {
   margin: 0;
   transition: color 0.45s ease;
-  font-family: "Raleway-Regular.ttf";
+  font-family: var(--font-primary);
   color: #005899;
 }
 
-.diagnosis-step.is-complete h3 {
-}
-
+/* RESPONSIVE */
 @media (max-width: 991px) {
+  .about-hero-section {
+    min-height: 360px;
+    padding: 110px 6% 70px;
+  }
+  .about-hero-content {
+    margin-left: 0;
+  }
+  .about-doctor-detail-section {
+    padding: 75px 0 65px;
+  }
+  .about-doctor-detail-section h2 {
+    margin-bottom: 50px;
+  }
+  .about-doctor-main-img {
+    height: 480px;
+  }
+  .about-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-philosophy-section p {
+    margin-bottom: 42px;
+  }
+  .medical-bg-layout {
+    margin-bottom: 75px;
+  }
+  .medical-floating-img {
+    position: relative;
+    inset: auto;
+    width: 48%;
+    height: 130px;
+    display: inline-block;
+    margin: 0 1% 24px;
+  }
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .about-treatment-section {
+    padding: 80px 0 90px;
+  }
+  .about-treatment-section h2 {
+    margin-bottom: 45px;
+  }
+  .about-treatment-intro {
+    margin-bottom: 36px;
+  }
+  .surgery-considered-title {
+    margin-bottom: 50px;
+  }
+  .surgery-considered-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
   .consultation-diagnosis-scroll {
     min-height: auto;
     padding: 75px 0;
     display: block;
   }
-
   .diagnosis-scroll-card {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 28px;
   }
-
   .diagnosis-scroll-image-wrap {
     height: 420px;
   }
-
   .diagnosis-steps-wrap {
     gap: 38px;
     padding-left: 52px;
   }
-
-  .diagnosis-step h3 {
-  }
 }
-
 @media (max-width: 575px) {
+  .about-hero-section {
+    min-height: 420px;
+    padding: 120px 7% 60px;
+  }
+  .about-doctor-main-img {
+    height: 360px;
+  }
+  .about-info-card {
+    padding: 28px 22px;
+  }
+  .medical-floating-img {
+    width: 100%;
+    height: 180px;
+    margin: 0 0 18px;
+  }
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+  .expertise-card {
+    min-height: 84px;
+  }
+  .about-treatment-section {
+    padding: 65px 0 75px;
+  }
+  .surgery-number {
+    width: 62px;
+    height: 62px;
+  }
   .consultation-diagnosis-inner h2 {
+    margin-bottom: 32px;
   }
-
-  .consultation-diagnosis-intro {
-  }
-
   .diagnosis-scroll-card {
-    padding: 20px;
+    padding: 50px 20px;
   }
-
   .diagnosis-scroll-image-wrap {
     height: 280px;
   }
-
   .diagnosis-number {
     width: 44px;
     height: 44px;
     left: -62px;
   }
-
-  .diagnosis-step h3 {
-  }
 }
-
-@media (max-width: 575px) {
-  .consultation-diagnosis-inner h2 {
-  }
-
-  .consultation-diagnosis-intro {
-  }
-
-  .diagnosis-scroll-card {
-    padding: 20px;
-  }
-
-  .diagnosis-scroll-image-wrap {
-    height: 280px;
-  }
-
-  .diagnosis-number {
-    width: 44px;
-    height: 44px;
-    left: -62px;
-  }
-
-  .diagnosis-step h3 {
-  }
-}
-
-
-
-
-
-
-
+/* ABOUT PAGE STYLES END */
