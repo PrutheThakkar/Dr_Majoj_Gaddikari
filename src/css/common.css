@@ -342,6 +342,7 @@ small {
   width: 100%;
   z-index: 99;
   padding: 0 60px;
+  padding-bottom: 15px;
 }
 .header-inner {
   width: 100%;
@@ -457,6 +458,13 @@ small {
   color: #073d59;
   padding: 15px 28px;
   font-weight: 500;
+  z-index: 9;
+}
+header .contact-btn{
+  z-index: 9;
+}
+header .common-btn{
+  z-index: 99;
 }
 
 body.mobile-menu-open {
@@ -609,11 +617,12 @@ body.mobile-menu-open {
     top: 0;
     right: 0;
     width: min(88vw, 390px);
-    height: 100%;
+    height: auto;
+    max-height: calc(100vh - 32px);
     background: #fffff3;
     border-radius: 34px 0 0 34px;
     padding: 120px 32px 36px;
-    overflow: hidden;
+    overflow-y: auto;
     transform: translateX(110%);
     transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: -24px 0 55px rgba(0, 103, 168, 0.22);
@@ -1023,4 +1032,53 @@ body.mobile-menu-open {
 .site-header.down .main-nav {
   background: transparent;
   filter: none;
+}
+
+
+
+.common-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #063f60;
+  /* font-size: 13px; */
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.common-btn-text {
+  background: #b7df00;
+  padding: 12px 24px;
+  border-radius: 50px;
+  transition: all 0.35s ease;
+  white-space: nowrap;
+}
+
+.common-btn-icon {
+  width: 0;
+  height: 38px;
+  opacity: 0;
+  overflow: hidden;
+  background: #b7df00;
+  border-radius: 50%;
+  margin-left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 16px; */
+  transform: translateX(-8px);
+  transition: all 0.35s ease;
+}
+
+.common-btn:hover .common-btn-icon {
+  width: 38px;
+  opacity: 1;
+  /* margin-left: 4px; */
+  transform: translateX(0);
+}
+
+.common-btn:hover .common-btn-text,
+.common-btn:hover .common-btn-icon {
+  background: #c4eb00;
 }

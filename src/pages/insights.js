@@ -47,7 +47,10 @@ const BlogPage = ({ data }) => {
                     </div>
                     <div className="blog-card-content">
                       <h3 dangerouslySetInnerHTML={{ __html: post.title }} />
-                      <span className="read-more">Read More →</span>
+                      <Link className="common-btn">
+                      <span className="common-btn-text">Read More</span>
+                      <span className="common-btn-icon">→</span>
+                      </Link>
                     </div>
                   </Link>
                 );

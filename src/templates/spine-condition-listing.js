@@ -57,10 +57,10 @@ const SpineConditionListingTemplate = ({ data }) => {
             {/* Desktop tabs */}
             <div className="condition-tabs">
               <button
-                className={`condition-tab ${showAll ? "active" : ""}`}
+                className={`condition-tab condition-tab-all ${showAll ? "active" : ""}`}
                 onClick={() => setShowAll(true)}
               >
-                All Conditions
+                All treatments
               </button>
 
               {allConditions.map((cond) => (

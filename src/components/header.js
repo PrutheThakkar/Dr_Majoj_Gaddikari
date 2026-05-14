@@ -141,14 +141,9 @@ const Header = () => {
           </Link>
         </nav>
 
-        <Link
-          to="/contact/"
-          className={`header-btn desktop-reach-btn ${
-            isActive("/contact/") ? "active" : ""
-          }`}
-        >
-          Reach Out
-        </Link>
+
+
+
 
         <button
           type="button"
@@ -200,12 +195,13 @@ const Header = () => {
 
             <Link
               to="/contact/"
-              className={`mobile-reach-btn ${
-                isActive("/contact/") ? "active" : ""
-              }`}
+              className={`mobile-reach-btn ${isActive("/contact/") ? "active" : ""
+                }`}
             >
               Reach Out
             </Link>
+
+
           </nav>
         </div>
       </div>

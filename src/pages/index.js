@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-
+import { Link } from "gatsby";
 import heroImage from "../images/spine-hero.webp";
 import doctorImg from "../images/doctor-img.webp";
 import treatmentImg from "../images/treatment-approach.webp";
@@ -29,9 +29,10 @@ const HomePage = () => {
             degenerative change, symptoms can begin to appear in different ways.
           </p>
 
-          <a href="/contact" className="hero-btn">
-            Book a consultation
-          </a>
+     <Link to="/contact" className="common-btn">
+  <span className="common-btn-text">Book a Consultation</span>
+  <span className="common-btn-icon">→</span>
+</Link>
         </div>
 
         <Breadcrumb items={[]} />
@@ -69,9 +70,10 @@ const HomePage = () => {
                 Many spine problems improve with physiotherapy, rehabilitation, and medication. When surgery becomes necessary, modern techniques allow targeted procedures designed to relieve nerve pressure and restore stability in the spine.
               </p>
 
-              <a href="#about" className="learn-btn">
-                Learn More
-              </a>
+                <Link to="/about" className="common-btn">
+                  <span className="common-btn-text">Read More</span>
+                  <span className="common-btn-icon">→</span>
+                </Link>
             </div>
           </div>
         </div>

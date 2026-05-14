@@ -121,7 +121,7 @@
 .contact-small-btn,
 .contact-booking-form button {
   width: fit-content;
-  padding: 13px 24px;
+  /* padding: 13px 24px; */
 }
 
 /* FORM */
@@ -210,3 +210,8 @@
   }
 }
 /* CONTACT PAGE STYLES END */
+
+.map-wrapper{
+  height: 100%;
+  margin-bottom: 30px;
+}

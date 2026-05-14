@@ -191,6 +191,12 @@
   bottom: 50px;
 }
 
+@media (max-width:767px) {
+  .medical-background-section{
+
+    padding-bottom: 0;
+  }
+}
 /* EXPERTISE */
 .expertise-area-wrap {
   text-align: center;
@@ -237,8 +243,11 @@
 /* ABOUT TREATMENT SECTION */
 .about-treatment-section {
   background: #FCFEF3;
-  padding: 0 var(--section-padding-sm) var(--section-padding-lg);
+  /* padding: 0 var(--section-padding-sm) var(--section-padding-lg); */
   text-align: center;
+  padding-top: 70px;
+  /* padding-top: 0; */
+  padding-bottom: 0;
 }
 .about-treatment-section .container {
   width: 88%;
@@ -466,6 +475,7 @@
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 28px;
+    padding-bottom: 50px;
   }
   .diagnosis-scroll-image-wrap {
     height: 420px;
@@ -520,3 +530,7 @@
   }
 }
 /* ABOUT PAGE STYLES END */
+
+.about-page footer{
+  padding-top: 50px;
+}

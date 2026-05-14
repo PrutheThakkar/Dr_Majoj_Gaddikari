@@ -94,9 +94,10 @@ const SpineConditionsPage = ({ data }) => {
 
                     <Link
                       to={`/spine-condition/${condition.slug}/`}
-                      className="view-treatment-btn"
+                      className=" common-btn"
                     >
-                      View All Treatment Options
+                       <span className="common-btn-text">View All Options</span>
+                       <span className="common-btn-icon">→</span>
                     </Link>
                   </div>
                 </div>

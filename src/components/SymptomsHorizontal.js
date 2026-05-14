@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { Link } from "gatsby";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -190,9 +191,10 @@ const SymptomsHorizontal = ({
       <div className="symptoms-bottom">
         <h3>{bottomText}</h3>
 
-        <a href="#contact" className="symptoms-btn">
-          Book a consultation
-        </a>
+       <Link to="/contact" className="common-btn">
+  <span className="common-btn-text">Book a Consultation</span>
+  <span className="common-btn-icon">→</span>
+</Link>
       </div>
     </section>
   );

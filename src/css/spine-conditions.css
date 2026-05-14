@@ -46,6 +46,7 @@
 /* CONDITIONS LIST */
 .conditions-list-section {
   padding: clamp(95px, 6vw, 120px) 0 clamp(90px, 5vw, 120px);
+  padding-bottom: 0;
 }
 .conditions-list-section .container {
   width: 88%;
@@ -140,6 +141,9 @@
   padding: 13px 24px;
 }
 
+.treatments-section {
+  padding: clamp(80px, 6.25vw, 120px) 0 0;
+}
 /* TREATMENTS GRID */
 .treatments-grid {
   display: flex;
@@ -151,6 +155,10 @@
 .treatments-grid .treatment-card-wrapper {
   width: 30%;
 }
+.treatments-grid .treatment-card-wrapper p {
+  margin-bottom: 0;
+}
+
 .treatment-card {
   text-decoration: none;
   border-radius: 8px;
@@ -165,6 +173,13 @@
   height: clamp(260px, 28vw, 420px);
   object-fit: cover;
   display: block;
+  object-position: 85%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.treatment-card:hover .treatment-card-image img {
+  transform: scale(1.04);
+  filter: brightness(1.05);
 }
 
 @media (max-width: 767px) {
@@ -182,6 +197,7 @@
   border-bottom: 1px solid #e5e7eb;
   top: 0;
   z-index: 50;
+  padding: 70px 0;
 }
 .condition-tabs {
   display: flex;
@@ -197,6 +213,18 @@
   border: 1.5px solid #a7d900;
   transition: all 0.2s ease;
   white-space: nowrap;
+}
+.condition-tab-all {
+  border-color: transparent;
+  background: linear-gradient(135deg, #0b4e9a 0%, #1b9cf1 45%, #a7d900 100%);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(11, 78, 154, 0.18);
+}
+.condition-tab-all.active {
+  background: linear-gradient(135deg, #073d74 0%, #1583e0 45%, #8db600 100%);
+}
+.condition-tab-all:hover {
+  background: #02192B !important;
 }
 .condition-tab:hover {
   background: #f0f4f8;
@@ -262,6 +290,7 @@
   }
   .conditions-list-section {
     padding: 75px 0 90px;
+    padding-bottom: 0;
   }
   .condition-row {
     grid-template-columns: 1fr;
@@ -321,3 +350,10 @@
   }
 }
 /* SPINE CONDITIONS PAGE STYLES END */
+
+.section-title-wrp{
+  text-align: center;
+}
+.section-title-wrp h2{
+ margin-bottom: 58px;
+}

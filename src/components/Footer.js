@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import logo from "../images/Manoj-Website-Logo.svg";
 
 
@@ -12,9 +13,10 @@ const Footer = () => {
           options.
         </h2>
 
-        <a href="#contact" className="footer-btn">
-          Learn More
-        </a>
+       <a href="/about" className="common-btn">
+        <span className="common-btn-text">Learn More</span>
+        <span className="common-btn-icon">→</span>
+      </a>
       </div>
 
       <div className="footer-main">
