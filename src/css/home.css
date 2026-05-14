@@ -1396,6 +1396,65 @@ body.condition-popup-open {
 .point-slipped .point-title {
   width: 260px;
 }
+
+@media (max-width: 767px) {
+
+  .conditions-visual-wrap {
+    overflow: hidden !important;
+    min-height: 360px !important;
+  }
+
+  .conditions-body-wrap {
+    width: 240px !important;
+    margin: 0 auto !important;
+  }
+
+  .conditions-body-img {
+    width: 100% !important;
+  }
+
+  /* LEFT LABELS */
+  .point-degenerative .point-line,
+  .point-scoliosis .point-line,
+  .point-slipped .point-line {
+    width: 70px !important;
+  }
+
+  .point-degenerative .point-title,
+  .point-scoliosis .point-title,
+  .point-slipped .point-title {
+    width: 90px !important;
+    max-width: 90px !important;
+    right: calc(100% + 78px) !important;
+    font-size: 10px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* RIGHT LABELS */
+  .point-neck .point-line,
+  .point-trauma .point-line {
+    width: 70px !important;
+  }
+
+  .point-neck .point-title,
+  .point-trauma .point-title {
+    width: 90px !important;
+    max-width: 90px !important;
+    left: calc(100% + 78px) !important;
+    font-size: 10px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* SCIATICA */
+  .point-sciatica .point-title {
+    font-size: 12px !important;
+  }
+
+  .conditions-bottom-text {
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+}
 /* ================================
    SPINE CONDITIONS FIX END
 ================================ */
