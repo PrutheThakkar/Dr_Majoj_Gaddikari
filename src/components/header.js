@@ -140,7 +140,12 @@ const Header = () => {
             Insights
           </Link>
         </nav>
-
+        <Link
+          to="/contact/"
+          className={`header-btn ${isActive("/contact/") ? "active" : ""}`}
+        >
+          Reach Out
+        </Link>
 
 
 
