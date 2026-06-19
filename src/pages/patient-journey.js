@@ -282,6 +282,7 @@ const PatientJourneyPage = () => {
             src={patientJourneyHero}
             alt="Patient journey spine care"
             className="patient-journey-hero-bg"
+            loading="lazy"
           />
 
           <div className="patient-journey-hero-content">

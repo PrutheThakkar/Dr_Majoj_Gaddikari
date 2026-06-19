@@ -18,7 +18,7 @@ const SpineTreatmentDetailTemplate = ({ data }) => {
         {/* Hero — same style as About page */}
         <section className="about-hero-section">
           <div className="about-hero-bg">
-            <img src={heroImage} alt={treatment.title} />
+            <img src={heroImage} alt={treatment.title} loading="lazy"/>
           </div>
 
           <div className="about-hero-content">

@@ -399,6 +399,7 @@ const ConsultationDiagnosisScroll = () => {
                 key={step.number}
                 src={step.image}
                 alt={step.title}
+                loading="lazy"
                 className={`diagnosis-scroll-image ${
                   activeIndex === index ? "is-active" : ""
                 }`}

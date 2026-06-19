@@ -32,6 +32,7 @@ const SpineConditionsPage = ({ data }) => {
             src={spineConditionsHero}
             alt="Understanding spine conditions"
             className="conditions-hero-bg"
+            loading="lazy"
           />
           <div className="conditions-hero-content">
             <h1>

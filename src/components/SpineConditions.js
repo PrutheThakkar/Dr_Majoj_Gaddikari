@@ -170,6 +170,7 @@ const SpineConditions = () => {
               src={spineBody}
               alt="Spine conditions"
               className="conditions-body-img"
+              loading="lazy"
             />
 
             {conditions.map((item) => (

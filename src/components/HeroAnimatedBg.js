@@ -192,6 +192,7 @@ const HeroAnimatedBg = () => {
         alt=""
         className="hero-bg-img-static"
         loading="eager"
+        
       />
 
       <canvas ref={canvasRef} className="hero-particle-canvas" />

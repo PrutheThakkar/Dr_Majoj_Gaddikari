@@ -162,8 +162,10 @@ const SpineConditionListingTemplate = ({ data }) => {
                         src={
                           treatment.featuredImage?.node?.sourceUrl ||
                           placeholderImage
+                          
                         }
                         alt={treatment.title}
+                        loading="lazy"
                       />
                     </div>
                     <p className="treatment-card-title">{treatment.title}</p>

@@ -15,7 +15,7 @@ const BlogPage = ({ data }) => {
         {/* Hero */}
         <section className="about-hero-section">
           <div className="about-hero-bg">
-            <img src={placeholderImage} alt="Blogs" />
+            <img src={placeholderImage} alt="Blogs" loading="lazy"/>
           </div>
           <div className="about-hero-content">
             <h1>Insights</h1>
@@ -42,6 +42,7 @@ const BlogPage = ({ data }) => {
                   <div className="blog-card-image">
                     <img
                       src={image}
+                      loading="lazy"
                       alt={post.featuredImage?.node?.altText || post.title}
                     />
                   </div>

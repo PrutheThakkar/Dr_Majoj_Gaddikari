@@ -16,7 +16,7 @@ const BlogDetailTemplate = ({ data }) => {
         {/* Hero */}
         <section className="about-hero-section">
           <div className="about-hero-bg">
-            <img src={heroImage} alt={post.title} />
+            <img src={heroImage} alt={post.title} loading="lazy"/>
           </div>
           <div className="about-hero-content">
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />

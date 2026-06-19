@@ -70,6 +70,7 @@ const SpineExplained = () => {
             src={spineExplainedImg}
             alt="Spine anatomy explained"
             className="spine-explained-img"
+            loading="lazy"
           />
 
           <div className="spine-label label-vertebrae">

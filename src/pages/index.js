@@ -113,6 +113,7 @@ const HomePage = () => {
                   src={doctorImg}
                   alt="Dr. Manojkumar Gaddikeri"
                   className="doctor-img"
+                  loading="lazy"
                 />
               </div>
 
@@ -172,7 +173,7 @@ const HomePage = () => {
             <ul data-aos="fade-up">
               <li>
                 <div className="treatment-image-wrap">
-                  <img src={treatmentImg} alt="Physiotherapy spine treatment" />
+                  <img src={treatmentImg} alt="Physiotherapy spine treatment" loading="lazy" />
                   <h3>Physiotherapy</h3>
                 </div>
               </li>
@@ -182,6 +183,7 @@ const HomePage = () => {
                   <img
                     src={treatmentImg1}
                     alt="Strengthening exercises spine treatment"
+                    loading="lazy"
                   />
                   <h3>strengthening exercises</h3>
                 </div>
@@ -189,7 +191,7 @@ const HomePage = () => {
 
               <li>
                 <div className="treatment-image-wrap">
-                  <img src={treatmentImg2} alt="Medication spine treatment" />
+                  <img src={treatmentImg2} alt="Medication spine treatment"  loading="lazy"/>
                   <h3>medication</h3>
                 </div>
               </li>

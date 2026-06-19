@@ -194,6 +194,7 @@ ${formValues.message}
             src={contactHero}
             alt="Book a consultation"
             className="contact-hero-bg"
+            loading="lazy"
           />
 
           <div className="contact-hero-content">
