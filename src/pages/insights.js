@@ -35,24 +35,26 @@ const BlogPage = ({ data }) => {
 
                 return (
                   <Link
-                    to={`/insights/${post.slug}/`}
-                    className="blog-card"
-                    key={post.slug}
-                  >
-                    <div className="blog-card-image">
-                      <img
-                        src={image}
-                        alt={post.featuredImage?.node?.altText || post.title}
-                      />
-                    </div>
-                    <div className="blog-card-content">
-                      <h3 dangerouslySetInnerHTML={{ __html: post.title }} />
-                      <Link className="common-btn">
+                  to={`/insights/${post.slug}/`}
+                  className="blog-card"
+                  key={post.slug}
+                >
+                  <div className="blog-card-image">
+                    <img
+                      src={image}
+                      alt={post.featuredImage?.node?.altText || post.title}
+                    />
+                  </div>
+
+                  <div className="blog-card-content">
+                    <h3 dangerouslySetInnerHTML={{ __html: post.title }} />
+
+                    <span className="common-btn">
                       <span className="common-btn-text">Read More</span>
                       <span className="common-btn-icon">→</span>
-                      </Link>
-                    </div>
-                  </Link>
+                    </span>
+                  </div>
+                </Link>
                 );
               })}
             </div>

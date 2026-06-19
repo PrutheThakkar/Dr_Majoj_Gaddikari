@@ -154,7 +154,7 @@ const SymptomsHorizontal = ({
   return (
     <section className="symptoms-horizontal-section" ref={sectionRef}>
       <div className="symptoms-heading-wrap">
-        <h2>{heading}</h2>
+        <h2 data-aos="fade-up">{heading}</h2>
         {description && <p className="symptoms-description">{description}</p>}
       </div>
 

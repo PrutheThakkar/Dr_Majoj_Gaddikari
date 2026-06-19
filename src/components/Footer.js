@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="site-footer" id="contact">
       <div className="footer-cta">
-        <h2>
+        <h2 data-aos="fade-up">
           If spine symptoms are affecting your daily activities,
           <br />a consultation can help identify the cause and explore treatment
           options.
@@ -19,7 +19,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className="footer-main">
+      <div className="footer-main" data-aos="fade-up">
         <div className="footer-brand">
           <img src={logo} alt="Dr. Manojkumar Gaddikeri" />
 

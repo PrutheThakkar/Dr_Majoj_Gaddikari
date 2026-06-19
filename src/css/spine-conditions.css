@@ -36,11 +36,14 @@
   margin: 0 auto;
   padding-top: 70px;
 }
+.conditions-hero-content br{
+  display: none;
+}
 .conditions-hero-content h1 {
   margin-bottom: 22px;
 }
 .conditions-hero-content p {
-  max-width: 520px;
+  max-width: 50%;
 }
 
 /* CONDITIONS LIST */

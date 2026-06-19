@@ -275,7 +275,7 @@ const diagnosisSteps = [
     number: "4",
     title: "Explanation Of Diagnosis",
     image:
-      "https://drmanoj.studiosentientdemo.com/wp-content/uploads/2026/05/review-MRI-CT-scans.webp",
+      "https://drmanoj.studiosentientdemo.com/wp-content/uploads/2026/06/explanation-diagnosis.webp",
   },
   {
     number: "5",
@@ -291,37 +291,54 @@ const diagnosisSteps = [
 
 const ConsultationDiagnosisScroll = () => {
   const sectionRef = useRef(null);
+  const lineProgressRef = useRef(null);
 
   const activeIndexRef = useRef(0);
   const revealedIndexRef = useRef(0);
-  const revealedProgressRef = useRef(0);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [revealedIndex, setRevealedIndex] = useState(0);
-  const [lineProgress, setLineProgress] = useState(0);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     gsap.registerPlugin(ScrollTrigger);
 
+    diagnosisSteps.forEach((step) => {
+      const img = new Image();
+      img.src = step.image;
+    });
+
     const ctx = gsap.context(() => {
-      ScrollTrigger.create({
+      gsap.set(lineProgressRef.current, {
+        scaleY: 0,
+        transformOrigin: "top center",
+      });
+
+      const progressTo = gsap.quickTo(lineProgressRef.current, "scaleY", {
+        duration: 0.18,
+        ease: "power2.out",
+      });
+
+      const trigger = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top",
-        end: () => `+=${diagnosisSteps.length * 520}`,
+        end: () => `+=${diagnosisSteps.length * 560}`,
         pin: true,
-        scrub: 1,
+        pinSpacing: true,
+        scrub: 0.65,
         anticipatePin: 1,
-        snap: {
-          snapTo: 1 / (diagnosisSteps.length - 1),
-          duration: { min: 0.18, max: 0.35 },
-          ease: "power1.inOut",
-        },
+        invalidateOnRefresh: true,
+        fastScrollEnd: true,
+
         onUpdate: (self) => {
+          const progress = gsap.utils.clamp(0, 1, self.progress);
+
+          progressTo(progress);
+
           const nextIndex = Math.min(
             diagnosisSteps.length - 1,
-            Math.round(self.progress * (diagnosisSteps.length - 1))
+            Math.floor(progress * diagnosisSteps.length)
           );
 
           if (nextIndex !== activeIndexRef.current) {
@@ -333,30 +350,29 @@ const ConsultationDiagnosisScroll = () => {
             revealedIndexRef.current = nextIndex;
             setRevealedIndex(nextIndex);
           }
-
-          const nextLineProgress = self.progress * 100;
-
-          if (nextLineProgress > revealedProgressRef.current) {
-            revealedProgressRef.current = nextLineProgress;
-            setLineProgress(nextLineProgress);
-          }
         },
+
         onLeaveBack: () => {
           activeIndexRef.current = 0;
           revealedIndexRef.current = 0;
-          revealedProgressRef.current = 0;
 
           setActiveIndex(0);
           setRevealedIndex(0);
-          setLineProgress(0);
+          progressTo(0);
         },
       });
+
+      ScrollTrigger.refresh();
+
+      return () => {
+        trigger.kill();
+      };
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
-   useEffect(() => {
+  useEffect(() => {
     if (typeof document === "undefined") return;
 
     document.body.classList.add("about-page");
@@ -378,20 +394,24 @@ const ConsultationDiagnosisScroll = () => {
 
         <div className="diagnosis-scroll-card">
           <div className="diagnosis-scroll-image-wrap">
-            <img
-              key={activeIndex}
-              src={diagnosisSteps[activeIndex].image}
-              alt={diagnosisSteps[activeIndex].title}
-              className="diagnosis-scroll-image"
-            />
+            {diagnosisSteps.map((step, index) => (
+              <img
+                key={step.number}
+                src={step.image}
+                alt={step.title}
+                className={`diagnosis-scroll-image ${
+                  activeIndex === index ? "is-active" : ""
+                }`}
+              />
+            ))}
           </div>
 
           <div className="diagnosis-steps-wrap">
             <span className="diagnosis-line"></span>
 
             <span
+              ref={lineProgressRef}
               className="diagnosis-line-progress"
-              style={{ height: `${lineProgress}%` }}
             ></span>
 
             {diagnosisSteps.map((step, index) => (

@@ -48,14 +48,14 @@
   --color-surface: #ffffff;
   --color-card: #f7faf3;
 
-  --h1-size: clamp(30px, 3.8vw, 48px);
+  --h1-size: clamp(30px, 3.8vw, 65px);
   --h2-size: clamp(25px, 3vw, 36px);
   --h3-size: clamp(20px, 2.4vw, 24px);
   --h4-size: clamp(18px, 2vw, 20px);
   --h5-size: clamp(16px, 1.5vw, 18px);
   --h6-size: clamp(15px, 1.2vw, 16px);
 
-  --body-size: clamp(15px, 1vw, 17px);
+  --body-size: clamp(15px, 1vw, 19px);
   --small-size: clamp(13px, 0.9vw, 14px);
 
   --container-width: 1520px;
@@ -94,6 +94,11 @@ body {
   color: var(--color-body);
   background: #FCFEF3;
 }
+
+ul li{ 
+  list-style: none;
+}
+
 img,
 picture,
 svg,
@@ -176,9 +181,29 @@ h6 {
   font-size: var(--h6-size);
 } */
 
+
+h1 {
+  font-size: clamp(32px, 5vw, 55px);
+  /* line-height: 1.1; */
+}
+
+h2 {
+  font-size: clamp(26px, 4vw, 35px);
+  /* line-height: 1.2; */
+}
+
+h3 {
+  font-size: clamp(20px, 3vw, 24px);
+  /* line-height: 1.3; */
+}
+
+h4 {
+  font-size: clamp(18px, 2.5vw, 20px);
+  /* line-height: 1.4; */
+}
 span,
 small {
-  color: var(--color-body);
+  /* color: var(--color-body); */
 }
 small {
   font-size: var(--small-size);
@@ -794,9 +819,14 @@ body.mobile-menu-open {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 760px;
+  max-width: 100%;
   padding-left: clamp(90px, 6.875vw, 132px);
-  padding-top: clamp(320px, 25vw, 480px);
+  padding-top: clamp(320px, 25vw, 400px);
+}
+@media (max-width:767px) {
+  .hero-content{
+   max-width: 100%;
+  }
 }
 .hero-content h1 {
   line-height: 1.08;
@@ -806,7 +836,7 @@ body.mobile-menu-open {
 }
 .hero-content p {
   max-width: 720px;
-  font-size: clamp(16px, 1vw, 18px);
+  font-size: clamp(18px, 2vw, 22px);
   line-height: 1.35;
   color: var(--color-muted);
   margin-bottom: 42px;
@@ -858,6 +888,7 @@ body.mobile-menu-open {
   font-weight: 400;
   color: #0067a8;
   margin-bottom: 48px;
+  font-family: "Raleway-Medium";
 }
 .footer-btn {
   background: #a7d900;
@@ -1086,4 +1117,11 @@ body.mobile-menu-open {
 .common-btn:hover .common-btn-text,
 .common-btn:hover .common-btn-icon {
   background: #c4eb00;
+}
+
+@media (max-width:1000px) {
+  
+  header .header-btn{
+    display: none;
+  }
 }

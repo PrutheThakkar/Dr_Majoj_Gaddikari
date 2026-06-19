@@ -1,6 +1,21 @@
 /* ================================
    HOME PAGE STYLES START
 ================================ */
+.hero-section{
+  position: relative;
+}
+.hero-section::after{
+content: "";
+width: 100%;
+height: 100%;
+background: url(../images/spine-seperate-img.webp);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: bottom;
+position: absolute;
+top: 0;
+right: 0;
+}
 
 /* HOME DOCTOR SECTION */
 .about-doctor-section {
@@ -104,7 +119,7 @@
 .spine-visual-wrap {
   position: relative;
   width: 100%;
-  height: 850px;
+  height: 1000px;
   margin: 0 auto;
 }
 .spine-explained-img {
@@ -144,24 +159,90 @@
   box-shadow: 0 0 0 6px rgba(182, 219, 0, 0.3);
 }
 .label-vertebrae {
-  left: 7%;
-  top: 37%;
+     left: 14%;
+    top: 25%;
+}
+@media (max-width:1600px){
+  .label-vertebrae {
+       left: 14%;
+      top: 30%;
+  }
+}
+@media (max-width:1280px){
+  .label-vertebrae {
+       left: 14%;
+      top: 35%;
+  }
 }
 .label-joints {
-  left: 44%;
-  top: 8%;
+ left: 45%;
+    top: 4%;
+}
+@media (max-width:1280px) {
+  .label-joints {
+   left: 45%;
+      top: 10%;
+  }
+}
+@media (max-width:1152px) {
+  .label-joints {
+   left: 50%;
+      top: 10%;
+  }
 }
 .label-disc {
   left: 24%;
-  bottom: 10%;
+  bottom: 6%;
+}
+@media (max-width:1600px) {
+  .label-disc {
+    left: 24%;
+    bottom: 10%;
+  }
+}
+@media (max-width:1280px) {
+  .label-disc {
+    left: 24%;
+    bottom: 15%;
+  }
+}
+@media (max-width:1152px) {
+  .label-disc {
+    left: 24%;
+    bottom: 16%;
+  }
 }
 .label-muscles {
-  right: 6%;
-  top: 33%;
+ right: 8%;
+    top: 22%;
+}
+@media (max-width:1280px) {
+  .label-muscles {
+   right:0%;
+      top: 27%;
+  }
 }
 .label-nerves {
-  right: 10%;
-  bottom: 5%;
+  right: 13%;
+  bottom: -1%;
+}
+@media (max-width:1600px) {
+  .label-nerves {
+  right: 13%;
+  bottom: 6%;
+}
+}
+@media (max-width:1280px) {
+  .label-nerves {
+  right: 6%;
+  bottom: 6%;
+}
+}
+@media (max-width:1152px) {
+  .label-nerves {
+  right: 5%;
+  bottom: 11%;
+}
 }
 .label-vertebrae span {
   margin-top: 16px;
@@ -268,10 +349,12 @@
 .symptoms-bottom h3 {
   color: #02192B;
   margin-bottom: 34px;
+      font-family: Raleway-Medium;
 }
 .symptoms-btn {
   padding: 13px 28px;
 }
+
 /* ================================
    HOME SPINE CONDITIONS PREVIEW START
 ================================ */
@@ -322,6 +405,7 @@
   padding: 0;
   background: transparent;
   cursor: pointer;
+  transform: translate(-50%, -50%);
 }
 
 .point-dot {
@@ -335,13 +419,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 2;
 }
-@media (max-width:767px) {
-  .point-dot {
-    width: 10px;
-    height: 10px;
-  }
-}
-
 
 .condition-point:hover .point-dot {
   transform: scale(1.14);
@@ -363,38 +440,45 @@
   font-size: clamp(14px, 1vw, 18px);
   font-weight: 400;
   line-height: 1.25;
-  white-space: nowrap;
+  white-space: normal;
+  width: max-content;
+  max-width: 280px;
   transform: translateY(-50%);
 }
 
 /* Dot positions exactly on body image */
 .point-degenerative {
-  left: 43%;
-  top: 21%;
+  left: 48%;
+  top: 16%;
 }
 
 .point-neck {
-  left: 54%;
-  top: 28%;
+  left: 56%;
+  top: 21%;
+}
+
+.point-stenosis {
+  left: 45%;
+  top: 42%;
 }
 
 .point-scoliosis {
-  left: 48%;
-  top: 43%;
+  left: 52%;
+  top: 40%;
 }
 
 .point-trauma {
-  left: 51%;
-  top: 63%;
+  left: 54%;
+  top: 58%;
 }
 
 .point-slipped {
-  left: 43%;
-  top: 75%;
+  left: 48%;
+  top: 73%;
 }
 
 .point-sciatica {
-  left: 44%;
+  left: 49%;
   top: 86%;
 }
 
@@ -402,7 +486,8 @@
 .point-degenerative .point-line,
 .point-scoliosis .point-line,
 .point-slipped .point-line {
-  right: 100%;
+  right: 18px;
+  left: auto;
   width: clamp(130px, 13vw, 230px);
 }
 
@@ -410,36 +495,45 @@
 .point-scoliosis .point-title,
 .point-slipped .point-title {
   right: calc(100% + clamp(145px, 14vw, 250px));
+  left: auto;
   text-align: right;
+  width: 260px;
 }
 
 /* Right side labels */
 .point-neck .point-line,
+.point-stenosis .point-line,
 .point-trauma .point-line {
-  left: 100%;
+  left: 18px;
+  right: auto;
   width: clamp(130px, 13vw, 230px);
 }
 
 .point-neck .point-title,
+.point-stenosis .point-title,
 .point-trauma .point-title {
   left: calc(100% + clamp(145px, 14vw, 250px));
+  right: auto;
   text-align: left;
+  width: 280px;
 }
 
 /* Sciatica bottom label */
 .point-sciatica .point-line {
   left: 50%;
-  top: 100%;
+  top: 18px;
   width: 1px;
-  height: 70px;
+  height: 72px;
   transform: translateX(-50%);
 }
 
 .point-sciatica .point-title {
-  top: calc(100% + 82px);
+  top: 98px;
   left: 50%;
+  right: auto;
   transform: translateX(-50%);
   text-align: center;
+  width: auto;
 }
 
 /* Desktop hover card */
@@ -491,6 +585,7 @@
   margin: clamp(35px, 5vw, 70px) auto 0;
   text-align: center;
   color: #02192b;
+  font-family: "Raleway-Medium";
 }
 
 /* Popup hidden by default */
@@ -538,6 +633,7 @@ body.condition-popup-open {
   }
 
   .point-neck .point-title,
+  .point-stenosis .point-title,
   .point-trauma .point-title {
     left: calc(100% + clamp(82px, 10vw, 145px));
   }
@@ -630,13 +726,6 @@ body.condition-popup-open {
     height: 22px;
     box-shadow: 0 0 0 7px rgba(182, 219, 0, 0.28);
   }
-  @media (max-width:767px) {
-  .point-dot {
-    width: 10px;
-    height: 10px;
-  }
-}
-
 
   .point-line {
     width: 75px !important;
@@ -655,6 +744,7 @@ body.condition-popup-open {
   }
 
   .point-neck .point-title,
+  .point-stenosis .point-title,
   .point-trauma .point-title {
     left: 88px;
   }
@@ -674,30 +764,65 @@ body.condition-popup-open {
   }
 
   .conditions-visual-wrap {
-    min-height: auto;
+    overflow: hidden;
+    min-height: 360px;
     padding: 10px 0 35px;
   }
 
   .conditions-body-wrap {
-    width: min(74vw, 360px);
+    width: 240px;
+    margin: 0 auto;
   }
 
-  /*
-    On mobile, keep dots on the image.
-    Hide long label lines because they go outside the screen.
-  */
-  .point-line {
-    display: none;
-  }
-
-  .point-title {
-    display: none;
+  .conditions-body-img {
+    width: 100%;
   }
 
   .point-dot {
-    width: 20px;
-    height: 20px;
-    box-shadow: 0 0 0 7px rgba(182, 219, 0, 0.28);
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 0 6px rgba(182, 219, 0, 0.28);
+  }
+
+  .point-degenerative .point-line,
+  .point-scoliosis .point-line,
+  .point-slipped .point-line {
+    width: 70px !important;
+  }
+
+  .point-degenerative .point-title,
+  .point-scoliosis .point-title,
+  .point-slipped .point-title {
+    width: 90px;
+    max-width: 90px;
+    right: calc(100% + 78px);
+    font-size: 10px;
+    line-height: 1.15;
+  }
+
+  .point-neck .point-line,
+  .point-stenosis .point-line,
+  .point-trauma .point-line {
+    width: 70px !important;
+  }
+
+  .point-neck .point-title,
+  .point-stenosis .point-title,
+  .point-trauma .point-title {
+    width: 90px;
+    max-width: 90px;
+    left: calc(100% + 78px);
+    font-size: 10px;
+    line-height: 1.15;
+  }
+
+  .point-sciatica .point-line {
+    height: 48px !important;
+  }
+
+  .point-sciatica .point-title {
+    top: calc(100% + 58px);
+    font-size: 12px;
   }
 
   .condition-popup-overlay {
@@ -719,6 +844,11 @@ body.condition-popup-open {
     height: 34px;
     font-size: 24px;
   }
+
+  .conditions-bottom-text {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -731,8 +861,8 @@ body.condition-popup-open {
   }
 
   .point-dot {
-    width: 18px;
-    height: 18px;
+    width: 10px;
+    height: 10px;
     box-shadow: 0 0 0 6px rgba(182, 219, 0, 0.28);
   }
 }
@@ -763,10 +893,28 @@ body.condition-popup-open {
 
 }
 .treatment-approach-section .container {
-  width: min(90%, 1200px);
+  /* width: min(90%, 1200px); */
 }
 .treatment-approach-section h2 {
   margin-bottom: var(--section-gap-lg);
+}
+
+.treatment-approach-section ul{
+display: flex;
+justify-content: space-between;
+}
+
+.treatment-approach-section ul li{
+width: 32%;
+}
+@media (max-width:767px) {
+  .treatment-approach-section ul{
+    flex-direction: column;
+  }
+ .treatment-approach-section ul li{
+width: 100%;
+
+}
 }
 .treatment-intro {
   margin-bottom: 58px;
@@ -776,9 +924,12 @@ body.condition-popup-open {
   max-width: 100%;
   margin: 0 auto 32px;
 }
+.treatment-image-wrap h3{
+  margin-top: 20px;
+}
 .treatment-image-wrap img {
   width: 100%;
-  height: 310px;
+ height: clamp(230px, calc(176.8px + 6.94vw), 310px);
   object-fit: cover;
   display: block;
 }
@@ -796,7 +947,7 @@ body.condition-popup-open {
   .spine-explained-section .container,
   .spine-conditions-section .container,
   .treatment-approach-section .container {
-    width: 88%;
+    /* width: 88%; */
   }
   .about-doctor-grid {
     grid-template-columns: 1fr;
@@ -874,8 +1025,8 @@ body.condition-popup-open {
   }
   .point-title {
     position: relative;
-    left: auto !important;
-    right: auto !important;
+    /* left: auto !important;
+    right: auto !important; */
     top: auto !important;
     display: block !important;
     white-space: normal;
@@ -896,6 +1047,7 @@ body.condition-popup-open {
     margin-bottom: 35px;
   }
 }
+
 @media (max-width: 575px) {
   .about-doctor-section {
     padding: clamp(60px, 7vw, 80px) 0;
@@ -1241,7 +1393,7 @@ body.condition-popup-open {
   display: block !important;
   top: 50% !important;
   color: #172f45 !important;
-  font-size: clamp(14px, 1vw, 18px) !important;
+  /* font-size: clamp(14px, 1vw, 18px) !important; */
   font-weight: 400 !important;
   line-height: 1.25 !important;
   white-space: nowrap !important;
@@ -1255,22 +1407,22 @@ body.condition-popup-open {
 }
 
 .point-neck {
-  left: 54% !important;
+  left: 46% !important;
   top: 28% !important;
 }
 
 .point-scoliosis {
-  left: 48% !important;
-  top: 43% !important;
+  left: 45% !important;
+    top: 53% !important;
 }
 
 .point-trauma {
-  left: 51% !important;
+  left: 46% !important;
   top: 63% !important;
 }
 
 .point-slipped {
-  left: 43% !important;
+  left: 46% !important;
   top: 75% !important;
 }
 
@@ -1458,3 +1610,5 @@ body.condition-popup-open {
 /* ================================
    SPINE CONDITIONS FIX END
 ================================ */
+
+

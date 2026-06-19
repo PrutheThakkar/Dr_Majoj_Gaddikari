@@ -1,40 +1,37 @@
 require("dotenv").config();
 
+const wpGraphqlUrl =
+  process.env.GATSBY_WPGRAPHQL_URL ||
+  "https://drmanoj.studiosentientdemo.com/graphql";
+
 module.exports = {
   siteMetadata: {
-    title: "Dr Manojkumar Gaddikeri",
+    title: "Dr Manoj Kumar Gaddikeri",
     description: "Orthopaedic Spine Specialist",
-    author: "@Dr Manojkumar Gaddikeri",
+    author: "@Dr Manoj Kumar Gaddikeri",
     siteUrl:
-      process.env.GATSBY_WEBSITE_URL || "https://drmanoj.studiosentientdemo.com/",
+      process.env.GATSBY_WEBSITE_URL ||
+      "https://drmanoj.studiosentientdemo.com/",
   },
+
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sass",
+
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: process.env.GATSBY_WPGRAPHQL_URL,
+        url: wpGraphqlUrl,
+
         schema: {
-          timeout: 30000, // Increase timeout if necessary
+          timeout: 30000,
         },
-        auth: {
-          // Use the credentials from your .env file
-          htaccess: {
-            username: process.env.GATSBY_USERNAME,
-            password: process.env.GATSBY_PASSWORD,
-          },
+
+        html: {
+          useGatsbyImage: false,
         },
-      },
-    },
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        typeName: "ACF", // Type name for ACF fields
-        fieldName: "acf", // Alias for GraphQL queries
-        url: process.env.GATSBY_WPGRAPHQL_URL, // Ensure this is correct
       },
     },
   ],

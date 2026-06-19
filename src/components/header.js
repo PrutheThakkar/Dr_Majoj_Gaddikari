@@ -100,16 +100,13 @@ const Header = () => {
   }, []);
 
   return (
-    <header
-      ref={headerRef}
-      className={`site-header${isDown ? " down" : ""}`}
-    >
+    <header ref={headerRef} className={`site-header${isDown ? " down" : ""}`}>
       <div className="header-inner">
-        <Link to="/" className="logo-wrap">
+        <Link to="/" className="logo-wrap header-animate-item">
           <img src={logo} alt="Dr. Manojkumar Gaddikeri" />
         </Link>
 
-        <nav className="main-nav">
+        <nav className="main-nav header-animate-item">
           <Link to="/about/" activeClassName="active">
             About
           </Link>
@@ -140,19 +137,21 @@ const Header = () => {
             Insights
           </Link>
         </nav>
+
         <Link
           to="/contact/"
-          className={`header-btn ${isActive("/contact/") ? "active" : ""}`}
+          className={`header-btn header-animate-item ${
+            isActive("/contact/") ? "active" : ""
+          }`}
         >
           Reach Out
         </Link>
 
-
-
-
         <button
           type="button"
-          className={`spine-menu-toggle ${menuOpen ? "open" : ""}`}
+          className={`spine-menu-toggle header-animate-item ${
+            menuOpen ? "open" : ""
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
@@ -200,13 +199,12 @@ const Header = () => {
 
             <Link
               to="/contact/"
-              className={`mobile-reach-btn ${isActive("/contact/") ? "active" : ""
-                }`}
+              className={`mobile-reach-btn ${
+                isActive("/contact/") ? "active" : ""
+              }`}
             >
               Reach Out
             </Link>
-
-
           </nav>
         </div>
       </div>

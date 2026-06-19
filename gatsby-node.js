@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   if (result.errors) {
-    console.error("❌ Query failed:", result.errors);
+    console.error(" Query failed:", result.errors);
     return;
   }
 
@@ -46,7 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  console.log("✅ Extra children map:", JSON.stringify(extraChildrenMap));
+  console.log(" Extra children map:", JSON.stringify(extraChildrenMap));
 
   // Listing page for each parent
   parents.forEach((condition) => {
@@ -101,7 +101,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   if (blogResult.errors) {
-    console.error("❌ Blog query failed:", blogResult.errors);
+    console.error(" Blog query failed:", blogResult.errors);
     return;
   }
 

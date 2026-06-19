@@ -62,7 +62,7 @@ const SpineExplained = () => {
   return (
     <section className="spine-explained-section" ref={sectionRef}>
       <div className="container">
-        <h2>The Spine Explained</h2>
+        <h2 data-aos="fade-up">The Spine Explained</h2>
 
         <div className="spine-visual-wrap">
           <img
