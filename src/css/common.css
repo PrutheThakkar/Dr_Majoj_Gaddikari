@@ -188,7 +188,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(26px, 4vw, 35px);
+  font-size: clamp(26px, 4vw, 32px);
   /* line-height: 1.2; */
 }
 
@@ -402,6 +402,11 @@ small {
     width: 250px;
   }
 }
+@media (max-width:1024px) {
+  .logo-wrap {
+    width: 210px;
+  }
+}
 .logo-wrap img {
   width: 100%;
   height: auto;
@@ -440,6 +445,14 @@ small {
     left: 57%;
     background-size: 55%;
     top: -10px;
+    gap: 30px;
+  }
+}
+@media (max-width:1024px) {
+  .main-nav {
+    left: 54%;
+    background-size: 60%;
+    top: -11px;
     gap: 30px;
   }
 }
@@ -821,7 +834,7 @@ body.mobile-menu-open {
   z-index: 2;
   max-width: 100%;
   padding-left: clamp(90px, 6.875vw, 132px);
-  padding-top: clamp(320px, 25vw, 400px);
+  padding-top: clamp(220px, 25vw, 400px);
 }
 @media (max-width:767px) {
   .hero-content{
@@ -1052,6 +1065,7 @@ body.mobile-menu-open {
 
 .site-header {
   transition: background 0.35s ease, box-shadow 0.35s ease;
+  transition: all 0.5s
 }
 
 .site-header.down {

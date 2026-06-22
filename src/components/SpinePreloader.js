@@ -51,9 +51,9 @@ const SpinePreloader = ({ onComplete }) => {
             ))}
           </svg>
 
-          <div className="preloader-logo-circle">
+          {/* <div className="preloader-logo-circle">
             <img src={smallLogo} alt="Dr. Manojkumar Gaddikeri logo" loading="lazy" />
-          </div>
+          </div> */}
         </div>
 
         <p className="preloader-text">Preparing spine care experience</p>
