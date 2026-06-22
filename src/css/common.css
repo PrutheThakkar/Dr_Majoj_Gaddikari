@@ -836,6 +836,16 @@ body.mobile-menu-open {
   padding-left: clamp(90px, 6.875vw, 132px);
   padding-top: clamp(220px, 25vw, 400px);
 }
+@media (max-width:1680px) {
+  .hero-content {
+  padding-top: 300px;
+}
+}
+@media (max-width:1440px) {
+  .hero-content {
+  padding-top: 250px;
+}
+}
 @media (max-width:767px) {
   .hero-content{
    max-width: 100%;
@@ -849,7 +859,7 @@ body.mobile-menu-open {
 }
 .hero-content p {
   max-width: 720px;
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(18px, 1.1vw, 22px);
   line-height: 1.35;
   color: var(--color-muted);
   margin-bottom: 42px;
