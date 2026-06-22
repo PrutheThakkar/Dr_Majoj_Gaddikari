@@ -168,6 +168,11 @@ right: 0;
       top: 30%;
   }
 }
+@media (max-width:1440px){
+  .label-vertebrae {
+       left: 9%;
+  }
+}
 @media (max-width:1280px){
   .label-vertebrae {
        left: 14%;
@@ -177,6 +182,12 @@ right: 0;
 .label-joints {
  left: 45%;
     top: 4%;
+}
+@media (max-width:1440px) {
+  .label-joints {
+   left: 45%;
+      top: 7%;
+  }
 }
 @media (max-width:1280px) {
   .label-joints {
@@ -200,6 +211,12 @@ right: 0;
     bottom: 10%;
   }
 }
+@media (max-width:1440px) {
+  .label-disc {
+    left: 25%;
+    bottom: 13%;
+  }
+}
 @media (max-width:1280px) {
   .label-disc {
     left: 24%;
@@ -216,6 +233,13 @@ right: 0;
  right: 8%;
     top: 22%;
 }
+@media (max-width:1440px) {
+  .label-muscles {
+   right: 3%;
+      top: 27%;
+  }
+ 
+}
 @media (max-width:1280px) {
   .label-muscles {
    right:0%;
@@ -229,6 +253,12 @@ right: 0;
 @media (max-width:1600px) {
   .label-nerves {
   right: 13%;
+  bottom: 6%;
+}
+}
+@media (max-width:1440px) {
+  .label-nerves {
+  right: 9%;
   bottom: 6%;
 }
 }
