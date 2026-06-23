@@ -19,9 +19,8 @@ const AnimatedHeroTitle = ({ startAnimation }) => {
 
   return (
     <h1
-      className={`hero-animated-title ${
-        startAnimation ? "title-animate" : "title-wait"
-      }`}
+      className={`hero-animated-title ${startAnimation ? "title-animate" : "title-wait"
+        }`}
       aria-label="Your Spine Supports Every Movement You Make"
     >
       {lines.map((line, lineIndex) => (
@@ -68,7 +67,7 @@ const HomePage = () => {
     }, 120);
   };
 
- 
+
   return (
     <>
       {showPreloader && (
@@ -76,31 +75,30 @@ const HomePage = () => {
       )}
 
       <Layout>
-       <section
-  className={`hero-section ${
-    startHeroAnimation ? "hero-ready" : "hero-wait"
-  }`}
->
-  <HeroAnimatedBg />
+        <section
+          className={`hero-section ${startHeroAnimation ? "hero-ready" : "hero-wait"
+            }`}
+        >
+          <HeroAnimatedBg />
 
-  <div className="hero-content">
-    <AnimatedHeroTitle startAnimation={startHeroAnimation} />
+          <div className="hero-content">
+            <AnimatedHeroTitle startAnimation={startHeroAnimation} />
 
-    <p className="hero-animated-para">
-      The spine supports posture, balance, and almost every movement the
-      body makes. When something affects it whether a slipped disc, nerve
-      compression, or degenerative change, symptoms can begin to appear
-      in different ways.
-    </p>
+            <p className="hero-animated-para">
+              The spine supports posture, balance, and almost every movement the
+              body makes. When something affects it whether a slipped disc, nerve
+              compression, or degenerative change, symptoms can begin to appear
+              in different ways.
+            </p>
 
-    <Link to="/contact" className="common-btn hero-animated-btn">
-      <span className="common-btn-text">Book a Consultation</span>
-      <span className="common-btn-icon">→</span>
-    </Link>
-  </div>
+            <Link to="/contact" className="common-btn hero-animated-btn">
+              <span className="common-btn-text">Book a Consultation</span>
+              <span className="common-btn-icon">→</span>
+            </Link>
+          </div>
 
-  <Breadcrumb items={[]} />
-</section>
+          <Breadcrumb items={[]} />
+        </section>
 
         <section className="about-doctor-section" id="about">
           <div className="container">
@@ -191,7 +189,7 @@ const HomePage = () => {
 
               <li>
                 <div className="treatment-image-wrap">
-                  <img src={treatmentImg2} alt="Medication spine treatment"  loading="lazy"/>
+                  <img src={treatmentImg2} alt="Medication spine treatment" loading="lazy" />
                   <h3>medication</h3>
                 </div>
               </li>
