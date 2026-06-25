@@ -47,6 +47,7 @@
 .book-consultation-section {
   padding: clamp(50px, 6vw, 120px) 0 clamp(90px, 5vw, 120px);
   background: #FCFEF3;
+  padding-bottom: 0;
 }
 
 .book-consultation-section .container {
@@ -221,4 +222,24 @@
 .map-wrapper{
   height: 100%;
   margin-bottom: 30px;
+}
+
+.contact-field {
+  width: 100%;
+}
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  color: #d93025;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.contact-form-message.success {
+  color: green;
+}
+
+.contact-form-message.error {
+  color: #d93025;
 }

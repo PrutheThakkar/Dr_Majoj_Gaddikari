@@ -6,13 +6,17 @@ const AppointmentForm = () => {
   const [formMessage, setFormMessage] = useState("");
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("First Name is required"),
-    lastName: Yup.string().required("Last Name is required"),
-    phone: Yup.string().required("Phone Number is required"),
+    firstName: Yup.string().trim().required("First Name is required"),
+    lastName: Yup.string().trim().required("Last Name is required"),
     email: Yup.string()
+      .trim()
       .email("Invalid email format")
       .required("Email is required"),
-    message: Yup.string().required("Message is required"),
+    phone: Yup.string()
+      .trim()
+      .matches(/^[0-9]{10}$/, "Enter a valid 10 digit phone number")
+      .required("Phone Number is required"),
+    message: Yup.string().trim().required("Message is required"),
   });
 
   const handleFormSubmit = async (values, { resetForm, setSubmitting }) => {
@@ -25,11 +29,11 @@ const AppointmentForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          firstName: values.firstName,
-          lastName: values.lastName,
-          phone: values.phone,
-          email: values.email,
-          message: values.message,
+          firstName: values.firstName.trim(),
+          lastName: values.lastName.trim(),
+          email: values.email.trim(),
+          phone: values.phone.trim(),
+          message: values.message.trim(),
         }),
       });
 
@@ -65,15 +69,15 @@ const AppointmentForm = () => {
       initialValues={{
         firstName: "",
         lastName: "",
-        phone: "",
         email: "",
+        phone: "",
         message: "",
       }}
       validationSchema={validationSchema}
       onSubmit={handleFormSubmit}
     >
       {({ isSubmitting }) => (
-        <Form className="appointment-form">
+        <Form className="appointment-form" noValidate>
           <div className="form-group">
             <Field type="text" name="firstName" placeholder="First Name" />
             <ErrorMessage name="firstName" component="div" className="error" />
@@ -85,13 +89,13 @@ const AppointmentForm = () => {
           </div>
 
           <div className="form-group">
-            <Field type="tel" name="phone" placeholder="Phone Number" />
-            <ErrorMessage name="phone" component="div" className="error" />
+            <Field type="email" name="email" placeholder="Email" />
+            <ErrorMessage name="email" component="div" className="error" />
           </div>
 
           <div className="form-group">
-            <Field type="email" name="email" placeholder="Email" />
-            <ErrorMessage name="email" component="div" className="error" />
+            <Field type="tel" name="phone" placeholder="Phone Number" />
+            <ErrorMessage name="phone" component="div" className="error" />
           </div>
 
           <div className="form-group">
@@ -99,7 +103,7 @@ const AppointmentForm = () => {
               as="textarea"
               name="message"
               rows="3"
-              placeholder="your message"
+              placeholder="Your Message"
             />
             <ErrorMessage name="message" component="div" className="error" />
           </div>
@@ -112,11 +116,9 @@ const AppointmentForm = () => {
 
           {formMessage && (
             <div
-              className="wpcf7-response-output"
-              style={{
-                color: formMessage.startsWith("Thank you") ? "green" : "red",
-                marginTop: 12,
-              }}
+              className={`form-response ${
+                formMessage.startsWith("Thank you") ? "success" : "error"
+              }`}
             >
               {formMessage}
             </div>

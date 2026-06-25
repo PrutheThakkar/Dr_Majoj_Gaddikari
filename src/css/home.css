@@ -479,7 +479,8 @@ right: 0;
 .symptoms-bottom h3 {
   color: #02192B;
   margin-bottom: 34px;
-      font-family: Raleway-Medium;
+      /* font-family: Raleway-Medium; */
+      font-family: "Raleway-Regular";
 }
 .symptoms-btn {
   padding: 13px 28px;
@@ -715,7 +716,8 @@ right: 0;
   margin: clamp(35px, 5vw, 70px) auto 0;
   text-align: center;
   color: #02192b;
-  font-family: "Raleway-Medium";
+  /* font-family: "Raleway-Medium"; */
+   font-family: "Raleway-Regular";
 }
 
 /* Popup hidden by default */
@@ -1066,6 +1068,7 @@ width: 100%;
 .treatment-approach-section h3 {
   margin-bottom: 62px;
   font-family: var(--font-primary);
+  text-transform: uppercase;
 }
 
 /* RESPONSIVE */
@@ -1175,6 +1178,7 @@ width: 100%;
   }
   .treatment-approach-section h3 {
     margin-bottom: 35px;
+    font-size: 18px;
   }
 }
 

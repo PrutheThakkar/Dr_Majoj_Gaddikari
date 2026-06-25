@@ -254,7 +254,8 @@
 }
 .expertise-bottom-text {
   margin: 0 auto 38px;
-  font-family: "Raleway-Medium";
+  /* font-family: "Raleway-Medium"; */
+   font-family: "Raleway-Regular";
 }
 
 /* ABOUT TREATMENT SECTION */

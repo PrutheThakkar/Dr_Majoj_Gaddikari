@@ -8,32 +8,47 @@ export default async function handler(req, res) {
 
   try {
     const body =
-      typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
+      typeof req.body === "string"
+        ? JSON.parse(req.body || "{}")
+        : req.body || {};
 
-    const { firstName, lastName, phone, email, message } = body;
+    const { firstName, lastName, email, phone, message } = body;
 
-    if (!firstName || !lastName || !phone || !email || !message) {
+    if (!firstName || !lastName || !email || !phone || !message) {
       return res.status(400).json({
         success: false,
         message: "Missing required form fields",
       });
     }
 
+    const submittedAt = new Date().toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata",
+    });
+
     const n8nResponse = await fetch(
-      "https://pruthe.app.n8n.cloud/webhook/b31572ee-6a3f-4b46-8f1c-eda3de345b35",
+      "https://pruthe.app.n8n.cloud/webhook/3cde56f8-f64d-480f-8c9c-3aad619e3707",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+
         body: JSON.stringify({
+          // camelCase fields for n8n old expressions
           firstName,
           lastName,
-          phone,
           email,
+          phone,
           message,
-          submittedAt: new Date().toISOString(),
-          source: "studiosentientdemo.com",
+          submittedAt,
+
+          // Excel column fields
+          "First Name": firstName,
+          "Last Name": lastName,
+          Email: email,
+          Phone: phone,
+          Message: message,
+          "Submitted At": submittedAt,
         }),
       }
     );

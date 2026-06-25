@@ -55,7 +55,12 @@
 /* CONDITIONS LIST */
 .conditions-list-section {
   padding: clamp(50px, 6vw, 120px) 0 clamp(90px, 5vw, 120px);
-  /* padding-bottom: 0; */
+  padding-bottom: 0;
+}
+@media (max-width:767px) {
+  .conditions-list-section{
+    padding-bottom: 50px;
+  }
 }
 .conditions-list-section .container {
   width: 88%;
@@ -101,7 +106,8 @@
 .condition-left h2 {
   margin-bottom: 34px;
   text-align: left;
-  font-family: "Raleway-Medium";
+  /* font-family: "Raleway-Medium"; */
+   font-family: "Raleway-Regular";
   color: #02192B;
 }
 .condition-left p {
@@ -115,7 +121,8 @@
 .condition-right h4 {
   margin-bottom: 22px;
   color: #02192B;
-  font-family: "Raleway-Medium";
+  /* font-family: "Raleway-Medium"; */
+   font-family: "Raleway-Regular";
 }
 .treatment-option-list {
   display: flex;

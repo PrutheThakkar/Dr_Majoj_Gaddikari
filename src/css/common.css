@@ -868,7 +868,7 @@ body.mobile-menu-open {
 }
 .hero-content p {
   max-width: 720px;
-  font-size: clamp(18px, 1.1vw, 22px);
+  font-size: clamp(16px, 1.1vw, 22px);
   line-height: 1.35;
   color: var(--color-muted);
   margin-bottom: 42px;
@@ -897,7 +897,7 @@ body.mobile-menu-open {
     padding-top: 215px;
   }
   .hero-content h1 {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 /* HERO SECTION END */
@@ -920,7 +920,8 @@ body.mobile-menu-open {
   font-weight: 400;
   color: #0067a8;
   margin-bottom: 48px;
-  font-family: "Raleway-Medium";
+  /* font-family: "Raleway-Medium"; */
+   font-family: "Raleway-Regular";
 }
 .footer-btn {
   background: #a7d900;
@@ -1021,9 +1022,9 @@ body.mobile-menu-open {
   }
 }
 @media (max-width: 575px) {
-  /* .footer-cta h2 {
-    font-size: 25px;
-  } */
+  .footer-cta h2 {
+    font-size: 18px;
+  }
     .site-footer {
     padding: 0px 7% 32px;
   }
