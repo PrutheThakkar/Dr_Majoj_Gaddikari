@@ -56,7 +56,7 @@
 .journey-listening-section h2,
 .patient-outcomes-section h2,
 .long-term-health-section h2 {
-  margin-bottom: 42px;
+  margin-bottom: clamp(30px, calc(11.7px + 3.04vw), 42px);
 }
 .journey-listening-copy {
   margin: 0 auto;
@@ -214,6 +214,6 @@
 }
 
 .symptoms-description {
-  margin-top: 50px;
+ margin-top: clamp(35px, calc(11.7px + 3.04vw), 50px);
 }
 /* PATIENT JOURNEY PAGE STYLES END */

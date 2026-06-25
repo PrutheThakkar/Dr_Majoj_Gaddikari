@@ -21,6 +21,12 @@
   height: 100%;
   object-fit: cover;
 }
+@media (max-width:767px) {
+  .conditions-hero-bg{
+
+    object-position: 80%;
+  }
+}
 .conditions-hero-section::after {
   content: "";
   position: absolute;
@@ -43,13 +49,13 @@
   margin-bottom: 22px;
 }
 .conditions-hero-content p {
-  max-width: 50%;
+  max-width: 100%;
 }
 
 /* CONDITIONS LIST */
 .conditions-list-section {
-  padding: clamp(95px, 6vw, 120px) 0 clamp(90px, 5vw, 120px);
-  padding-bottom: 0;
+  padding: clamp(50px, 6vw, 120px) 0 clamp(90px, 5vw, 120px);
+  /* padding-bottom: 0; */
 }
 .conditions-list-section .container {
   width: 88%;
@@ -58,7 +64,7 @@
 }
 .conditions-list-section h2 {
   text-align: center;
-  margin-bottom: 42px;
+  margin-bottom: clamp(35px, calc(11.7px + 3.04vw), 70px);
 }
 .conditions-section-intro {
   max-width: 100%;
@@ -145,7 +151,7 @@
 }
 
 .treatments-section {
-  padding: clamp(80px, 6.25vw, 120px) 0 0;
+ padding: clamp(30px, calc(-29.9px + 7.81vw), 120px) 0 0;
 }
 /* TREATMENTS GRID */
 .treatments-grid {
@@ -200,7 +206,7 @@
   border-bottom: 1px solid #e5e7eb;
   top: 0;
   z-index: 50;
-  padding: 70px 0;
+ padding: clamp(30px, calc(3.4px + 3.47vw), 70px) 0;
 }
 .condition-tabs {
   display: flex;
@@ -292,8 +298,8 @@
     min-height: 330px;
   }
   .conditions-list-section {
-    padding: 75px 0 90px;
-    padding-bottom: 0;
+    padding: 50px 0 90px;
+    /* padding-bottom: 0; */
   }
   .condition-row {
     grid-template-columns: 1fr;
@@ -358,5 +364,5 @@
   text-align: center;
 }
 .section-title-wrp h2{
- margin-bottom: 58px;
+ margin-bottom: clamp(35px, calc(11.7px + 3.04vw), 70px);
 }

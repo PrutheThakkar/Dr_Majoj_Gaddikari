@@ -3,9 +3,10 @@ import gsap from "gsap";
 import { Link } from "gatsby";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
+import "swiper/css/pagination";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -170,7 +171,8 @@ const SymptomsHorizontal = ({
       {/* Mobile Swiper slider from 820px */}
       <div className="symptoms-mobile-slider">
         <Swiper
-          modules={[Autoplay]}
+        modules={[Pagination, Autoplay]}
+                    pagination={{ clickable: true }}
           slidesPerView={1}
           spaceBetween={18}
           loop={true}
@@ -189,12 +191,16 @@ const SymptomsHorizontal = ({
       </div>
 
       <div className="symptoms-bottom">
+      <div className="container">
+        
+
         <h3>{bottomText}</h3>
 
-       <Link to="/contact" className="common-btn">
-  <span className="common-btn-text">Book a Consultation</span>
-  <span className="common-btn-icon">→</span>
-</Link>
+        <Link to="/contact" className="common-btn">
+          <span className="common-btn-text">Book a Consultation</span>
+          <span className="common-btn-icon">→</span>
+        </Link>
+      </div>
       </div>
     </section>
   );

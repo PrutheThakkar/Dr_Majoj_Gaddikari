@@ -15,6 +15,11 @@
   align-items: center;
   padding: 120px 7% 90px;
 }
+@media (max-width:767px) {
+  .about-hero-section{
+    padding-bottom: 30px;
+  }
+}
 .about-hero-bg {
   position: absolute;
   inset: 0;
@@ -43,16 +48,22 @@
   max-width: 680px;
   margin-left: 60px;
 }
+@media (max-width:767px) {
+  .about-hero-content{
+    margin-left: 0;
+  }
+}
 .about-hero-content h1 {
   margin-bottom: 28px;
 }
 .about-hero-content p {
   max-width: 650px;
+  margin-bottom: 0;
 }
 
 /* DOCTOR DETAIL */
 .about-doctor-detail-section {
-  padding: clamp(95px, 6vw, 105px) 0 clamp(80px, 5vw, 90px);
+  padding: clamp(50px, 6vw, 105px) 0 clamp(80px, 5vw, 90px);
   background: #FCFEF3;
   text-align: center;
 }
@@ -72,7 +83,7 @@
 }
 .about-doctor-main-img {
   width: 100%;
-  height: 610px;
+  height: clamp(300px, calc(293.6px + 16.48vw), 610px);
   object-fit: cover;
   object-position: center;
   display: block;
@@ -149,11 +160,11 @@
 }
 .medical-background-section h2 {
   text-align: center;
-  margin-bottom: 58px;
+ margin-bottom: clamp(35px, calc(11.7px + 3.04vw), 70px);
 }
 .medical-bg-layout {
   position: relative;
-  margin-bottom: 95px;
+   margin-bottom: clamp(50px, calc(11.7px + 3.04vw), 70px);
 }
 .medical-bg-copy {
   margin: 0 auto;
@@ -202,13 +213,18 @@
   text-align: center;
 }
 .expertise-area-wrap h2 {
-  margin-bottom: 70px;
+ margin-bottom: clamp(35px, calc(11.7px + 3.04vw), 70px);
 }
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 34px 38px;
   margin: 0 auto 52px;
+}
+@media (max-width:767px) {
+  .expertise-grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .expertise-card {
   min-height: 92px;
@@ -244,9 +260,10 @@
 /* ABOUT TREATMENT SECTION */
 .about-treatment-section {
   background: #FCFEF3;
+ padding-top: 50px;
   /* padding: 0 var(--section-padding-sm) var(--section-padding-lg); */
   text-align: center;
-  padding-top: 70px;
+  /* padding-top: 0; */
   /* padding-top: 0; */
   padding-bottom: 0;
 }
@@ -255,7 +272,7 @@
   max-width: 1500px;
 }
 .about-treatment-section h2 {
-  margin-bottom: 70px;
+ margin-bottom: clamp(30px, calc(11.7px + 3.04vw), 70px);
 }
 .about-treatment-intro {
   margin: 0 auto 46px;
@@ -273,6 +290,15 @@
 .surgery-considered-card {
   text-align: center;
 }
+@media (max-width:767px) {
+  .surgery-considered-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .surgery-considered-card{
+  }
+}
 .surgery-number {
   width: 72px;
   height: 72px;
@@ -287,6 +313,13 @@
   font-family: "PlayfairDisplay-Bold";
   font-size: var(--h1-size);
 }
+@media (max-width:767px) {
+  .surgery-number{
+     width: 30px;
+  height: 30px;
+  margin-bottom: 20px;
+  }
+}
 .surgery-considered-card:hover .surgery-number {
   transform: translateY(-6px);
   box-shadow: 0 0 0 14px rgba(201, 234, 51, 0.28);
@@ -294,6 +327,63 @@
 .surgery-considered-card h4 {
   max-width: 420px;
   margin: 0 auto;
+}
+
+/* ================================
+   EXPERTISE MOBILE SWIPER
+================================ */
+
+.expertise-mobile-slider {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .expertise-desktop-grid {
+    display: none !important;
+  }
+
+  .expertise-mobile-slider {
+    display: block;
+    width: 100%;
+    margin-top: 28px;
+    overflow: hidden;
+  }
+
+  .expertise-mobile-slider .swiper {
+    overflow: visible;
+    padding-bottom: 42px;
+    margin-bottom: 50px;
+  }
+
+  .expertise-mobile-slider .swiper-slide {
+    height: auto;
+  }
+
+  .expertise-mobile-card {
+    width: 100%;
+    height: 100%;
+    min-height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .expertise-mobile-slider .swiper-pagination {
+    bottom: 0 !important;
+  }
+
+  .expertise-mobile-slider .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: rgba(0, 103, 168, 0.35);
+    opacity: 1;
+  }
+
+  .expertise-mobile-slider .swiper-pagination-bullet-active {
+    width: 24px;
+    border-radius: 20px;
+    background: #0067a8;
+  }
 }
 
 /* CONSULTATION DIAGNOSIS SCROLL */
@@ -544,4 +634,113 @@
 
 .about-page footer{
   padding-top: 50px;
+}
+
+
+/* ================================
+   CONSULTATION DIAGNOSIS MOBILE SWIPER
+================================ */
+
+.diagnosis-mobile-slider {
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .consultation-diagnosis-scroll {
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+
+  .consultation-diagnosis-inner {
+    width: 94%;
+    padding: 60px 0;
+  }
+
+  .diagnosis-desktop-card {
+    display: none !important;
+  }
+
+  .diagnosis-mobile-slider {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .diagnosis-mobile-slider .swiper {
+    width: 100%;
+    overflow: visible;
+    padding-bottom: 42px;
+  }
+
+  .diagnosis-mobile-slider .swiper-slide {
+    height: auto;
+  }
+
+  .diagnosis-mobile-card {
+    background: #d3ee55;
+    padding: 18px;
+    min-height: 100%;
+  }
+
+  .diagnosis-mobile-image-wrap {
+    width: 100%;
+    height: clamp(260px, calc(206.7px + 14.22vw), 315px);
+    overflow: hidden;
+    background: #eef7d7;
+  }
+
+  .diagnosis-mobile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .diagnosis-mobile-content {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-top: 26px;
+  }
+
+  .diagnosis-mobile-number {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #0067a8;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    line-height: 1;
+    font-family: "PlayfairDisplay-SemiBold";
+  }
+
+  .diagnosis-mobile-content h3 {
+    margin: 0;
+    color: #005899;
+    font-family: var(--font-primary);
+    text-align: left;
+    /* font-size: clamp(24px, 7vw, 34px); */
+    line-height: 1.18;
+  }
+
+  .diagnosis-mobile-slider .swiper-pagination {
+    bottom: 0 !important;
+  }
+
+  .diagnosis-mobile-slider .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: rgba(0, 103, 168, 0.35);
+    opacity: 1;
+  }
+
+  .diagnosis-mobile-slider .swiper-pagination-bullet-active {
+    background: #0067a8;
+    width: 24px;
+    border-radius: 20px;
+  }
 }

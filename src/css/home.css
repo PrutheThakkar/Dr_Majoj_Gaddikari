@@ -46,8 +46,8 @@ right: 0;
 .doctor-bg-card {
   position: absolute;
   inset: 35px 35px 0 0;
-  background: #d3ee55;
-  transform: rotate(-4deg);
+  /* background: #d3ee55; */
+  /* transform: rotate(-4deg); */
   z-index: 1;
   transition: transform 0.45s ease;
 }
@@ -56,7 +56,7 @@ right: 0;
   z-index: 2;
   width: 100%;
   display: block;
-  transform: rotate(4deg);
+  /* transform: rotate(4deg); */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
@@ -306,6 +306,106 @@ right: 0;
   top: -13px;
   bottom: auto;
 }
+
+
+.spine-mobile-wrap {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .spine-visual-wrap {
+    display: none;
+  }
+
+  .spine-mobile-wrap {
+    display: block;
+  }
+
+  .spine-explained-section {
+    padding: 60px 0 40px;
+  }
+
+  .spine-explained-section h2 {
+    margin-bottom: 25px;
+  }
+
+  .spine-mobile-visual-wrap {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 28px;
+  }
+
+  .spine-mobile-main-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .spine-mobile-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 10px;
+  }
+
+  .spine-mobile-info-card {
+    background: #f9fbf1;
+    border: 1px solid #d5e88a;
+    border-radius: 24px;
+    padding: 18px;
+  }
+
+  .spine-mobile-info-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .spine-mobile-info-head h4 {
+    margin: 0;
+    color: #1d5fae;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .spine-mobile-info-card p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #18314b;
+  }
+
+  .info-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #b6db00;
+    box-shadow: 0 0 0 8px rgba(182, 219, 0, 0.2);
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .spine-mobile-visual-wrap {
+    max-width: 320px;
+  }
+
+  .spine-mobile-info-card {
+    border-radius: 22px;
+    padding: 16px;
+  }
+
+  .spine-mobile-info-head h4 {
+    font-size: 16px;
+  }
+
+  .spine-mobile-info-card p {
+    font-size: 15px;
+  }
+}
+
+
 
 /* SYMPTOMS HORIZONTAL SECTION */
 .symptoms-horizontal-section {
@@ -1086,7 +1186,7 @@ width: 100%;
   .spine-explained-section .container,
   .spine-conditions-section .container,
   .treatment-approach-section .container {
-    width: 95%;
+    width: 90%;
   }
   .about-doctor-grid {
     gap: 36px;
@@ -1146,6 +1246,7 @@ width: 100%;
     min-height: auto !important;
     overflow: hidden;
     padding-bottom: clamp(50px, 8vw, 80px);
+   padding-bottom: 0;
   }
 
   .symptoms-desktop-area {
@@ -1320,6 +1421,11 @@ body.condition-popup-open {
   background: #fcfef3;
   padding: clamp(70px, 6vw, 120px) 0 clamp(60px, 5vw, 100px);
   padding-top: 0;
+}
+@media (max-width:767px) {
+  .spine-conditions-section{
+    padding-top: 50px;
+  }
 }
 
 .spine-conditions-section .container {

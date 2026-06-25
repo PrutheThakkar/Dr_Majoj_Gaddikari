@@ -188,7 +188,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(26px, 4vw, 32px);
+  font-size: clamp(21px, 4vw, 32px);
   /* line-height: 1.2; */
 }
 
@@ -207,6 +207,9 @@ small {
 }
 small {
   font-size: var(--small-size);
+}
+p:last-child{
+  margin-bottom: 0 !important;
 }
 
 /* BUTTONS */
@@ -1022,13 +1025,16 @@ body.mobile-menu-open {
     font-size: 25px;
   } */
     .site-footer {
-    padding: 50px 7% 32px;
+    padding: 0px 7% 32px;
   }
   .footer-brand img {
     width: 260px;
   }
   .footer-brand p {
     font-size: 17px;
+  }
+  .footer-brand p br{
+    display: none;
   }
 }
 /* FOOTER SECTION END */

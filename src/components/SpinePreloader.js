@@ -39,7 +39,10 @@ const SpinePreloader = ({ onComplete }) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-           
+            <path
+              className="spine-path"
+              d="M112 18C76 52 74 91 111 124C149 158 148 196 109 226C70 257 71 297 111 328C149 358 151 388 112 406"
+            />
 
             {[45, 80, 118, 157, 196, 236, 276, 316, 356].map((y, index) => (
               <g className="spine-disc" key={index}>

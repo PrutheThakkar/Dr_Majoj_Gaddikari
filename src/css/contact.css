@@ -45,9 +45,10 @@
 
 /* BOOK CONSULTATION */
 .book-consultation-section {
-  padding: clamp(95px, 6vw, 120px) 0 clamp(90px, 5vw, 120px);
+  padding: clamp(50px, 6vw, 120px) 0 clamp(90px, 5vw, 120px);
   background: #FCFEF3;
 }
+
 .book-consultation-section .container {
   width: 88%;
   max-width: 1520px;
@@ -176,7 +177,7 @@
     min-height: 340px;
   }
   .book-consultation-section {
-    padding: 75px 0 90px;
+    /* padding: 75px 0 90px; */
   }
   .consultation-info-grid {
     grid-template-columns: 1fr;
@@ -188,6 +189,11 @@
   .contact-consultation-img {
     height: 360px;
     margin-bottom: 36px;
+  }
+}
+@media (max-width:767px) {
+  .book-consultation-section{
+    padding-bottom: 0;
   }
 }
 @media (max-width: 575px) {
