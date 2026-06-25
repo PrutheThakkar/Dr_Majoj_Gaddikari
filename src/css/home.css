@@ -1182,6 +1182,9 @@ width: 100%;
   .about-doctor-section {
     padding: clamp(60px, 7vw, 80px) 0;
   }
+  .spine-explained-section{
+    padding-top: 0;
+  }
   .about-doctor-section .container,
   .spine-explained-section .container,
   .spine-conditions-section .container,
