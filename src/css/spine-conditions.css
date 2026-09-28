@@ -490,4 +490,17 @@
   .spine-condition-listing-page .condition-dropdown {
     padding: 0 6%;
   }
+  .spine-condition-listing-page .condition-dropdown-menu {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    margin-top: 8px;
+  }
+  .spine-condition-listing-page .condition-dropdown-item {
+    width: 100%;
+    min-height: 44px;
+    text-align: left;
+    white-space: normal;
+    font: inherit;
+  }
 }

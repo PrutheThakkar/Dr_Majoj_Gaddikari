@@ -108,6 +108,13 @@
 .about-doctor-image-wrap:hover .about-doctor-main-img {
   transform: scale(1.035);
 }
+@media (max-width: 767px) {
+  .about-doctor-main-img {
+    height: clamp(280px, 80vw, 420px);
+    aspect-ratio: auto;
+    object-position: center top;
+  }
+}
 .about-doctor-copy {
   max-width: 1000px;
   width: 68%;

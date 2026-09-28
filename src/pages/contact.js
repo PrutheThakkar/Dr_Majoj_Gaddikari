@@ -2,32 +2,19 @@ import React, { useState } from "react";
 import Layout from "../components/layout";
 
 import contactHero from "../images/about-hero.webp";
+import consultationHoursIcon from "../images/consultation-new.svg";
+import appointmentDeskIcon from "../images/appointment.svg";
+import whatToBringIcon from "../images/what-to-bring.svg";
 import Breadcrumb from "../components/Breadcrumb";
 
 const ConsultationHoursIcon = () => (
-  <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-    <circle cx="40" cy="40" r="40" fill="#d6e97b" />
-    <g stroke="#4b5726" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="40" cy="38" r="23" /><circle cx="40" cy="36" r="16" />
-      <path d="M40 25v12l8 5M37 53v8m6-8v8m-8 0h10" />
-    </g>
-  </svg>
+  <img src={consultationHoursIcon} alt="" aria-hidden="true" />
 );
 const AppointmentDeskIcon = () => (
-  <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-    <circle cx="40" cy="40" r="40" fill="#d6e97b" />
-    <g stroke="#4b5726" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="40" cy="26" r="5" /><path d="m36 31-6 5v10m14-15 6 5v10M35 37v7h10v-7M26 46h28v16H26zM33 40l7 3 7-3M39 33l1 5 1-5" />
-    </g>
-  </svg>
+  <img src={appointmentDeskIcon} alt="" aria-hidden="true" />
 );
 const WhatToBringIcon = () => (
-  <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-    <circle cx="40" cy="40" r="40" fill="#d6e97b" />
-    <g stroke="#4b5726" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="20" y="29" width="41" height="31" rx="3" /><path d="M30 29v-7h20v7M20 40h41M27 40V29h12l7 7v4M30 33h8m-8 4h9M35 40v5h10v-5" />
-    </g>
-  </svg>
+  <img src={whatToBringIcon} alt="" aria-hidden="true" />
 );
 
 const contactCards = [
@@ -265,6 +252,8 @@ const ContactPage = () => {
                       <input
                         type="text"
                         name="firstName"
+                        autoComplete="given-name"
+                        aria-label="First name"
                         value={formValues.firstName}
                         onChange={handleChange}
                         placeholder="First Name*"
@@ -281,6 +270,8 @@ const ContactPage = () => {
                       <input
                         type="text"
                         name="lastName"
+                        autoComplete="family-name"
+                        aria-label="Last name"
                         value={formValues.lastName}
                         onChange={handleChange}
                         placeholder="Last Name*"
@@ -297,6 +288,9 @@ const ContactPage = () => {
                       <input
                         type="tel"
                         name="phone"
+                        autoComplete="tel"
+                        inputMode="tel"
+                        aria-label="Phone number"
                         value={formValues.phone}
                         onChange={handleChange}
                         placeholder="Phone Number*"
@@ -325,6 +319,7 @@ const ContactPage = () => {
                   <div className="contact-field">
                     <textarea
                       name="message"
+                      aria-label="Your message"
                       value={formValues.message}
                       onChange={handleChange}
                       placeholder="Your Message*"

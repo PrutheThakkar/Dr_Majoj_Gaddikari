@@ -83,6 +83,9 @@ const SpineConditionListingTemplate = ({ data, location }) => {
             <div className="condition-dropdown">
               <button
                 className="condition-dropdown-btn"
+                type="button"
+                aria-expanded={dropdownOpen}
+                aria-controls="mobile-treatment-categories"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 {showAll ? "All Treatments" : condition.title}
@@ -92,7 +95,7 @@ const SpineConditionListingTemplate = ({ data, location }) => {
               </button>
 
               {dropdownOpen && (
-                <div className="condition-dropdown-menu">
+                <div className="condition-dropdown-menu" id="mobile-treatment-categories">
                   <button
                     className={`condition-dropdown-item ${showAll ? "active" : ""}`}
                     onClick={() => {
