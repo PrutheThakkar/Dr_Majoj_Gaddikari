@@ -293,6 +293,7 @@ export const query = graphql`
                 altText
                 gatsbyImage(
                   layout: FULL_WIDTH
+                  width: 1920
                   placeholder: BLURRED
                   quality: 90
                 )
