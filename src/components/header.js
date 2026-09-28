@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "gatsby";
 import { useLocation } from "@reach/router";
-import logo from "../images/Manoj-Website-Logo.svg";
+import logo from "../images/manoj-new-logo.svg";
 
 const Header = () => {
   const location = useLocation();

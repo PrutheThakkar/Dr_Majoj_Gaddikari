@@ -71,12 +71,13 @@
 }
 
 .hero-animated-title {
-  overflow: hidden;
+  /* Let serif descenders extend beyond the tight heading line-height. */
+  overflow: visible;
 }
 
 .hero-title-line {
   display: block;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-title-word {

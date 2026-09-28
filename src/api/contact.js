@@ -12,9 +12,9 @@ export default async function handler(req, res) {
         ? JSON.parse(req.body || "{}")
         : req.body || {};
 
-    const { firstName, lastName, email, phone, message } = body;
+    const { firstName, lastName, email = "", phone, message } = body;
 
-    if (!firstName || !lastName || !email || !phone || !message) {
+    if (!firstName || !lastName || !phone || !message) {
       return res.status(400).json({
         success: false,
         message: "Missing required form fields",

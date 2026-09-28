@@ -74,8 +74,6 @@ const SpineConditionsPage = ({ data }) => {
                   </div>
 
                   <div className="condition-right">
-                    <h4>Major Treatment Approaches</h4>
-
                     <ul className="treatment-option-list">
                       <li className="treatment-option">
                         <span>Slip Disc / Disc Herniation Treatment</span>

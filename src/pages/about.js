@@ -1,8 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Layout from "../components/layout";
-import gsap from "gsap";
 import { Link } from "gatsby";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
@@ -11,6 +9,10 @@ import "swiper/css/pagination";
 
 import aboutHero from "../images/about-hero.webp";
 import doctorImg from "../images/about-dr.webp";
+import persistentSymptomsIcon from "../images/symptoms-svg1.svg";
+import nerveCompressionIcon from "../images/nerve-com-svg.svg";
+import structuralProblemsIcon from "../images/structural-svg.svg";
+import consultationImg from "../images/detailed-discussion-symptoms.webp";
 import Breadcrumb from "../components/Breadcrumb";
 
 /* =========================
@@ -242,18 +244,33 @@ const expertiseItems = [
   },
 ];
 
+const PersistentSymptomsIcon = () => (
+  <img src={persistentSymptomsIcon} alt="" />
+);
+
+const NerveCompressionIcon = () => (
+  <img src={nerveCompressionIcon} alt="" />
+);
+
+const StructuralProblemsIcon = () => (
+  <img src={structuralProblemsIcon} alt="" />
+);
+
 const surgeryConsideredItems = [
   {
     number: "1",
     title: "Symptoms Persist Despite Non-Surgical Treatment",
+    Icon: PersistentSymptomsIcon,
   },
   {
     number: "2",
     title: "Nerve Compression Causes Weakness Or Significant Pain",
+    Icon: NerveCompressionIcon,
   },
   {
     number: "3",
     title: "Structural Problems In The Spine Require Correction",
+    Icon: StructuralProblemsIcon,
   },
 ];
 
@@ -294,180 +311,30 @@ const diagnosisSteps = [
    CONSULTATION DIAGNOSIS SCROLL
 ========================= */
 
-const ConsultationDiagnosisScroll = () => {
-  const sectionRef = useRef(null);
-  const lineProgressRef = useRef(null);
-
-  const activeIndexRef = useRef(0);
-  const revealedIndexRef = useRef(0);
-
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [revealedIndex, setRevealedIndex] = useState(0);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    // Do not run GSAP pin scroll on mobile
-    if (window.innerWidth <= 575) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    diagnosisSteps.forEach((step) => {
-      const img = new Image();
-      img.src = step.image;
-    });
-
-    const ctx = gsap.context(() => {
-      gsap.set(lineProgressRef.current, {
-        scaleY: 0,
-        transformOrigin: "top center",
-      });
-
-      const progressTo = gsap.quickTo(lineProgressRef.current, "scaleY", {
-        duration: 0.18,
-        ease: "power2.out",
-      });
-
-      const trigger = ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: () => `+=${diagnosisSteps.length * 560}`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 0.65,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        fastScrollEnd: true,
-
-        onUpdate: (self) => {
-          const progress = gsap.utils.clamp(0, 1, self.progress);
-
-          progressTo(progress);
-
-          const nextIndex = Math.min(
-            diagnosisSteps.length - 1,
-            Math.floor(progress * diagnosisSteps.length)
-          );
-
-          if (nextIndex !== activeIndexRef.current) {
-            activeIndexRef.current = nextIndex;
-            setActiveIndex(nextIndex);
-          }
-
-          if (nextIndex > revealedIndexRef.current) {
-            revealedIndexRef.current = nextIndex;
-            setRevealedIndex(nextIndex);
-          }
-        },
-
-        onLeaveBack: () => {
-          activeIndexRef.current = 0;
-          revealedIndexRef.current = 0;
-
-          setActiveIndex(0);
-          setRevealedIndex(0);
-          progressTo(0);
-        },
-      });
-
-      ScrollTrigger.refresh();
-
-      return () => {
-        trigger.kill();
-      };
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  return (
-    <div className="consultation-diagnosis-scroll" ref={sectionRef}>
-      <div className="consultation-diagnosis-inner">
-        <h2>Consultation And Diagnosis</h2>
-
-        <p className="consultation-diagnosis-intro">
-          A spine consultation involves understanding the patient’s symptoms as
-          well as reviewing imaging studies.
-        </p>
-
-        {/* Desktop Scroll Layout */}
-        <div className="diagnosis-scroll-card diagnosis-desktop-card">
-          <div className="diagnosis-scroll-image-wrap">
-            {diagnosisSteps.map((step, index) => (
-              <img
-                key={step.number}
-                src={step.image}
-                alt={step.title}
-                loading="lazy"
-                className={`diagnosis-scroll-image ${activeIndex === index ? "is-active" : ""
-                  }`}
-              />
-            ))}
-          </div>
-
-          <div className="diagnosis-steps-wrap">
-            <span className="diagnosis-line"></span>
-
-            <span
-              ref={lineProgressRef}
-              className="diagnosis-line-progress"
-            ></span>
-
-            {diagnosisSteps.map((step, index) => (
-              <div
-                key={step.number}
-                className={`diagnosis-step ${index <= revealedIndex ? "is-complete" : ""
-                  } ${activeIndex === index ? "active" : ""}`}
-              >
-                <span className="diagnosis-number">{step.number}</span>
-                <h3>{step.title}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile Swiper Layout */}
-        <div className="diagnosis-mobile-slider">
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            slidesPerView={1}
-            spaceBetween={18}
-            speed={700}
-            autoplay={{
-              delay: 2800,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-          >
-            {diagnosisSteps.map((step) => (
-              <SwiperSlide key={step.number}>
-                <div className="diagnosis-mobile-card">
-                  <div className="diagnosis-mobile-image-wrap">
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      loading="lazy"
-                      className="diagnosis-mobile-image"
-                    />
-                  </div>
-
-                  <div className="diagnosis-mobile-content">
-                    <span className="diagnosis-mobile-number">
-                      {step.number}
-                    </span>
-
-                    <h3>{step.title}</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+const ConsultationDiagnosis = () => (
+  <section className="consultation-section">
+    <div className="consultation-container">
+      <h2>Consultation &amp; Diagnosis</h2>
+      <p className="consultation-intro">
+        A spine consultation involves understanding the patient’s symptoms as
+        well as reviewing imaging studies.
+      </p>
+      <div className="consultation-layout">
+        <img
+          src={consultationImg}
+          alt="Dr. Manojkumar Gaddikeri discussing symptoms with a patient"
+          className="consultation-image"
+          loading="lazy"
+        />
+        <ol className="consultation-timeline">
+          {diagnosisSteps.map((step) => (
+            <li key={step.number}>{step.title}</li>
+          ))}
+        </ol>
       </div>
     </div>
-  );
-};
+  </section>
+);
 
 /* =========================
    ABOUT PAGE
@@ -502,7 +369,7 @@ const AboutPage = () => {
         <section className="about-doctor-detail-section">
           <div className="container">
             <h2>
-              Spine Problems Can Affect How People Move, Work, And Perform
+              Spine Problems Can Affect How People Move, Work,<br/> & Perform
               Everyday Activities
             </h2>
 
@@ -520,13 +387,11 @@ const AboutPage = () => {
                 focuses on diagnosing and treating conditions affecting the
                 spine. His work includes managing common spine problems such as
                 slipped discs and sciatica, as well as more complex conditions
-                involving nerve compression, spinal instability, or deformity.
-              </p>
-
-              <p>
-                The aim of treatment is to identify the source of symptoms and
+                involving nerve compression, spinal instability, or deformity. The aim of treatment is to identify the source of symptoms and
                 guide patients toward the most effective treatment option.
               </p>
+
+            
             </div>
           </div>
         </section>
@@ -552,6 +417,11 @@ const AboutPage = () => {
               </div>
             </div>
 
+          </div>
+        </section>
+
+        <section className="expertise-section">
+          <div className="container">
             <div className="expertise-area-wrap">
               <h2>Areas of Expertise</h2>
 
@@ -632,18 +502,18 @@ const AboutPage = () => {
             </p>
 
             <div className="surgery-considered-grid">
-              {surgeryConsideredItems.map((item) => (
-                <div className="surgery-considered-card" key={item.number}>
-                  <span className="surgery-number">{item.number}</span>
-                  <h4>{item.title}</h4>
+              {surgeryConsideredItems.map(({ number, title, Icon }) => (
+                <div className="surgery-considered-card" key={number}>
+                  <span className="treatment-icon" aria-hidden="true"><Icon /></span>
+                  <h4>{title}</h4>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Consultation Diagnosis Scroll Section */}
-        <ConsultationDiagnosisScroll />
+        {/* Consultation and diagnosis */}
+        <ConsultationDiagnosis />
       </main>
     </Layout>
   );

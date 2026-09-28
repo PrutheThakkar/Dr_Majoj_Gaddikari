@@ -16,6 +16,7 @@ import "aos/dist/aos.css";
 
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Layout = ({ children }) => {
   useEffect(() => {
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
       smoothWheel: true,
       syncTouch: false,
     });
+    lenis.on("scroll", ScrollTrigger.update);
 
     let rafId;
 
@@ -51,6 +53,7 @@ const Layout = ({ children }) => {
         cancelAnimationFrame(rafId);
       }
 
+      lenis.off("scroll", ScrollTrigger.update);
       lenis.destroy();
     };
   }, []);

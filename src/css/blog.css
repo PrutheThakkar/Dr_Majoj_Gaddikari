@@ -4,8 +4,7 @@
 
 /* BLOG LISTING SECTION */
 .blog-listing-section {
-  padding: var(--section-padding-lg) 0 var(--section-padding-md);
-  padding-bottom: 0;
+  padding: var(--section-padding-lg) 0 clamp(30px, 3vw, 50px);
 }
 .blog-grid {
   display: grid;
@@ -216,7 +215,7 @@
 }
 @media (max-width: 767px) {
   .blog-listing-section {
-    padding: clamp(40px, 6vw, 60px) 0;
+    padding: clamp(40px, 6vw, 60px) 0 clamp(30px, 3vw, 50px);
 
   }
   .blog-grid {

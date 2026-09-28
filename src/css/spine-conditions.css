@@ -43,13 +43,13 @@
   padding-top: 70px;
 }
 .conditions-hero-content br{
-  display: none;
+  display: initial;
 }
 .conditions-hero-content h1 {
   margin-bottom: 22px;
 }
 .conditions-hero-content p {
-  max-width: 100%;
+  max-width: 580px;
 }
 
 /* CONDITIONS LIST */
@@ -63,60 +63,72 @@
   }
 }
 .conditions-list-section .container {
-  width: 88%;
-  max-width: 1520px;
+  width: 80%;
+  max-width: 1680px;
   margin: 0 auto;
 }
 .conditions-list-section h2 {
   text-align: center;
-  margin-bottom: clamp(35px, calc(11.7px + 3.04vw), 70px);
+  margin-bottom: 18px;
 }
 .conditions-section-intro {
   max-width: 100%;
-  margin: 0 auto 58px;
+  margin: 0 auto clamp(32px, 3vw, 50px);
   text-align: center;
 }
 .conditions-list-wrap {
   border: 1px solid #cfe969;
-  background: linear-gradient(90deg, rgba(246, 255, 217, 0.95) 0%, rgba(218, 240, 93, 0.72) 100%);
+  background: linear-gradient(90deg, #fcfef3 0%, #edf5c1 25%, #dfed97 55%, #e4f0a7 72%, #fcfef3 100%);
 }
 .condition-row {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 55px;
-  padding: 44px 42px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 0;
+  padding: clamp(30px, 2.7vw, 54px);
   border-bottom: 1px solid #cfe969;
 }
 .condition-row:last-child {
   border-bottom: 0;
 }
 .condition-left {
-  padding-right: 38px;
+  padding-right: 20px;
 }
 .condition-icon {
   width: 88px;
   height: 88px;
   border-radius: 50%;
-  background: #d3ee55;
+  background: #d6e97b;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
 }
 .condition-left h2 {
   margin-bottom: 34px;
+  font-size: clamp(22px, 1.5vw, 30px);
   text-align: left;
   /* font-family: "Raleway-Medium"; */
    font-family: "Raleway-Regular";
   color: #02192B;
 }
 .condition-left p {
-  max-width: 620px;
+  max-width: none;
+  margin-bottom: 0;
 }
 .condition-right {
   border-left: 1px solid #c0dd4c;
-  padding-left: 44px;
+  padding-left: 20px;
   align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.condition-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.condition-right .common-btn {
+  margin-top: auto;
 }
 .condition-right h4 {
   margin-bottom: 22px;
@@ -125,18 +137,21 @@
    font-family: "Raleway-Regular";
 }
 .treatment-option-list {
+  width: 100%;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 14px;
   margin-bottom: 28px;
 }
 .treatment-option {
-  min-height: 46px;
+  min-height: 56px;
   border: 1px solid #a7d900;
   border-radius: 8px;
-  background: rgba(252, 255, 242, 0.85);
+  background: #fcfef3;
   text-decoration: none;
-  padding: 0 16px;
+  padding: 12px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -301,6 +316,9 @@
 
 /* RESPONSIVE */
 @media (max-width: 991px) {
+  .conditions-list-section .container {
+    width: 88%;
+  }
   .conditions-hero-section {
     min-height: 330px;
   }
@@ -372,4 +390,104 @@
 }
 .section-title-wrp h2{
  margin-bottom: clamp(35px, calc(11.7px + 3.04vw), 70px);
+}
+
+
+/* Treatment listings: category strip and two-column reference layout. */
+.spine-condition-listing-page .condition-switcher-section {
+  padding: 12px 0;
+  border: 0;
+  background: #afd300;
+}
+.spine-condition-listing-page .condition-switcher-section > .container {
+  width: 100%;
+  max-width: none;
+}
+.spine-condition-listing-page .condition-tabs {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 2px 18px;
+  max-width: 1640px;
+  margin: 0 auto;
+}
+.spine-condition-listing-page .condition-tab {
+  flex: 0 0 calc((100% - 60px) / 7);
+  min-width: 0;
+  height: 44px;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  white-space: normal;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: #629743;
+  color: #fff;
+  box-shadow: none;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.25;
+  cursor: pointer;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .spine-condition-listing-page .condition-tab {
+    flex-basis: calc((100% - 30px) / 4);
+  }
+}
+.spine-condition-listing-page .condition-tab.active,
+.spine-condition-listing-page .condition-tab:hover {
+  background: #0067a8;
+}
+.spine-condition-listing-page .treatments-section {
+  padding: clamp(55px, 6vw, 110px) 0 clamp(30px, 3vw, 50px);
+  background:
+    radial-gradient(ellipse at 0% 18%, #eaf3b7 0%, transparent 36%),
+    radial-gradient(ellipse at 100% 60%, #e6f1a8 0%, transparent 40%),
+    #fcfef3;
+}
+.spine-condition-listing-page .treatments-section > .container {
+  width: 84.4%;
+  max-width: 1680px;
+}
+.spine-condition-listing-page .section-title-wrp h2 {
+  margin-bottom: 18px;
+}
+.spine-condition-listing-page .treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 42px 38px;
+  margin-top: 42px;
+}
+.spine-condition-listing-page .treatments-grid .treatment-card-wrapper {
+  width: auto;
+}
+.spine-condition-listing-page .treatment-card {
+  display: block;
+  border-radius: 0;
+}
+.spine-condition-listing-page .treatment-card-image {
+  aspect-ratio: 1.88;
+  overflow: hidden;
+}
+.spine-condition-listing-page .treatment-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* The banner artwork sits on the right; crop away the empty left side. */
+  object-position: right center;
+}
+.spine-condition-listing-page .treatment-card-title {
+  color: #233c48;
+  margin-top: 16px;
+}
+@media (max-width: 767px) {
+  .spine-condition-listing-page .treatments-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .spine-condition-listing-page .condition-dropdown {
+    padding: 0 6%;
+  }
 }

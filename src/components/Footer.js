@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import logo from "../images/Manoj-Website-Logo.svg";
+import logo from "../images/manoj-new-logo.svg";
 
 
 const Footer = () => {

@@ -5,11 +5,11 @@ import Breadcrumb from "../components/Breadcrumb";
 
 const placeholderImage = "https://placehold.co/600x400?text=No+Image";
 
-const SpineConditionListingTemplate = ({ data }) => {
+const SpineConditionListingTemplate = ({ data, location }) => {
   const condition = data.wpSpineCondition;
   const allConditions = data.allWpSpineCondition.nodes;
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(!location?.search?.includes("view=condition"));
 
   // Current condition's treatments
   const conditionTreatments = [
@@ -38,7 +38,10 @@ const SpineConditionListingTemplate = ({ data }) => {
             <img src={heroImage} alt={condition.title} />
           </div>
           <div className="about-hero-content">
-            <h1>{showAll ? "All Treatments" : condition.title}</h1>
+            <h1>{showAll ? "Advanced Spine Treatments" : condition.title}</h1>
+            {showAll && (
+              <p>Personalized treatment approaches focused on relieving pain, restoring movement, and supporting long-term spine health.</p>
+            )}
             {!showAll && (
               <div dangerouslySetInnerHTML={{ __html: condition.content }} />
             )}
@@ -66,7 +69,7 @@ const SpineConditionListingTemplate = ({ data }) => {
               {allConditions.map((cond) => (
                 <Link
                   key={cond.slug}
-                  to={`/spine-condition/${cond.slug}/`}
+                  to={`/spine-condition/${cond.slug}/?view=condition`}
                   className={`condition-tab ${!showAll && cond.slug === condition.slug ? "active" : ""
                     }`}
                   onClick={() => setShowAll(false)}
@@ -82,7 +85,7 @@ const SpineConditionListingTemplate = ({ data }) => {
                 className="condition-dropdown-btn"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
-                {showAll ? "All Conditions" : condition.title}
+                {showAll ? "All Treatments" : condition.title}
                 <span className={`dropdown-arrow ${dropdownOpen ? "open" : ""}`}>
                   ▼
                 </span>
@@ -97,13 +100,13 @@ const SpineConditionListingTemplate = ({ data }) => {
                       setDropdownOpen(false);
                     }}
                   >
-                    All Conditions
+                    All Treatments
                   </button>
 
                   {allConditions.map((cond) => (
                     <Link
                       key={cond.slug}
-                      to={`/spine-condition/${cond.slug}/`}
+                      to={`/spine-condition/${cond.slug}/?view=condition`}
                       className={`condition-dropdown-item ${!showAll && cond.slug === condition.slug ? "active" : ""
                         }`}
                       onClick={() => {
@@ -125,7 +128,12 @@ const SpineConditionListingTemplate = ({ data }) => {
         <section className="treatments-section">
           <div className="container">
             <div className="section-title-wrp">
-              {condition.spineConditionsPost?.desciption && (
+              {showAll ? (
+                <>
+                  <h2>Treatments &amp; Procedures</h2>
+                  <p>Comprehensive surgical and non-surgical spine treatments tailored to the condition, symptoms, and recovery goals of each patient.</p>
+                </>
+              ) : condition.spineConditionsPost?.desciption && (
                 <div
                   className="treatments-intro"
                   dangerouslySetInnerHTML={{ __html: condition.spineConditionsPost.desciption }}
@@ -135,20 +143,16 @@ const SpineConditionListingTemplate = ({ data }) => {
 
             <div className="treatments-grid">
               {treatmentsToShow.map((treatment, index) => {
-                // For "all" view, find the parent condition to build correct URL
+                // Match the primary-parent routes generated in gatsby-node.js.
                 const parentCondition = showAll
-                  ? allConditions.find(
-                    (c) =>
-                      data.allWpSpineCondition.nodes.find(
-                        (n) => n.slug === c.slug
-                      )
+                  ? data.treatmentParents.nodes.find(
+                    (parent) => parent.databaseId === treatment.parentDatabaseId
                   )
-                  : null;
+                  : condition;
 
-                const linkTo = showAll
-                  ? `/spine-condition/${treatment.parentSlug || condition.slug
-                  }/${treatment.slug}/`
-                  : `/spine-condition/${condition.slug}/${treatment.slug}/`;
+                if (!parentCondition) return null;
+
+                const linkTo = `/spine-condition/${parentCondition.slug}/${treatment.slug}/`;
 
                 return (
                   <div key={index} className="treatment-card-wrapper">
@@ -191,6 +195,12 @@ export const query = graphql`
     $databaseId: Int!
     $extraChildSlugs: [String]
   ) {
+    treatmentParents: allWpSpineCondition {
+      nodes {
+        databaseId
+        slug
+      }
+    }
     wpSpineCondition(slug: { eq: $slug }) {
       title
       slug

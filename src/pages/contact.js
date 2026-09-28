@@ -1,52 +1,32 @@
 import React, { useState } from "react";
 import Layout from "../components/layout";
-import { useLocation } from "@reach/router";
 
 import contactHero from "../images/about-hero.webp";
 import Breadcrumb from "../components/Breadcrumb";
 
 const ConsultationHoursIcon = () => (
-  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-    <rect width="80" height="80" rx="40" fill="#AFD300" fillOpacity="0.5" />
-    <path
-      d="M40 17C27.3 17 17 27.3 17 40C17 52.7 27.3 63 40 63C52.7 63 63 52.7 63 40C63 27.3 52.7 17 40 17ZM40 58C30.1 58 22 49.9 22 40C22 30.1 30.1 22 40 22C49.9 22 58 30.1 58 40C58 49.9 49.9 58 40 58Z"
-      fill="#0067A8"
-    />
-    <path
-      d="M42 28H38V42L49 49L51 45.7L42 40.4V28Z"
-      fill="#AFD300"
-    />
+  <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+    <circle cx="40" cy="40" r="40" fill="#d6e97b" />
+    <g stroke="#4b5726" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="40" cy="38" r="23" /><circle cx="40" cy="36" r="16" />
+      <path d="M40 25v12l8 5M37 53v8m6-8v8m-8 0h10" />
+    </g>
   </svg>
 );
-
 const AppointmentDeskIcon = () => (
-  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-    <rect width="80" height="80" rx="40" fill="#AFD300" fillOpacity="0.5" />
-    <path
-      d="M25 24H55C57.2 24 59 25.8 59 28V56C59 58.2 57.2 60 55 60H25C22.8 60 21 58.2 21 56V28C21 25.8 22.8 24 25 24Z"
-      fill="#0067A8"
-    />
-    <path d="M29 20H34V30H29V20Z" fill="#AFD300" />
-    <path d="M46 20H51V30H46V20Z" fill="#AFD300" />
-    <path d="M27 36H53V41H27V36Z" fill="#fff" />
-    <path d="M27 46H44V51H27V46Z" fill="#fff" />
+  <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+    <circle cx="40" cy="40" r="40" fill="#d6e97b" />
+    <g stroke="#4b5726" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="40" cy="26" r="5" /><path d="m36 31-6 5v10m14-15 6 5v10M35 37v7h10v-7M26 46h28v16H26zM33 40l7 3 7-3M39 33l1 5 1-5" />
+    </g>
   </svg>
 );
-
 const WhatToBringIcon = () => (
-  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-    <rect width="80" height="80" rx="40" fill="#AFD300" fillOpacity="0.5" />
-    <path
-      d="M27 21H53C55.2 21 57 22.8 57 25V58C57 60.2 55.2 62 53 62H27C24.8 62 23 60.2 23 58V25C23 22.8 24.8 21 27 21Z"
-      fill="#0067A8"
-    />
-    <path d="M31 32H49V36H31V32Z" fill="#fff" />
-    <path d="M31 42H49V46H31V42Z" fill="#fff" />
-    <path d="M31 52H42V56H31V52Z" fill="#fff" />
-    <path
-      d="M35 18H45C46.7 18 48 19.3 48 21V25H32V21C32 19.3 33.3 18 35 18Z"
-      fill="#AFD300"
-    />
+  <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+    <circle cx="40" cy="40" r="40" fill="#d6e97b" />
+    <g stroke="#4b5726" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="20" y="29" width="41" height="31" rx="3" /><path d="M30 29v-7h20v7M20 40h41M27 40V29h12l7 7v4M30 33h8m-8 4h9M35 40v5h10v-5" />
+    </g>
   </svg>
 );
 
@@ -80,17 +60,11 @@ const contactCards = [
 ];
 
 const ContactPage = () => {
-  const location = useLocation();
-
-  const isActive = (path) => {
-    return location.pathname === path || location.pathname.startsWith(path);
-  };
-
   const [formValues, setFormValues] = useState({
     firstName: "",
     lastName: "",
-    email: "",
     phone: "",
+    preferredDate: "",
     message: "",
   });
 
@@ -103,11 +77,9 @@ const ContactPage = () => {
 
     const firstName = formValues.firstName.trim();
     const lastName = formValues.lastName.trim();
-    const email = formValues.email.trim();
     const phone = formValues.phone.trim();
     const message = formValues.message.trim();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[0-9]{10}$/;
 
     if (!firstName) {
@@ -118,10 +90,8 @@ const ContactPage = () => {
       errors.lastName = "Last name is required";
     }
 
-    if (!email) {
-      errors.email = "Email is required";
-    } else if (!emailRegex.test(email)) {
-      errors.email = "Enter a valid email address";
+    if (!formValues.preferredDate) {
+      errors.preferredDate = "Preferred date is required";
     }
 
     if (!phone) {
@@ -174,9 +144,10 @@ const ContactPage = () => {
         body: JSON.stringify({
           firstName: formValues.firstName.trim(),
           lastName: formValues.lastName.trim(),
-          email: formValues.email.trim(),
           phone: formValues.phone.trim(),
-          message: formValues.message.trim(),
+          message: formValues.preferredDate
+            ? `Preferred date: ${formValues.preferredDate}\n\n${formValues.message.trim()}`
+            : formValues.message.trim(),
         }),
       });
 
@@ -193,9 +164,9 @@ const ContactPage = () => {
       setFormValues({
         firstName: "",
         lastName: "",
-        email: "",
-        phone: "",
-        message: "",
+            phone: "",
+        preferredDate: "",
+    message: "",
       });
 
       setFormErrors({});
@@ -238,7 +209,7 @@ const ContactPage = () => {
         <section className="book-consultation-section" id="contact">
           <div className="container">
             <div className="book-consultation-heading">
-              <h2>Book a Consultation</h2>
+              <h2>Book A Consultation</h2>
 
               <p>
                 For appointments or consultation enquiries, patients can contact
@@ -279,25 +250,10 @@ const ContactPage = () => {
                   ></iframe>
                 </div>
 
-                <h3>
-                  Visit Wockhardt Hospital, Mira Road for advanced spine case.
-                </h3>
-
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.google.com/maps/search/Wockhardt+Hospitals+Mira+Road"
-                  className={`common-btn contact-btn ${
-                    isActive("/contact/") ? "active" : ""
-                  }`}
-                >
-                  <span className="common-btn-text">Get Direction</span>
-                  <span className="common-btn-icon">→</span>
-                </a>
               </div>
 
               <div className="contact-main-right">
-                <h2>Get in Touch</h2>
+                <h2>Get In Touch</h2>
 
                 <form
                   className="contact-booking-form"
@@ -339,20 +295,6 @@ const ContactPage = () => {
 
                     <div className="contact-field">
                       <input
-                        type="email"
-                        name="email"
-                        value={formValues.email}
-                        onChange={handleChange}
-                        placeholder="Email*"
-                      />
-
-                      {formErrors.email && (
-                        <span className="field-error">{formErrors.email}</span>
-                      )}
-                    </div>
-
-                    <div className="contact-field">
-                      <input
                         type="tel"
                         name="phone"
                         value={formValues.phone}
@@ -364,6 +306,20 @@ const ContactPage = () => {
                         <span className="field-error">{formErrors.phone}</span>
                       )}
                     </div>
+                    <div className="contact-field">
+                      <input
+                        type="text"
+                        onFocus={(event) => { event.currentTarget.type = "date"; }}
+                        onBlur={(event) => { if (!event.currentTarget.value) event.currentTarget.type = "text"; }}
+                        placeholder="Preferred Date*"
+                        name="preferredDate"
+                        aria-label="Preferred date"
+                        value={formValues.preferredDate}
+                        onChange={handleChange}
+                      />
+                      {formErrors.preferredDate && <span className="field-error">{formErrors.preferredDate}</span>}
+                    </div>
+
                   </div>
 
                   <div className="contact-field">

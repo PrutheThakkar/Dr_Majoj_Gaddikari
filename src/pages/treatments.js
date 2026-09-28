@@ -3,7 +3,7 @@ import { navigate } from "gatsby";
 
 const TreatmentsPage = () => {
   useEffect(() => {
-    navigate("/spine-condition/slipped-or-herniated-disc/");
+    navigate("/spine-condition/slipped-or-herniated-disc/?view=all", { replace: true });
   }, []);
 
   return null;

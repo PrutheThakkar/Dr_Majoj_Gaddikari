@@ -907,7 +907,7 @@ body.mobile-menu-open {
 ================================ */
 .site-footer {
   background: linear-gradient(180deg, #FCFEF3 0%, #f2ffc9 42%, #b9dce4 100%);
-  padding: 170px 6.5% 34px;
+  padding: clamp(30px, 3vw, 50px) 6.5% 34px;
   color: #0067a8;
 }
 .footer-cta {
@@ -1004,7 +1004,7 @@ body.mobile-menu-open {
 }
 @media (max-width: 991px) {
   .site-footer {
-    padding: 100px 7% 32px;
+    padding: clamp(30px, 3vw, 50px) 7% 32px;
   }
   .footer-cta {
     margin-bottom: 80px;
@@ -1026,7 +1026,7 @@ body.mobile-menu-open {
     font-size: 18px;
   }
     .site-footer {
-    padding: 0px 7% 32px;
+    padding: clamp(30px, 3vw, 50px) 7% 32px;
   }
   .footer-brand img {
     width: 260px;

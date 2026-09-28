@@ -19,69 +19,92 @@ right: 0;
 
 /* HOME DOCTOR SECTION */
 .about-doctor-section {
-  background: #FCFEF3;
-  padding: var(--section-padding-lg) 0 var(--section-padding-md);
-  padding-bottom: 0;
+  background: radial-gradient(ellipse at 16% 70%, #e2efa4 0%, #f2f8d6 32%, #fcfef3 65%);
+  padding: clamp(64px, 6vw, 120px) 0;
+  border-bottom: 1px solid #b5d900;
 }
 .about-doctor-section .container {
-  width: 82%;
-  max-width: 1420px;
+  width: 84%;
+  max-width: 1680px;
 }
 .about-doctor-section h2 {
   text-align: center;
-  margin-bottom: var(--section-gap-lg);
+  margin-bottom: clamp(36px, 3vw, 60px);
 }
 .about-doctor-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
   align-items: center;
-  gap: var(--section-gap-lg);
+  gap: clamp(28px, 2.6vw, 54px);
 }
 .doctor-image-wrap {
-  position: relative;
-  width: clamp(320px, 27vw, 520px);
-  max-width: 100%;
+  width: 100%;
+  max-width: 620px;
   margin: 0 auto;
 }
-.doctor-bg-card {
-  position: absolute;
-  inset: 35px 35px 0 0;
-  /* background: #d3ee55; */
-  /* transform: rotate(-4deg); */
-  z-index: 1;
-  transition: transform 0.45s ease;
-}
 .doctor-img {
-  position: relative;
-  z-index: 2;
   width: 100%;
+  height: auto;
   display: block;
-  /* transform: rotate(4deg); */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  transition: transform 0.45s ease, box-shadow 0.45s ease;
-}
-.doctor-image-wrap:hover .doctor-bg-card {
-  transform: rotate(0deg);
-}
-.doctor-image-wrap:hover .doctor-img {
-  transform: rotate(0deg);
-  box-shadow: 0 28px 55px rgba(0, 103, 168, 0.16);
 }
 .doctor-content {
-  padding-top: 30px;
+  min-width: 0;
 }
 .doctor-content h3 {
-  color: #A3C112;
-  margin-bottom: 10px;
+  color: var(--color-body);
+  margin-bottom: 2px;
+  font-size: clamp(24px, 1.6vw, 32px);
+  line-height: 1.25;
 }
-.doctor-content h4 {
-  margin-bottom: 42px;
-  color: #005899;
-  font-family: var(--font-primary);
+.doctor-content .doctor-specialty {
+  margin-bottom: 24px;
+  color: #a8ce00;
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 1.15vw, 24px);
+  line-height: 1.35;
 }
-.doctor-content p {
+.doctor-content .about-section-paragraph p {
   margin-bottom: 28px;
-  max-width: 720px;
+  max-width: none;
+  font-size: clamp(16px, 1.05vw, 21px);
+  line-height: 1.5;
+}
+.doctor-content .about-section-paragraph p:last-child {
+  margin-bottom: 0;
+}
+.doctor-credentials {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1vw, 22px);
+  margin: 24px 0 clamp(28px, 2.5vw, 50px);
+}
+.doctor-credential {
+  padding: clamp(14px, 1vw, 22px);
+  border: 1px solid #b5d900;
+  border-bottom-color: #e5efbd;
+  border-radius: 20px;
+  background: #fcfef3;
+}
+.doctor-credential dt {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 1.3vw, 27px);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.doctor-credential dd {
+  margin: 0;
+  font-size: clamp(12px, 0.75vw, 15px);
+  line-height: 1.5;
+}
+@media (min-width: 992px) and (max-width: 1250px) {
+  .doctor-credentials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575px) {
+  .doctor-credentials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 .learn-btn {
   margin-top: 60px;
@@ -143,7 +166,7 @@ right: 0;
   display: block;
   width: 1px;
   height: 90px;
-  background: #c8e600;
+  background: rgba(55, 137, 181, 0.55);
   position: relative;
 }
 .spine-label span::after {
@@ -153,10 +176,10 @@ right: 0;
   bottom: -13px;
   width: 24px;
   height: 24px;
-  background: #b6db00;
+  background: #3789b5;
   border-radius: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 0 0 6px rgba(182, 219, 0, 0.3);
+  box-shadow: 0 0 0 6px rgba(55, 137, 181, 0.3);
 }
 .label-vertebrae {
      left: 14%;
@@ -380,8 +403,8 @@ right: 0;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #b6db00;
-    box-shadow: 0 0 0 8px rgba(182, 219, 0, 0.2);
+    background: #3789b5;
+    box-shadow: 0 0 0 8px rgba(55, 137, 181, 0.2);
     flex-shrink: 0;
   }
 }
@@ -493,7 +516,6 @@ right: 0;
 .spine-conditions-section {
   background: #fcfef3;
   padding: clamp(70px, 6vw, 120px) 0 clamp(60px, 5vw, 100px);
-  padding-top: 0;
 }
 
 .spine-conditions-section .container {
@@ -1115,7 +1137,7 @@ width: 100%;
     bottom: auto;
     order: 2;
     padding-left: 22px;
-    border-left: 2px solid #c8e600;
+    border-left: 2px solid #3789b5;
   }
   .spine-label span {
     display: none;
@@ -1295,6 +1317,66 @@ width: 100%;
 
 /* SYMPTOMS MOBILE SWIPER END */
 
+/* Compact desktop strip, aligned with the page's content inset. */
+@media (min-width: 821px) {
+  .symptoms-horizontal-section {
+    padding: 32px 0 clamp(64px, 6vw, 96px);
+    border-bottom: 1px solid #cfe969;
+    background: radial-gradient(ellipse at 55% 65%, #f1f7d1, #fcfef3 70%);
+  }
+
+  .symptoms-heading-wrap {
+    margin-bottom: 40px;
+    padding: 0 8%;
+  }
+
+  .symptoms-heading-wrap h2 {
+    color: #172f45;
+    font-size: clamp(20px, 1.35vw, 26px);
+    line-height: 1.35;
+  }
+
+  .symptoms-track {
+    padding: 0 8vw;
+    align-items: stretch;
+  }
+
+  .symptoms-desktop-area .symptom-card {
+    flex: 0 0 clamp(340px, 31vw, 560px);
+    width: clamp(340px, 31vw, 560px);
+    min-height: 0;
+    padding: 20px 24px 24px;
+    gap: 20px;
+  }
+
+  .symptoms-desktop-area .symptom-card + .symptom-card {
+    border-left: 0;
+  }
+
+  .symptoms-desktop-area .symptom-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    background: #d1e86c;
+  }
+
+  .symptoms-desktop-area .symptom-card h3 {
+    margin: 0;
+    font-size: clamp(18px, 1.15vw, 22px);
+    line-height: 1.3;
+    font-weight: 400;
+  }
+
+  .symptoms-desktop-area .symptom-card p {
+    max-width: none;
+    margin: 0;
+    font-size: clamp(15px, 0.95vw, 18px);
+    line-height: 1.3;
+    color: #5d705e;
+  }
+}
+
 
 
 
@@ -1427,7 +1509,6 @@ body.condition-popup-open {
 .spine-conditions-section {
   background: #fcfef3;
   padding: clamp(70px, 6vw, 120px) 0 clamp(60px, 5vw, 100px);
-  padding-top: 0;
 }
 @media (max-width:767px) {
   .spine-conditions-section{
@@ -1755,3 +1836,6 @@ body.condition-popup-open {
 ================================ */
 
 
+.about-section-paragraph{
+  margin-bottom: 20px;
+}
