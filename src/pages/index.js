@@ -126,6 +126,7 @@ const HomePage = ({ data }) => {
               image={bannerImage}
               alt={bannerAlt}
               className="hero-banner-image"
+              style={{ position: "absolute", inset: 0 }}
             />
           )}
 

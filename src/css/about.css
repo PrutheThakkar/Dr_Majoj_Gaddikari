@@ -436,7 +436,7 @@
 /* CONSULTATION AND DIAGNOSIS */
 .about-page > .consultation-section {
   background: #fcfef3;
-  padding: clamp(55px, 6vw, 120px) 0 0;
+  padding: clamp(55px, 6vw, 120px) 0 clamp(48px, 5vw, 96px);
   border-bottom: 0;
   box-shadow: none;
 }

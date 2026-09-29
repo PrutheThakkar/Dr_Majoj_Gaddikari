@@ -229,6 +229,37 @@ body.preloader-active {
   text-align: center;
 }
 
+.preloader-brand-mark {
+  width: clamp(100px, 9vw, 140px);
+  margin: 0 auto 28px;
+  animation: preloaderBrandBreathe 2.2s ease-in-out infinite;
+}
+
+.preloader-brand-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes preloaderBrandBreathe {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 8px 12px rgba(0, 103, 168, 0.1));
+  }
+  50% {
+    transform: translateY(-6px) scale(1.04);
+    filter: drop-shadow(0 14px 20px rgba(0, 103, 168, 0.18));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader-brand-mark,
+  .preloader-bg-glow,
+  .preloader-dots span {
+    animation: none;
+  }
+}
+
 .preloader-spine-wrap {
   position: relative;
   width: clamp(150px, 15vw, 220px);

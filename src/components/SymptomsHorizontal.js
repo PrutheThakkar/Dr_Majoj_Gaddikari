@@ -61,7 +61,7 @@ const SymptomsHorizontal = ({
           scrollTrigger: {
             trigger: section,
             start: () => `top top+=${getHeaderHeight()}`,
-            end: () => `+=${Math.max(1, getDistance()) + window.innerHeight * 0.25}`,
+            end: () => `+=${Math.max(1, getDistance())}`,
             // Follow scroll exactly so the strip finishes before the pin releases.
             scrub: true,
             pin: true,
@@ -76,8 +76,6 @@ const SymptomsHorizontal = ({
           duration: 1,
           ease: "none",
         });
-        // Keep the final card in view for a little more scroll before continuing.
-        timeline.to({}, { duration: 0.2 });
       }, section);
 
       const observer = new ResizeObserver(refresh);

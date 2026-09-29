@@ -54,13 +54,7 @@
 
 /* CONDITIONS LIST */
 .conditions-list-section {
-  padding: clamp(50px, 6vw, 120px) 0 clamp(90px, 5vw, 120px);
-  padding-bottom: 0;
-}
-@media (max-width:767px) {
-  .conditions-list-section{
-    padding-bottom: 50px;
-  }
+  padding: clamp(50px, 6vw, 120px) 0 clamp(48px, 5vw, 96px);
 }
 .conditions-list-section .container {
   width: 80%;
@@ -323,8 +317,7 @@
     min-height: 330px;
   }
   .conditions-list-section {
-    padding: 50px 0 90px;
-    /* padding-bottom: 0; */
+    padding-top: 50px;
   }
   .condition-row {
     grid-template-columns: 1fr;
