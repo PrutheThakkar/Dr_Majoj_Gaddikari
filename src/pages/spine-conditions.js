@@ -1,17 +1,49 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import spineConditionsHero from "../images/about-hero.webp";
 import Breadcrumb from "../components/Breadcrumb";
+import spineTumorsIcon from "../images/Spine-Tumors.svg";
 
 // Condition Icon Component (Using SVG code from `svgCode`)
-const ConditionIcon = ({ svgCode }) => {
+const ConditionIcon = ({ svgCode, title }) => {
+  if (/spine tumou?rs?/i.test(title)) {
+    return (
+      <span className="condition-icon">
+        <img src={spineTumorsIcon} alt="" width="88" height="88" />
+      </span>
+    );
+  }
   return (
     <span className="condition-icon" dangerouslySetInnerHTML={{ __html: svgCode }} />
   );
 };
 
 const SpineConditionsPage = ({ data }) => {
+  const cardsRef = useRef(null);
+
+  useEffect(() => {
+    const list = cardsRef.current;
+    const header = document.querySelector(".site-header");
+    const cards = Array.from(list.children);
+    const updateStack = () => {
+      const top = (header?.getBoundingClientRect().height || 80) + 20;
+      list.style.setProperty("--stack-top", `${top}px`);
+      // Tall cards stay in normal flow so none of their content is trapped.
+      cards.forEach((card) => {
+        card.classList.toggle("can-stack", card.offsetHeight < window.innerHeight - top - 24);
+      });
+    };
+    updateStack();
+    const observer = new ResizeObserver(updateStack);
+    cards.forEach((card) => observer.observe(card));
+    if (header) observer.observe(header);
+    window.addEventListener("resize", updateStack);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateStack);
+    };
+  }, []);
   // Sort conditions in descending order by menuOrder
   const conditions = data.allWpSpineCondition.nodes.sort((a, b) => {
     if (a.menuOrder < b.menuOrder) {
@@ -57,12 +89,12 @@ const SpineConditionsPage = ({ data }) => {
               disorders affecting the neck, back, and nerves.
             </p>
 
-            <div className="conditions-list-wrap">
+            <div className="conditions-list-wrap conditions-card-stack" ref={cardsRef}>
               {conditions.map((condition, index) => (
                 <div className="condition-row" key={index}>
                   <div className="condition-left">
                     {/* Render the icon using the svgCode */}
-                    <ConditionIcon svgCode={condition.spineConditionsPost.svgCode} />
+                    <ConditionIcon title={condition.title} svgCode={condition.spineConditionsPost.svgCode} />
 
                     <h2>{condition.title}</h2>
                     <div

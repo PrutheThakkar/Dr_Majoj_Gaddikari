@@ -121,6 +121,7 @@
 
 /* FORM */
 .contact-main-right h2 {
+  text-align: center;
   margin-bottom: 34px;
 }
 .contact-booking-form {
@@ -297,7 +298,34 @@ main:has(.contact-page) + .site-footer .footer-cta h2 br { display: none; }
     padding: 13px 12px;
   }
   .contact-booking-form textarea { min-height: 180px; margin-bottom: 20px; }
-  .contact-booking-form button { width: 100%; min-height: 44px; justify-content: center; }
+  .contact-booking-form button { width: fit-content; min-height: 44px; justify-content: center; }
   .contact-main-left .map-wrapper,
   .contact-main-left .map-wrapper iframe { height: 280px; min-height: 280px; }
+}
+
+.contact-booking-form .common-btn,
+.contact-booking-form .common-btn:hover {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (min-width: 992px) {
+  .contact-main-right h2 {
+    text-align: left;
+  }
+
+  .contact-booking-form .common-btn,
+  .contact-booking-form .common-btn:hover {
+    margin-left: 0;
+    margin-right: auto;
+  }
 }

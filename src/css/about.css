@@ -190,6 +190,42 @@
 }
 .medical-bg-copy p {
   margin-bottom: 0;
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.65;
+}
+.medical-bg-copy .reading-word {
+  display: inline-block;
+  border-radius: 3px;
+  color: #767676;
+}
+.medical-bg-copy .is-reading .reading-word {
+  animation: medical-reading-highlight 1.2s ease-out both;
+  animation-delay: var(--word-delay);
+}
+@keyframes medical-reading-highlight {
+  0% {
+    color: #767676;
+    background-color: transparent;
+  }
+  35% {
+    color: #000;
+    background-color: rgba(175, 211, 0, 0.28);
+  }
+  100% {
+    color: #000;
+    background-color: transparent;
+  }
+}
+@media (max-width: 767px) {
+  .medical-bg-copy {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .medical-bg-copy .is-reading .reading-word {
+    animation: none;
+    color: #000;
+  }
 }
 .medical-floating-img {
   position: absolute;
@@ -374,9 +410,7 @@
   }
 
   .expertise-mobile-slider .swiper {
-    overflow: visible;
-    padding-bottom: 42px;
-    margin-bottom: 50px;
+    overflow: hidden;
   }
 
   .expertise-mobile-slider .swiper-slide {
@@ -392,20 +426,57 @@
     justify-content: center;
   }
 
-  .expertise-mobile-slider .swiper-pagination {
-    bottom: 0 !important;
+  .expertise-slider-controls {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0 32px;
+  }
+
+  .expertise-slider-pagination {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .expertise-slider-arrow {
+    display: grid;
+    place-items: center;
+    padding: 0;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #a7d900;
+    border-radius: 50%;
+    background: #a7d900;
+    color: #073d59;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .expertise-slider-arrow:focus-visible,
+  .expertise-slider-pagination .swiper-pagination-bullet:focus-visible {
+    outline: 2px solid #0067a8;
+    outline-offset: 4px;
   }
 
   .expertise-mobile-slider .swiper-pagination-bullet {
-    width: 9px;
-    height: 9px;
-    background: rgba(0, 103, 168, 0.35);
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #c9ccc2;
     opacity: 1;
   }
 
   .expertise-mobile-slider .swiper-pagination-bullet-active {
-    width: 24px;
-    border-radius: 20px;
     background: #0067a8;
   }
 }

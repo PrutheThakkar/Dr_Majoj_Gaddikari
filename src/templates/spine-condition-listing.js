@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Breadcrumb from "../components/Breadcrumb";
@@ -9,6 +9,7 @@ const SpineConditionListingTemplate = ({ data, location }) => {
   const condition = data.wpSpineCondition;
   const allConditions = data.allWpSpineCondition.nodes;
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const gridRef = useRef(null);
   const [showAll, setShowAll] = useState(!location?.search?.includes("view=condition"));
 
   // Current condition's treatments
@@ -24,6 +25,27 @@ const SpineConditionListingTemplate = ({ data, location }) => {
 
   // Which treatments to show
   const treatmentsToShow = showAll ? allTreatments : conditionTreatments;
+
+  useEffect(() => {
+    if (!window.IntersectionObserver || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const cards = Array.from(gridRef.current.children);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    cards.forEach((card) => {
+      card.classList.add("reveal-ready");
+      observer.observe(card);
+    });
+    return () => {
+      observer.disconnect();
+      cards.forEach((card) => card.classList.remove("reveal-ready", "is-revealed"));
+    };
+  }, [showAll, data]);
 
   const heroImage =
     condition.featuredImage?.node?.sourceUrl || placeholderImage;
@@ -144,7 +166,7 @@ const SpineConditionListingTemplate = ({ data, location }) => {
               )}
             </div>
 
-            <div className="treatments-grid">
+            <div className="treatments-grid" ref={gridRef}>
               {treatmentsToShow.map((treatment, index) => {
                 // Match the primary-parent routes generated in gatsby-node.js.
                 const parentCondition = showAll
@@ -158,7 +180,7 @@ const SpineConditionListingTemplate = ({ data, location }) => {
                 const linkTo = `/spine-condition/${parentCondition.slug}/${treatment.slug}/`;
 
                 return (
-                  <div key={index} className="treatment-card-wrapper">
+                  <div key={treatment.slug} className="treatment-card-wrapper">
                   <Link
                     to={linkTo}
                     className="treatment-card"

@@ -509,8 +509,8 @@ p:last-child{
   font-weight: 700 !important;
 }
 .header-btn.active {
-  background: #0067a8;
-  color: #fff;
+  background: #a7d900;
+  color: #073d59;
 }
 .header-btn {
   background: #a7d900;
@@ -760,8 +760,12 @@ body.mobile-menu-open {
     display: none;
   }
 
-  .mobile-nav .mobile-reach-btn:hover,
   .mobile-nav .mobile-reach-btn.active {
+    background: #a7d900;
+    color: #073d59;
+  }
+
+  .mobile-nav .mobile-reach-btn:hover {
     background: #0067a8;
     color: #fff;
   }
@@ -925,6 +929,9 @@ body.mobile-menu-open {
   max-width: 100%;
   display: block;
   margin-bottom: 25px;
+}
+.footer-consult-btn {
+  margin-bottom: 24px;
 }
 .footer-brand p {
   font-size: clamp(16px, 1vw, 20px);

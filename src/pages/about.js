@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Layout from "../components/layout";
 import { Link } from "gatsby";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { A11y, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -14,6 +14,7 @@ import nerveCompressionIcon from "../images/nerve-com-svg.svg";
 import structuralProblemsIcon from "../images/structural-svg.svg";
 import consultationImg from "../images/detailed-discussion-symptoms.webp";
 import Breadcrumb from "../components/Breadcrumb";
+import ReadingParagraph from "../components/ReadingParagraph";
 
 /* =========================
    EXPERTISE ICONS
@@ -341,6 +342,8 @@ const ConsultationDiagnosis = () => (
 ========================= */
 
 const AboutPage = () => {
+  const expertiseSwiper = useRef(null);
+  const [activeExpertise, setActiveExpertise] = useState(0);
   return (
     <Layout>
       <main className="about-page">
@@ -369,7 +372,7 @@ const AboutPage = () => {
         <section className="about-doctor-detail-section">
           <div className="container">
             <h2>
-              Spine Problems Can Affect How People Move, Work,<br/> & Perform
+              Spine Problems Can Affect How People <br/>  Perform
               Everyday Activities
             </h2>
 
@@ -403,8 +406,8 @@ const AboutPage = () => {
 
             <div className="medical-bg-layout">
               <div className="medical-bg-copy">
-                <p>
-                  Dr. Gaddikeri trained in orthopaedic surgery before developing
+                <ReadingParagraph>
+                  {`Dr. Gaddikeri trained in orthopaedic surgery before developing
                   a specialised focus on spinal disorders. His experience
                   includes evaluating and treating a wide range of spine
                   conditions across different age groups and activity levels.
@@ -412,8 +415,8 @@ const AboutPage = () => {
                   involving nerve compression, disc problems, and degenerative
                   changes in the spine. His training includes experience in
                   advanced spine procedures and minimally invasive surgical
-                  techniques.
-                </p>
+                  techniques.`}
+                </ReadingParagraph>
               </div>
             </div>
 
@@ -445,9 +448,13 @@ const AboutPage = () => {
               {/* Mobile Swiper */}
               <div className="expertise-mobile-slider">
                 <Swiper
-                  modules={[Pagination, Autoplay]}
-                  pagination={{ clickable: true }}
-                  slidesPerView={1.15}
+                  id="expertise-slider"
+                  modules={[A11y, Autoplay]}
+                  onSwiper={(swiper) => { expertiseSwiper.current = swiper; }}
+                  onSlideChange={(swiper) => setActiveExpertise(swiper.realIndex)}
+                  observer={true}
+                  observeParents={true}
+                  slidesPerView={1}
                   spaceBetween={18}
                   speed={700}
                   loop={true}
@@ -473,12 +480,33 @@ const AboutPage = () => {
                     );
                   })}
                 </Swiper>
+                <div className="expertise-slider-controls">
+                  <button onClick={() => expertiseSwiper.current?.slidePrev()} type="button" className="expertise-slider-arrow" aria-label="Previous area of expertise" aria-controls="expertise-slider">
+                    <span aria-hidden="true">←</span>
+                  </button>
+                  <div className="expertise-slider-pagination" role="group" aria-label="Choose an area of expertise">
+                    {expertiseItems.map((item, index) => (
+                      <button
+                        key={item.title}
+                        type="button"
+                        className={`swiper-pagination-bullet${activeExpertise === index ? " swiper-pagination-bullet-active" : ""}`}
+                        aria-label={`Show ${item.title}`}
+                        aria-current={activeExpertise === index ? "true" : undefined}
+                        aria-controls="expertise-slider"
+                        onClick={() => expertiseSwiper.current?.slideToLoop(index)}
+                      />
+                    ))}
+                  </div>
+                  <button onClick={() => expertiseSwiper.current?.slideNext()} type="button" className="expertise-slider-arrow" aria-label="Next area of expertise" aria-controls="expertise-slider">
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </div>
               </div>
 
-              <h3 className="expertise-bottom-text">
+              {/* <h3 className="expertise-bottom-text">
                 These conditions often require careful evaluation because
                 multiple structures in the spine may be involved.
-              </h3>
+              </h3> */}
 
               <Link to="/contact" className="common-btn">
                 <span className="common-btn-text">Book a Consultation</span>

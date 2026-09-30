@@ -6,22 +6,14 @@ import logo from "../images/manoj-new-logo.svg";
 const Footer = () => {
   return (
     <footer className="site-footer" id="contact">
-      <div className="footer-cta">
-        <h2 data-aos="fade-up">
-          If spine symptoms are affecting your daily activities,
-          <br />a consultation can help identify the cause and explore treatment
-          options.
-        </h2>
-
-        <a href="/about" className="common-btn">
-          <span className="common-btn-text">Learn More</span>
-          <span className="common-btn-icon">→</span>
-        </a>
-      </div>
-
       <div className="footer-main" data-aos="fade-up">
         <div className="footer-brand">
           <img src={logo} alt="Dr. Manojkumar Gaddikeri" />
+
+          <Link to="/contact" className="common-btn footer-consult-btn">
+            <span className="common-btn-text">Consult Now</span>
+            <span className="common-btn-icon">→</span>
+          </Link>
 
           <p>
             Orthopaedic spine surgeon specialising in
@@ -30,6 +22,16 @@ const Footer = () => {
           </p>
 
           <div className="footer-social">
+            <a href="https://www.facebook.com/share/1FE8xSdrLk/?mibextid=wwXIfr" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#005899" aria-hidden="true">
+                <path d="M21 0H3a3 3 0 0 0-3 3v18a3 3 0 0 0 3 3h9v-9H9v-3h3V9c0-3 1.8-5 5-5h3v3h-2c-1.5 0-2 .6-2 2v3h4l-1 3h-3v9h5a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3Z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@DrManojkumarGaddikeri" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#005899" aria-hidden="true">
+                <path fillRule="evenodd" clipRule="evenodd" d="M3 0h18a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3Zm6 6.5v11l9-5.5-9-5.5Z" />
+              </svg>
+            </a>
             <a href="https://www.instagram.com/spinesaviour/" aria-label="Instagram" target="_blank">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5.59844 0C0 0 0 0 0 5.60156V13.6016C0 19.2 0 19.2 5.60156 19.2H13.6016C19.2 19.2 19.2 19.2 19.2 13.5984V5.59844C19.2 0 19.2 0 13.5984 0H5.59844ZM15.2 3.2C15.6416 3.2 16 3.5584 16 4C16 4.4416 15.6416 4.8 15.2 4.8C14.7584 4.8 14.4 4.4416 14.4 4C14.4 3.5584 14.7584 3.2 15.2 3.2ZM9.6 4.8C12.2472 4.8 14.4 6.9528 14.4 9.6C14.4 12.2472 12.2472 14.4 9.6 14.4C6.9528 14.4 4.8 12.2472 4.8 9.6C4.8 6.9528 6.9528 4.8 9.6 4.8ZM9.6 6.4C8.75131 6.4 7.93737 6.73714 7.33726 7.33726C6.73714 7.93737 6.4 8.75131 6.4 9.6C6.4 10.4487 6.73714 11.2626 7.33726 11.8627C7.93737 12.4629 8.75131 12.8 9.6 12.8C10.4487 12.8 11.2626 12.4629 11.8627 11.8627C12.4629 11.2626 12.8 10.4487 12.8 9.6C12.8 8.75131 12.4629 7.93737 11.8627 7.33726C11.2626 6.73714 10.4487 6.4 9.6 6.4Z" fill="#005899" />

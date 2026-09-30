@@ -182,11 +182,11 @@ const ContactPage = () => {
           />
 
           <div className="contact-hero-content">
-            <h1>Book A Consultation</h1>
+            <h1>Expert Guidance for <br/>Your Spine Health</h1>
+
 
             <p>
-              Speak with our team for appointments, spine evaluation, and
-              consultation support.
+              Reach out to discuss your symptoms, treatment options, or recovery journey. We’re committed to helping you take the next step toward a healthier, pain-free life.
             </p>
           </div>
 

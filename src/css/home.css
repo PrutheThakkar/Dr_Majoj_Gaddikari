@@ -1060,7 +1060,7 @@ body.condition-popup-open {
   /* width: min(90%, 1200px); */
 }
 .treatment-approach-section h2 {
-  margin-bottom: var(--section-gap-lg);
+  margin-bottom: clamp(16px, 2vw, 24px);
 }
 
 .treatment-approach-section ul{

@@ -80,6 +80,27 @@
 .condition-row:last-child {
   border-bottom: 0;
 }
+.conditions-card-stack {
+  isolation: isolate;
+  border: 0;
+  background: none;
+}
+.conditions-card-stack .condition-row {
+  position: relative;
+  background: linear-gradient(90deg, #fcfef3 0%, #edf5c1 25%, #dfed97 55%, #e4f0a7 72%, #fcfef3 100%);
+  border: 1px solid #cfe969;
+  margin-bottom: clamp(24px, 4vw, 64px);
+  box-shadow: 0 -8px 24px rgba(45, 69, 30, 0.08);
+}
+.conditions-card-stack .condition-row:last-child {
+  margin-bottom: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .conditions-card-stack .condition-row.can-stack {
+    position: sticky;
+    top: var(--stack-top, 100px);
+  }
+}
 .condition-left {
   padding-right: 20px;
 }
@@ -113,7 +134,8 @@
   flex-direction: column;
   align-items: flex-start;
 }
-.condition-icon svg {
+.condition-icon svg,
+.condition-icon img {
   width: 100%;
   height: 100%;
 }
@@ -380,7 +402,7 @@
 .spine-condition-listing-page .condition-switcher-section {
   padding: 12px 0;
   border: 0;
-  background: #afd300;
+  background: #bfe7f7;
 }
 .spine-condition-listing-page .condition-tabs {
   flex-wrap: wrap;
@@ -402,8 +424,8 @@
   align-items: center;
   justify-content: center;
   border: 0;
-  background: #629743;
-  color: #fff;
+  background: #fff;
+  color: #005899;
   box-shadow: none;
   font: inherit;
   font-size: 13px;
@@ -418,6 +440,19 @@
 .spine-condition-listing-page .condition-tab.active,
 .spine-condition-listing-page .condition-tab:hover {
   background: #0067a8;
+  color: #fff;
+}
+.spine-condition-listing-page .condition-tab:focus-visible {
+  outline: 2px solid #005899;
+  outline-offset: 3px;
+}
+.spine-condition-listing-page .condition-dropdown-btn {
+  color: #005899;
+}
+.spine-condition-listing-page .condition-dropdown-item:hover,
+.spine-condition-listing-page .condition-dropdown-item.active {
+  background: #e2f4fc;
+  color: #005899;
 }
 .spine-condition-listing-page .treatments-section {
   padding: clamp(55px, 6vw, 110px) 0 clamp(30px, 3vw, 50px);
@@ -456,6 +491,26 @@
 .spine-condition-listing-page .treatment-card-title {
   color: #233c48;
   margin-top: 16px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .treatments-grid .reveal-ready .treatment-card-image {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 800ms ease, transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .treatments-grid .reveal-ready .treatment-card-image img {
+    transform: scale(1.06);
+    transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .treatments-grid .is-revealed .treatment-card-image,
+  .treatments-grid .reveal-ready:focus-within .treatment-card-image {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .treatments-grid .is-revealed .treatment-card-image img,
+  .treatments-grid .reveal-ready:focus-within .treatment-card-image img {
+    transform: scale(1);
+  }
 }
 @media (max-width: 767px) {
   .spine-condition-listing-page .treatments-grid {
