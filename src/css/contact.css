@@ -31,8 +31,6 @@
 .contact-hero-content {
   position: relative;
   z-index: 2;
-  width: 84.4%;
-  max-width: 1800px;
   margin: 0 auto;
   padding-top: 70px;
 }
@@ -47,11 +45,6 @@
 .book-consultation-section {
   padding: clamp(50px, 6vw, 120px) 0 clamp(30px, 3vw, 50px);
   background: radial-gradient(ellipse 65% 35% at 50% 0%, #e8f2af, #fcfef3 100%);
-}
-
-.book-consultation-section .container {
-  width: 84.4%;
-  max-width: 1800px;
 }
 .book-consultation-heading {
   text-align: center;
@@ -201,9 +194,6 @@
   .contact-hero-section {
     min-height: 380px;
   }
-  .contact-hero-content {
-    width: 86%;
-  }
   .contact-main-card {
     padding: 20px;
   }
@@ -285,10 +275,6 @@ main:has(.contact-page) + .site-footer .footer-cta h2 br { display: none; }
 
 /* Compact contact layout for phones. */
 @media (max-width: 767px) {
-  .contact-hero-content,
-  .book-consultation-section .container {
-    width: calc(100% - 32px);
-  }
   .contact-hero-content { padding: 90px 0 75px; }
   .contact-hero-bg { object-position: 70% center; }
   .book-consultation-section { padding-top: 40px; }

@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useId, useMemo, useRef } from "react";
 import gsap from "gsap";
 import { Link } from "gatsby";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, A11y, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -22,6 +22,7 @@ const SymptomsHorizontal = ({
 }) => {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
+  const sliderId = `symptoms-${useId().replace(/:/g, "")}`;
 
   const symptomItems = useMemo(() => {
     return symptomsList
@@ -150,8 +151,13 @@ const SymptomsHorizontal = ({
 
       <div className="symptoms-mobile-slider">
         <Swiper
-          modules={[Pagination, Autoplay]}
-          pagination={{ clickable: true }}
+          id={sliderId}
+          modules={[Pagination, Navigation, A11y, Autoplay]}
+          pagination={{ el: `#${sliderId}-pagination`, clickable: true }}
+          navigation={{
+            prevEl: `#${sliderId}-prev`,
+            nextEl: `#${sliderId}-next`,
+          }}
           slidesPerView={1}
           spaceBetween={18}
           loop={symptomItems.length > 1}
@@ -167,6 +173,17 @@ const SymptomsHorizontal = ({
             </SwiperSlide>
           ))}
         </Swiper>
+        {symptomItems.length > 1 && (
+          <div className="symptoms-slider-controls">
+            <button id={`${sliderId}-prev`} type="button" className="symptoms-slider-arrow" aria-label="Previous symptom" aria-controls={sliderId}>
+              <span aria-hidden="true">←</span>
+            </button>
+            <div id={`${sliderId}-pagination`} className="symptoms-slider-pagination" />
+            <button id={`${sliderId}-next`} type="button" className="symptoms-slider-arrow" aria-label="Next symptom" aria-controls={sliderId}>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        )}
       </div>
 
       {(bottomText || buttonText) && (

@@ -31,8 +31,6 @@
 .patient-journey-hero-content {
   position: relative;
   z-index: 2;
-  width: 88%;
-  max-width: 1520px;
   margin: 0 auto;
   padding-top: 70px;
 }
@@ -45,8 +43,6 @@
 
 /* Centered content with alternating soft green highlights. */
 .patient-journey-page .container {
-  width: 84.4%;
-  max-width: 1520px;
   margin: 0 auto;
 }
 .journey-listening-section,

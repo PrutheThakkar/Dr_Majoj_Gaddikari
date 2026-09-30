@@ -59,7 +59,7 @@
   --small-size: clamp(13px, 0.9vw, 14px);
 
   --container-width: 1520px;
-  --container-fluid-width: 90%;
+  --container-fluid-width: 84.4%;
 
   --section-padding-lg: clamp(70px, 6vw, 120px);
   --section-padding-md: clamp(50px, 5vw, 90px);
@@ -133,7 +133,14 @@ textarea {
 section {
   padding: var(--section-padding-lg) 0;
 }
-.container {
+.container,
+.consultation-container,
+.hero-content,
+.about-hero-content,
+.conditions-hero-content,
+.patient-journey-hero-content,
+.contact-hero-content,
+.symptoms-heading-wrap {
   width: var(--container-fluid-width);
   max-width: var(--container-width);
   margin-left: auto;
@@ -596,19 +603,6 @@ body.mobile-menu-open {
     align-items: center;
   }
 
-  .spine-icon::before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: 50%;
-    width: 2px;
-    height: 24px;
-    background: #0067a8;
-    border-radius: 20px;
-    transform: translateX(-50%);
-    transition: all 0.35s ease;
-  }
-
   .spine-icon span {
     width: 12px;
     height: 12px;
@@ -616,12 +610,6 @@ body.mobile-menu-open {
     border: 2px solid #0067a8;
     border-radius: 50%;
     transition: all 0.35s ease;
-  }
-
-  .spine-menu-toggle.open .spine-icon::before {
-    transform: translateX(-50%) rotate(45deg);
-    height: 30px;
-    top: 1px;
   }
 
   .spine-menu-toggle.open .spine-icon span:nth-child(1) {
@@ -841,8 +829,6 @@ body.mobile-menu-open {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 100%;
-  padding-left: clamp(90px, 6.875vw, 132px);
   padding-top: clamp(220px, 25vw, 400px);
 }
 @media (max-width:1680px) {
@@ -855,11 +841,6 @@ body.mobile-menu-open {
   padding-top: 250px;
 }
 }
-@media (max-width:767px) {
-  .hero-content{
-   max-width: 100%;
-  }
-}
 .hero-content h1 {
   line-height: 1.08;
   font-weight: 400;
@@ -868,10 +849,17 @@ body.mobile-menu-open {
 }
 .hero-content p {
   max-width: 720px;
+  white-space: normal;
   font-size: clamp(16px, 1.1vw, 22px);
   line-height: 1.35;
   color: var(--color-muted);
   margin-bottom: 42px;
+}
+@media (max-width: 1680px) {
+  .hero-content p {
+    /* Match the desktop size at 1680px, then scale gently down to phones. */
+    font-size: clamp(16px, calc(15px + 0.25vw), 18.48px);
+  }
 }
 .hero-btn {
   background: #a7d900;
@@ -881,14 +869,11 @@ body.mobile-menu-open {
 @media (max-width: 1366px) {
   .hero-content {
     padding-top: 150px;
-    padding-left: clamp(40px, 6vw, 90px);
   }
 }
 @media (max-width: 991px) {
   .hero-content {
     padding-top: 120px;
-    padding-left: 20px !important;
-    padding-right: 20px;
   }
 }
 @media (max-width: 575px) {
@@ -1053,6 +1038,7 @@ body.mobile-menu-open {
 }
 @media (max-width: 991px) {
   :root {
+    --container-fluid-width: 90%;
     --h1-size: 42px;
     --h2-size: 34px;
     --h3-size: 28px;
@@ -1060,9 +1046,6 @@ body.mobile-menu-open {
     --h5-size: 18px;
     --h6-size: 16px;
     --body-size: 16px;
-  }
-  .container {
-    width: 92%;
   }
 }
 @media (max-width: 767px) {

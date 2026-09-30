@@ -140,7 +140,10 @@ const HomePage = ({ data }) => {
               className="hero-animated-para"
               dangerouslySetInnerHTML={{
                 __html:
-                  pageData?.homePageBannerPara ,
+                  (pageData?.homePageBannerPara || "")
+                    .replace(/<[^>]*>/g, " ")
+                    .replace(/\s+/g, " ")
+                    .trim(),
               }}
             />
 
@@ -235,7 +238,7 @@ const HomePage = ({ data }) => {
                     alt="Physiotherapy spine treatment"
                     loading="lazy"
                   />
-                  <h3>Physiotherapy</h3>
+                  <h3>physiotherapy</h3>
                 </div>
               </li>
 
@@ -246,7 +249,7 @@ const HomePage = ({ data }) => {
                     alt="Strengthening exercises spine treatment"
                     loading="lazy"
                   />
-                  <h3>Strengthening exercises</h3>
+                  <h3>strengthening exercises</h3>
                 </div>
               </li>
 
@@ -257,7 +260,7 @@ const HomePage = ({ data }) => {
                     alt="Medication spine treatment"
                     loading="lazy"
                   />
-                  <h3>Medication</h3>
+                  <h3>medication</h3>
                 </div>
               </li>
             </ul>
