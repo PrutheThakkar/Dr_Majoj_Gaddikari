@@ -253,7 +253,7 @@ main:has(.contact-page) + .site-footer {
 }
 main:has(.contact-page) + .site-footer .footer-cta h2 {
   font-family: "PlayfairDisplay-Regular", serif;
-  font-size: clamp(22px, 1.8vw, 32px);
+  font-size: var(--h2-size);
   max-width: 1000px;
   margin: 0 auto 24px;
 }
@@ -265,7 +265,7 @@ main:has(.contact-page) + .site-footer .footer-cta h2 br { display: none; }
 
 .book-consultation-heading h2,
 .contact-main-right h2 {
-  font-size: clamp(30px, 2.7vw, 48px);
+  font-size: var(--h2-size);
 }
 .contact-main-card { align-items: stretch; }
 .contact-main-left .map-wrapper { position: relative; }

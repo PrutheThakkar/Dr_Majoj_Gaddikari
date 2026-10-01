@@ -49,7 +49,7 @@
   --color-card: #f7faf3;
 
   --h1-size: clamp(30px, 3.8vw, 65px);
-  --h2-size: clamp(25px, 3vw, 36px);
+  --h2-size: clamp(30px, 4vw, 48px);
   --h3-size: clamp(20px, 2.4vw, 24px);
   --h4-size: clamp(18px, 2vw, 20px);
   --h5-size: clamp(16px, 1.5vw, 18px);
@@ -195,7 +195,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(21px, 4vw, 32px);
+  font-size: var(--h2-size);
   /* line-height: 1.2; */
 }
 
@@ -1014,9 +1014,6 @@ body.mobile-menu-open {
   }
 }
 @media (max-width: 575px) {
-  .footer-cta h2 {
-    font-size: 18px;
-  }
     .site-footer {
     padding: clamp(30px, 3vw, 50px) 7% 32px;
   }
@@ -1038,7 +1035,6 @@ body.mobile-menu-open {
 @media (max-width: 1366px) {
   :root {
     --h1-size: clamp(30px, 3.6vw, 44px);
-    --h2-size: clamp(24px, 2.8vw, 34px);
     --h3-size: clamp(20px, 2.4vw, 24px);
     --body-size: clamp(15px, 1vw, 16px);
   }
@@ -1047,7 +1043,6 @@ body.mobile-menu-open {
   :root {
     --container-fluid-width: 90%;
     --h1-size: 42px;
-    --h2-size: 34px;
     --h3-size: 28px;
     --h4-size: 22px;
     --h5-size: 18px;
@@ -1058,7 +1053,6 @@ body.mobile-menu-open {
 @media (max-width: 767px) {
   :root {
     --h1-size: 34px;
-    --h2-size: 28px;
     --h3-size: 22px;
     --h4-size: 18px;
     --h5-size: 16px;
@@ -1162,4 +1156,10 @@ body.mobile-menu-open {
   .site-header.down .main-nav{
     top: 0;
   }
+}
+
+@media (max-width:767px) {
+  h2 br{
+   display: none;
+ }
 }

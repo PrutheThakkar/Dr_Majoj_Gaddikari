@@ -187,7 +187,7 @@ pointer-events: none;
   display: block;
   width: 1px;
   height: 90px;
-  background: rgba(55, 137, 181, 0.55);
+  background: rgba(167, 217, 0, 0.55);
   position: relative;
 }
 .spine-label span::after {
@@ -197,10 +197,10 @@ pointer-events: none;
   bottom: -13px;
   width: 24px;
   height: 24px;
-  background: #3789b5;
+  background: #a7d900;
   border-radius: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 0 0 6px rgba(55, 137, 181, 0.3);
+  box-shadow: 0 0 0 6px rgba(167, 217, 0, 0.3);
 }
 .label-vertebrae {
      left: 14%;
@@ -424,8 +424,8 @@ pointer-events: none;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #3789b5;
-    box-shadow: 0 0 0 8px rgba(55, 137, 181, 0.2);
+    background: #a7d900;
+    box-shadow: 0 0 0 8px rgba(167, 217, 0, 0.2);
     flex-shrink: 0;
   }
 }
@@ -1383,7 +1383,7 @@ width: 100%;
 
   .symptoms-heading-wrap h2 {
     color: var(--color-heading);
-    font-size: clamp(20px, 1.35vw, 26px);
+    font-size: var(--h2-size);
     line-height: 1.35;
   }
 
