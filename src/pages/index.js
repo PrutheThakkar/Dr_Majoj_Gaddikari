@@ -63,7 +63,7 @@ const AnimatedHeroTitle = ({ startAnimation, title }) => {
           {line.split(" ").map((word, wordIndex) => (
             <span className="hero-title-word" key={wordIndex}>
               {word.split("").map((letter, index) => {
-                const delay = letterIndex * 0.035;
+                const delay = `calc(${letterIndex} * var(--hero-letter-stagger, 0.035s))`;
                 letterIndex += 1;
 
                 return (
@@ -71,7 +71,7 @@ const AnimatedHeroTitle = ({ startAnimation, title }) => {
                     className="hero-title-letter"
                     key={`${lineIndex}-${wordIndex}-${index}`}
                     style={{
-                      animationDelay: startAnimation ? `${delay}s` : "0s",
+                      animationDelay: startAnimation ? delay : "0s",
                     }}
                   >
                     {letter}
