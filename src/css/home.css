@@ -1885,3 +1885,124 @@ body.condition-popup-open {
 .about-section-paragraph{
   margin-bottom: 20px;
 }
+
+/* Mobile anatomy scroll story */
+@media (max-width: 1000px) {
+  .spine-explained-section.has-mobile-story {
+    padding: 0;
+    position: relative;
+    background: #fcfef3;
+  }
+
+  .has-mobile-story .container {
+    position: sticky;
+    top: var(--spine-header-height, 70px);
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0px !important;
+    background: #fcfef3;
+  }
+
+  .has-mobile-story h2 {
+    flex-shrink: 0;
+    opacity: 1 !important;
+    transform: none !important;
+    margin-bottom: 16px;
+  }
+
+  .spine-mobile-wrap.is-scroll-animated {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: #fcfef3;
+  }
+
+  .is-scroll-animated .spine-mobile-visual-wrap {
+    position: relative;
+    max-width: min(420px, 48svh);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .spine-mobile-hotspot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #a7d900;
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0;
+    box-shadow: 0 0 0 5px rgba(167, 217, 0, 0.25);
+    transition: opacity 0.35s ease, transform 0.45s ease;
+    pointer-events: none;
+  }
+
+  .spine-mobile-hotspot.is-active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .spine-mobile-hotspot.is-active::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border: 2px solid #a7d900;
+    border-radius: 50%;
+    animation: spine-point-pulse 1.8s ease-out infinite;
+  }
+
+  .is-scroll-animated .spine-mobile-info-list {
+    display: grid;
+    margin-top: 20px;
+    gap: 0;
+    perspective: 800px;
+  }
+
+  .is-scroll-animated .spine-mobile-info-card {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(24px) rotateX(-6deg) scale(0.96);
+    transition: opacity 0.35s ease, transform 0.5s ease, visibility 0.35s;
+    pointer-events: none;
+    align-self: stretch;
+  }
+
+  .is-scroll-animated .spine-mobile-info-card.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) rotateX(0) scale(1);
+    border-color: #a7d900;
+    box-shadow: 0 10px 30px rgba(24, 49, 75, 0.07);
+    pointer-events: auto;
+  }
+
+  .spine-mobile-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+    color: #1d5fae;
+    font-size: 11px;
+  }
+
+  .spine-mobile-progress-track {
+    flex: 1;
+    height: 3px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #e4eccf;
+  }
+
+  .spine-mobile-progress-track span {
+    display: block;
+    height: 100%;
+    background: #a7d900;
+    transition: width 0.45s ease;
+  }
+}
+
+@keyframes spine-point-pulse {
+  from { opacity: 0.8; transform: scale(0.65); }
+  to { opacity: 0; transform: scale(1.8); }
+}

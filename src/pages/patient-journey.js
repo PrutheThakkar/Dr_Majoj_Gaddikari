@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Layout from "../components/layout";
 
 import patientJourneyHero from "../images/about-hero.webp";
+import listeningImg from "../images/patient-jpurney-new-img.webp";
 import postureIcon from "../images/posture-svg.svg";
 import strengtheningIcon from "../images/structure-svg.svg";
 import earlyRecognitionIcon from "../images/early-recognition.svg";
@@ -217,6 +218,90 @@ const HealthFocusIcon = ({ number }) => (
   <img src={healthFocusIcons[number]} alt="" aria-hidden="true" />
 );
 
+/* Outcomes strip: grid on desktop/tablet, swipe slider with arrows + dots on mobile (CSS ≤ 767px) */
+const OutcomesSlider = ({ items }) => {
+  const trackRef = useRef(null);
+  const [active, setActive] = useState(0);
+
+  const goTo = (i) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const index = (i + items.length) % items.length;
+    const first = track.children[0];
+    track.scrollTo({
+      left: track.children[index].offsetLeft - first.offsetLeft,
+      behavior: "smooth",
+    });
+    setActive(index);
+  };
+
+  const handleScroll = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    const start = track.children[0].offsetLeft;
+    let nearest = 0;
+    let min = Infinity;
+    Array.from(track.children).forEach((child, i) => {
+      const d = Math.abs(child.offsetLeft - start - track.scrollLeft);
+      if (d < min) {
+        min = d;
+        nearest = i;
+      }
+    });
+    setActive(nearest);
+  };
+
+  return (
+    <>
+      <div className="patient-outcome-strip" ref={trackRef} onScroll={handleScroll}>
+        {items.map((item) => (
+          <div className="patient-outcome-card" key={item.title}>
+            <span className="journey-icon" aria-hidden="true">{item.icon}</span>
+            <h3>{item.title}</h3>
+          </div>
+        ))}
+      </div>
+
+      <div className="outcome-slider-nav">
+        <button
+          type="button"
+          className="outcome-slider-arrow"
+          aria-label="Previous"
+          onClick={() => goTo(active - 1)}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M20 12H4M10 6l-6 6 6 6" />
+          </svg>
+        </button>
+
+        <div className="outcome-slider-dots">
+          {items.map((item, i) => (
+            <button
+              type="button"
+              key={item.title}
+              className={`outcome-slider-dot${i === active ? " is-active" : ""}`}
+              aria-label={`Go to slide ${i + 1}`}
+              aria-current={i === active}
+              onClick={() => goTo(i)}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className="outcome-slider-arrow"
+          aria-label="Next"
+          onClick={() => goTo(active + 1)}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 12h16M14 6l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
+    </>
+  );
+};
+
 const PatientJourneyPage = () => {
   return (
     <Layout>
@@ -251,6 +336,15 @@ const PatientJourneyPage = () => {
           <div className="container">
             <h2>Care That Begins With Listening</h2>
 
+            <img
+              src={listeningImg}
+              alt="Dr. Manojkumar Gaddikeri reviewing a patient's spine scan"
+              className="journey-listening-image"
+              width="763"
+              height="381"
+              loading="lazy"
+            />
+
             <div className="journey-listening-copy">
               <p>
                 Spine conditions can affect everyday life in ways that are often difficult to explain:
@@ -274,14 +368,7 @@ const PatientJourneyPage = () => {
               to everyday routines. Each patient’s condition and recovery journey is unique, but the objective
               remains consistent while restoring function and helping patients return to a more active life.
             </p>
-            <div className="patient-outcome-strip">
-              {patientJourneySymptoms.slice(0, 4).map((item) => (
-                <div className="patient-outcome-card" key={item.title}>
-                  <span className="journey-icon" aria-hidden="true">{item.icon}</span>
-                  <h3>{item.title}</h3>
-                </div>
-              ))}
-            </div>
+            <OutcomesSlider items={patientJourneySymptoms.slice(0, 4)} />
           </div>
         </section>
 

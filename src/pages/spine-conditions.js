@@ -24,24 +24,39 @@ const SpineConditionsPage = ({ data }) => {
 
   useEffect(() => {
     const list = cardsRef.current;
+    if (!list) return;
     const header = document.querySelector(".site-header");
     const cards = Array.from(list.children);
     const updateStack = () => {
       const top = (header?.getBoundingClientRect().height || 80) + 20;
-      list.style.setProperty("--stack-top", `${top}px`);
-      // Tall cards stay in normal flow so none of their content is trapped.
+      const viewportHeight = window.innerHeight;
+      // Tall cards scroll fully before sticking, keeping their links reachable.
       cards.forEach((card) => {
-        card.classList.toggle("can-stack", card.offsetHeight < window.innerHeight - top - 24);
+        const inset = Math.min(top, viewportHeight - card.offsetHeight - 24);
+        card.style.setProperty("--card-stack-top", `${inset}px`);
+        card.classList.add("can-stack");
       });
     };
+    let frame;
+    const scheduleUpdate = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(updateStack);
+    };
     updateStack();
-    const observer = new ResizeObserver(updateStack);
+    const observer = new ResizeObserver(scheduleUpdate);
     cards.forEach((card) => observer.observe(card));
     if (header) observer.observe(header);
-    window.addEventListener("resize", updateStack);
+    window.addEventListener("resize", scheduleUpdate);
+    window.visualViewport?.addEventListener("resize", scheduleUpdate);
     return () => {
+      cancelAnimationFrame(frame);
       observer.disconnect();
-      window.removeEventListener("resize", updateStack);
+      window.removeEventListener("resize", scheduleUpdate);
+      window.visualViewport?.removeEventListener("resize", scheduleUpdate);
+      cards.forEach((card) => {
+        card.classList.remove("can-stack");
+        card.style.removeProperty("--card-stack-top");
+      });
     };
   }, []);
   // Sort conditions in descending order by menuOrder

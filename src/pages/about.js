@@ -14,7 +14,7 @@ import nerveCompressionIcon from "../images/nerve-com-svg.svg";
 import structuralProblemsIcon from "../images/structural-svg.svg";
 import consultationImg from "../images/detailed-discussion-symptoms.webp";
 import Breadcrumb from "../components/Breadcrumb";
-import ReadingParagraph from "../components/ReadingParagraph";
+import medicalBackgroundImg from "../images/manoj-medical-bg-img.webp";
 
 /* =========================
    EXPERTISE ICONS
@@ -405,18 +405,28 @@ const AboutPage = () => {
             <h2>Medical Background</h2>
 
             <div className="medical-bg-layout">
+              <img
+                src={medicalBackgroundImg}
+                alt="Dr. Manojkumar Gaddikeri reviewing spinal scans in his clinic"
+                className="medical-bg-image"
+                width="763"
+                height="381"
+                loading="lazy"
+              />
               <div className="medical-bg-copy">
-                <ReadingParagraph>
-                  {`Dr. Gaddikeri trained in orthopaedic surgery before developing
+                <p>
+                  Dr. Gaddikeri trained in orthopaedic surgery before developing
                   a specialised focus on spinal disorders. His experience
                   includes evaluating and treating a wide range of spine
                   conditions across different age groups and activity levels.
+                </p>
+                <p>
                   Over time, his work has focused increasingly on conditions
                   involving nerve compression, disc problems, and degenerative
                   changes in the spine. His training includes experience in
                   advanced spine procedures and minimally invasive surgical
-                  techniques.`}
-                </ReadingParagraph>
+                  techniques.
+                </p>
               </div>
             </div>
 

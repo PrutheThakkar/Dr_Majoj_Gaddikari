@@ -97,8 +97,9 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .conditions-card-stack .condition-row.can-stack {
+    position: -webkit-sticky;
     position: sticky;
-    top: var(--stack-top, 100px);
+    top: var(--card-stack-top, 100px);
   }
 }
 .condition-left {
