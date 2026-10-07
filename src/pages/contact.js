@@ -1,3 +1,4 @@
+import Seo from "../components/seo";
 import React, { useState } from "react";
 import Layout from "../components/layout";
 
@@ -364,3 +365,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+export const Head = (props) => <Seo {...props} />;

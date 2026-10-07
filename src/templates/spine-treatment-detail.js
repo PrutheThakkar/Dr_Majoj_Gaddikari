@@ -1,3 +1,4 @@
+import Seo from "../components/seo";
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
@@ -62,3 +63,7 @@ export const query = graphql`
     }
   }
 `;
+export const Head = (props) => {
+  const entry = props.data.wpSpineCondition;
+  return <Seo {...props} title={entry.title} image={entry.featuredImage?.node?.sourceUrl} />;
+};

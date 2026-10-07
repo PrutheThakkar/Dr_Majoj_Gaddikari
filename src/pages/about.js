@@ -1,3 +1,4 @@
+import Seo from "../components/seo";
 import React, { useRef, useState } from "react";
 import Layout from "../components/layout";
 import { Link } from "gatsby";
@@ -558,3 +559,5 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
+export const Head = (props) => <Seo {...props} />;

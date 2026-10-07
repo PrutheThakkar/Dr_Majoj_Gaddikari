@@ -1,3 +1,4 @@
+import Seo from "../components/seo";
 import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -318,3 +319,5 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = (props) => <Seo {...props} />;

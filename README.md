@@ -97,3 +97,20 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## SEO and sitemaps
+
+SEO titles and descriptions from the revised master sheet are stored in
+`src/data/seo-metadata.json`. Every page uses Gatsby's `Head` API to render
+metadata, canonical links, social sharing tags and JSON-LD in the built HTML.
+Condition and treatment pages without sheet entries use their WordPress titles.
+
+The canonical domain defaults to `https://spinecaremumbai.in`. Set
+`GATSBY_SEO_SITE_URL` to override this domain; the WordPress source remains
+configured independently with `GATSBY_WPGRAPHQL_URL`.
+
+`/treatments/` renders the existing treatment listing directly. `/sitemap/`
+provides a visitor-facing directory linked in the footer. Production builds
+also generate `/sitemap.xml` and `/robots.txt` from actual Gatsby pages,
+excluding error pages and duplicate treatment aliases. Rebuild after adding
+WordPress content to refresh both sitemaps.

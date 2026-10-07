@@ -1,3 +1,4 @@
+import Seo from "../components/seo";
 import React, { useRef, useState } from "react";
 import Layout from "../components/layout";
 
@@ -394,3 +395,5 @@ const PatientJourneyPage = () => {
 };
 
 export default PatientJourneyPage;
+
+export const Head = (props) => <Seo {...props} />;

@@ -60,6 +60,7 @@ const Footer = () => {
             <h3>Explore</h3>
             {/* <a href="">FAQ</a> */}
             <a href="/insights">Blogs</a>
+            {/* <Link to="/sitemap/">Sitemap</Link> */}
           </div>
 
           <div className="footer-col footer-contact">

@@ -1,12 +1,10 @@
-require("dotenv").config();
+require("dotenv").config()
 
 const wpGraphqlUrl =
   process.env.GATSBY_WPGRAPHQL_URL ||
-  "https://drmanoj.studiosentientdemo.com/graphql";
+  "https://drmanoj.studiosentientdemo.com/graphql"
 
-const siteUrl =
-  process.env.GATSBY_WEBSITE_URL ||
-  "https://drmanoj.studiosentientdemo.com/";
+const siteUrl = process.env.GATSBY_SEO_SITE_URL || "https://spinecaremumbai.in/"
 
 module.exports = {
   siteMetadata: {
@@ -49,4 +47,4 @@ module.exports = {
       },
     },
   ],
-};
+}

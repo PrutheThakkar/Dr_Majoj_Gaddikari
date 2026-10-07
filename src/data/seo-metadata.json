@@ -1,0 +1,112 @@
+{
+  "/": {
+    "label": "Home",
+    "canonical": "https://spinecaremumbai.in/",
+    "title": "Dr. Manoj Gaddikeri | Orthopaedic Spine Surgeon in Mira Road",
+    "description": "Dr. Manoj Gaddikeri is an orthopaedic spine surgeon in Mira Road offering personalised non-surgical and surgical care for spine conditions.",
+    "focusKeyword": "orthopaedic spine surgeon in Mira Road",
+    "secondaryKeywords": "spine surgeon Mira Road; spine specialist Mira Road; spine doctor Mumbai; back pain specialist Mira Road",
+    "schemaType": "Physician",
+    "searchIntent": "Transactional / Navigational"
+  },
+  "/about/": {
+    "label": "About",
+    "canonical": "https://spinecaremumbai.in/about/",
+    "title": "Dr. Manoj Gaddikeri | Orthopaedic Spine Surgeon",
+    "description": "Learn about Dr. Manoj Gaddikeri, an orthopaedic spine surgeon focused on spine conditions, minimally invasive procedures and personalised care.",
+    "focusKeyword": "Dr Manoj Gaddikeri",
+    "secondaryKeywords": "Manoj Gaddikeri spine surgeon; orthopaedic spine surgeon Mira Road; spine specialist",
+    "schemaType": "Physician",
+    "searchIntent": "Navigational"
+  },
+  "/spine-conditions/": {
+    "label": "Spine Conditions",
+    "canonical": "https://spinecaremumbai.in/spine-conditions/",
+    "title": "Spine Conditions Treated in Mira Road | Dr. Gaddikeri",
+    "description": "Explore spine conditions treated by Dr. Manoj Gaddikeri, including slipped discs, sciatica, stenosis, scoliosis, fractures and spine tumours.",
+    "focusKeyword": "spine conditions treated in Mira Road",
+    "secondaryKeywords": "slipped disc; sciatica; cervical spine disorders; lumbar spine disorders; spinal stenosis; scoliosis; spine fractures; spinal infections; spine tumours",
+    "schemaType": "MedicalWebPage",
+    "searchIntent": "Informational / Transactional"
+  },
+  "/treatments/": {
+    "label": "Treatments",
+    "canonical": "https://spinecaremumbai.in/treatments/",
+    "title": "Spine Treatment & Surgery in Mira Road | Dr. Manoj Gaddikeri",
+    "description": "Understand spine treatment options, including non-surgical care and minimally invasive procedures, based on diagnosis and individual needs.",
+    "focusKeyword": "spine treatment in Mira Road",
+    "secondaryKeywords": "non-surgical spine treatment; minimally invasive spine surgery; endoscopic spine procedures; spine surgery Mira Road",
+    "schemaType": "MedicalWebPage",
+    "searchIntent": "Transactional"
+  },
+  "/patient-journey/": {
+    "label": "Patient Journey",
+    "canonical": "https://spinecaremumbai.in/patient-journey/",
+    "title": "Spine Consultation & Recovery Journey | Dr. Manoj Gaddikeri",
+    "description": "Understand what to expect from spine consultation and treatment, from evaluation and diagnosis to recovery and follow-up.",
+    "focusKeyword": "spine consultation",
+    "secondaryKeywords": "spine diagnosis; spine treatment journey; spine surgery recovery; spine consultation Mira Road",
+    "schemaType": "MedicalWebPage",
+    "searchIntent": "Informational"
+  },
+  "/insights/": {
+    "label": "Insights",
+    "canonical": "https://spinecaremumbai.in/insights/",
+    "title": "Spine Health & Treatment Insights | Dr. Manoj Gaddikeri",
+    "description": "Read practical insights on back pain, neck pain, spine conditions, treatment options and spine care from Dr. Manoj Gaddikeri.",
+    "focusKeyword": "spine health and treatment",
+    "secondaryKeywords": "back pain; neck pain; spine treatment; spine specialist Mira Road",
+    "schemaType": "CollectionPage",
+    "searchIntent": "Informational"
+  },
+  "/insights/the-30-year-old-spine-why-back-pain-is-appearing-earlier-than-previous-generations/": {
+    "label": "Insight: 30-Year-Old Spine",
+    "canonical": "https://spinecaremumbai.in/insights/the-30-year-old-spine-why-back-pain-is-appearing-earlier-than-previous-generations/",
+    "title": "Back Pain in Your 30s: Why It’s Becoming More Common",
+    "description": "Why are younger adults experiencing back and neck pain? Learn how sitting, screens, inactivity and lifestyle can affect the spine.",
+    "focusKeyword": "back pain in your 30s",
+    "secondaryKeywords": "back pain in young adults; sedentary lifestyle back pain; neck pain from screens; posture and back pain",
+    "schemaType": "Article",
+    "searchIntent": "Informational"
+  },
+  "/insights/orthopaedic-spine-clinic-in-mira-road/": {
+    "label": "Insight: Orthopaedic Spine Clinic",
+    "canonical": "https://spinecaremumbai.in/insights/orthopaedic-spine-clinic-in-mira-road/",
+    "title": "Orthopaedic Spine Clinic in Mira Road | Dr. Gaddikeri",
+    "description": "Looking for a spine specialist in Mira Road? Learn about common spine problems, evaluation and treatment options with Dr. Manoj Gaddikeri.",
+    "focusKeyword": "orthopaedic spine clinic in Mira Road",
+    "secondaryKeywords": "spine specialist Mira Road; back pain treatment Mira Road; spine doctor Mira Road",
+    "schemaType": "Article",
+    "searchIntent": "Transactional / Local"
+  },
+  "/insights/spine-tumor-surgery-in-mira-road/": {
+    "label": "Insight: Spine Tumor Surgery",
+    "canonical": "https://spinecaremumbai.in/insights/spine-tumor-surgery-in-mira-road/",
+    "title": "Spine Tumor Surgery in Mira Road | Dr. Gaddikeri",
+    "description": "Learn about spine tumours, symptoms, diagnosis and when surgery may be considered, with care from an orthopaedic spine surgeon in Mira Road.",
+    "focusKeyword": "spine tumor surgery in Mira Road",
+    "secondaryKeywords": "spine tumor specialist Mira Road; spine tumor treatment; spinal tumor surgery",
+    "schemaType": "Article",
+    "searchIntent": "Transactional / Informational"
+  },
+  "/insights/hello-world/": {
+    "label": "Insight: Neck & Back Pain",
+    "canonical": "https://spinecaremumbai.in/insights/hello-world/",
+    "title": "Neck & Back Pain Specialist in Mira Road | Dr. Gaddikeri",
+    "description": "Understand common causes of neck and back pain, how they are evaluated and the treatment options available in Mira Road.",
+    "focusKeyword": "neck and back pain specialist in Mira Road",
+    "secondaryKeywords": "back pain doctor Mira Road; neck pain specialist Mira Road; spine specialist Mira Road",
+    "schemaType": "Article",
+    "searchIntent": "Transactional / Informational"
+  },
+  "/contact/": {
+    "label": "Contact",
+    "canonical": "https://spinecaremumbai.in/contact/",
+    "title": "Contact Dr. Manoj Gaddikeri | Spine Consultation in Mira Road",
+    "description": "Book a spine consultation with Dr. Manoj Gaddikeri at Wockhardt Hospital, Mira Road and understand what to bring for your appointment.",
+    "focusKeyword": "spine consultation Mira Road",
+    "secondaryKeywords": "Dr Manoj Gaddikeri appointment; spine doctor Mira Road; spine surgeon Mira Road",
+    "schemaType": "ContactPage",
+    "searchIntent": "Transactional"
+  }
+}

@@ -1,3 +1,4 @@
+import Seo from "../components/seo";
 import React, { useEffect, useRef, useState } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
@@ -5,12 +6,12 @@ import Breadcrumb from "../components/Breadcrumb";
 
 const placeholderImage = "https://placehold.co/600x400?text=No+Image";
 
-const SpineConditionListingTemplate = ({ data, location }) => {
+const SpineConditionListingTemplate = ({ data, location, pageContext }) => {
   const condition = data.wpSpineCondition;
   const allConditions = data.allWpSpineCondition.nodes;
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const gridRef = useRef(null);
-  const [showAll, setShowAll] = useState(!location?.search?.includes("view=condition"));
+  const [showAll, setShowAll] = useState(Boolean(pageContext?.isTreatments || location?.search?.includes("view=all")));
 
   // Current condition's treatments
   const conditionTreatments = [
@@ -301,3 +302,8 @@ allWpSpineCondition(
     }
   }
 `;
+
+export const Head = (props) => {
+  const entry = props.data.wpSpineCondition;
+  return <Seo {...props} title={entry.title} image={entry.featuredImage?.node?.sourceUrl} />;
+};

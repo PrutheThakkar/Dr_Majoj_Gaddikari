@@ -1,0 +1,44 @@
+.sitemap-page {
+  padding-top: 180px;
+  padding-bottom: 80px;
+}
+.sitemap-page h1 {
+  color: #005899;
+  margin-bottom: 20px;
+}
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin: 40px 0;
+}
+.sitemap-grid h2 {
+  color: #005899;
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+.sitemap-grid ul {
+  padding-left: 22px;
+}
+.sitemap-grid li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.sitemap-page a {
+  color: #005899;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sitemap-page a:focus-visible {
+  outline: 2px solid #005899;
+  outline-offset: 4px;
+}
+@media (max-width: 767px) {
+  .sitemap-page {
+    padding-top: 130px;
+  }
+  .sitemap-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

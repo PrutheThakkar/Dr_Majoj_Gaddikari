@@ -1,3 +1,4 @@
+import Seo from "../components/seo";
 import React, { useEffect, useRef } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
@@ -175,3 +176,5 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = (props) => <Seo {...props} />;
