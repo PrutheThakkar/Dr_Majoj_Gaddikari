@@ -16,9 +16,9 @@ const Footer = () => {
           </Link>
 
           <p>
-            Orthopaedic spine surgeon specialising in
+            Orthopaedic Spine Surgeon
             <br />
-            personalised, patient-centred spine care
+            Understanding spinal conditions and their treatment options
           </p>
 
           <div className="footer-social">

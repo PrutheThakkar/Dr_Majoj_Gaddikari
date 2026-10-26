@@ -126,9 +126,9 @@ const Header = () => {
             Treatments
           </Link>
 
-          <Link to="/patient-journey/" activeClassName="active">
+          {/* <Link to="/patient-journey/" activeClassName="active">
             Patient Journey
-          </Link>
+          </Link> */}
 
           <Link
             to="/insights/"
@@ -186,9 +186,9 @@ const Header = () => {
               Treatments
             </Link>
 
-            <Link to="/patient-journey/" activeClassName="active">
+            {/* <Link to="/patient-journey/" activeClassName="active">
               Patient Journey
-            </Link>
+            </Link> */}
 
             <Link
               to="/insights/"

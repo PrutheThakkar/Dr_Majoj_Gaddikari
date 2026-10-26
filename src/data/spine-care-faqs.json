@@ -1,0 +1,50 @@
+[
+  {
+    "question": "When should I consult an orthopaedic spine surgeon?",
+    "answer": "Consider a consultation if back or neck pain persists, keeps returning, affects daily activities or is accompanied by symptoms such as tingling, numbness or weakness in the arms or legs. An assessment can help identify possible causes and determine whether further investigations or specialist care are needed."
+  },
+  {
+    "question": "What is a slipped disc?",
+    "answer": "A slipped disc, commonly called a herniated disc, occurs when material from an intervertebral disc protrudes beyond its usual boundaries. Depending on its location and whether it presses on nearby nerves, it may cause back or neck pain, tingling, numbness or weakness. Some slipped discs cause no symptoms. Treatment depends on the clinical findings and severity of symptoms."
+  },
+  {
+    "question": "What is sciatica, and how is it treated?",
+    "answer": "Sciatica refers to pain that travels along the path of the sciatic nerve, often from the lower back through the buttock and down one leg. It can occur when a nerve root is irritated or compressed. Treatment depends on the underlying cause and may include medication, physiotherapy and activity modification. Surgery may be considered in selected cases."
+  },
+  {
+    "question": "Does every slipped disc require surgery?",
+    "answer": "No. Many slipped discs can be managed without surgery, depending on the symptoms and clinical findings. Treatment may include medication, physiotherapy and rehabilitation. Surgery may be considered when symptoms persist despite appropriate treatment, or when there is significant or worsening nerve dysfunction. The decision depends on the individual case."
+  },
+  {
+    "question": "When is an MRI needed for back pain?",
+    "answer": "An MRI is not necessary for every episode of back pain. The need for imaging depends on the symptoms, medical history and findings from a clinical examination. It may be recommended when nerve compression or another underlying condition is suspected, when symptoms persist, or when the results could influence treatment decisions."
+  },
+  {
+    "question": "What causes spinal stenosis?",
+    "answer": "Spinal stenosis is the narrowing of spaces within the spine, which can put pressure on the spinal cord or nerves. It may develop due to age-related changes, thickening of ligaments, disc changes or bone growth. Symptoms can include pain, numbness, weakness or difficulty walking. Treatment depends on the location and severity of the narrowing and its effect on the nerves."
+  },
+  {
+    "question": "What is spinal instability?",
+    "answer": "Spinal instability refers to abnormal movement between vertebrae that may affect the spine's ability to maintain its normal alignment during movement. It can occur due to degenerative changes, injury or other spinal conditions. Symptoms and treatment options vary. Assessment may involve a clinical examination and imaging to determine whether the instability is contributing to the patient's symptoms."
+  },
+  {
+    "question": "When might spine surgery be recommended?",
+    "answer": "Spine surgery may be considered when a condition causes significant symptoms or nerve problems that have not responded adequately to appropriate non-surgical treatment. In some situations, such as severe or progressive neurological deficits, earlier intervention may be necessary. The decision depends on the diagnosis, clinical findings, potential benefits and risks, and the patient's overall health."
+  },
+  {
+    "question": "What is minimally invasive spine surgery?",
+    "answer": "Minimally invasive spine surgery uses specialised instruments and smaller incisions than many conventional open procedures. Depending on the condition and procedure, it may be used to treat selected problems involving discs, nerves or spinal stability. It is not suitable for every patient or every spinal condition. The appropriate approach depends on the diagnosis, anatomy and surgical requirements."
+  },
+  {
+    "question": "Can back pain return after treatment?",
+    "answer": "Back pain can recur, even after treatment. Its course depends on the underlying condition, physical demands, general health and other factors. Following the recommended rehabilitation plan, maintaining appropriate physical activity and seeking reassessment if symptoms change may help guide ongoing management. Persistent or worsening symptoms should be discussed with a healthcare professional."
+  },
+  {
+    "question": "What symptoms of a spine problem need urgent medical attention?",
+    "answer": "Back or neck pain accompanied by new difficulty controlling the bladder or bowel, numbness around the groin or saddle area, or rapidly worsening weakness in the legs requires emergency medical assessment. These symptoms can indicate serious nerve compression. Do not wait for a routine appointment if they occur."
+  },
+  {
+    "question": "What should I bring to a spine consultation?",
+    "answer": "Bring any previous medical reports, imaging scans and reports, a list of current medications, and details of previous treatments or physiotherapy. It may also help to note when the symptoms began, what makes them better or worse, and whether they affect walking, sleep or everyday activities. This information can help inform the clinical assessment."
+  }
+]

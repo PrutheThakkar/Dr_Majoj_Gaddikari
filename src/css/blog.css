@@ -239,6 +239,78 @@
     padding: 14px 16px 18px;
   }
 }
+/* Spine care FAQs below the blog grid. */
+.insights-faq-section {
+  background: #f7faf3;
+  border-top: 1px solid #d3e68c;
+}
+.insights-faq-section .blog-listing-intro {
+  max-width: 950px;
+  margin: 0 auto;
+}
+.insights-faq-list {
+  max-width: 1150px;
+  margin: clamp(28px, 4vw, 48px) auto 0;
+  border-top: 1px solid #d3e68c;
+}
+.insights-faq-item {
+  border-bottom: 1px solid #d3e68c;
+}
+.insights-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: clamp(20px, 2.5vw, 30px) 12px;
+  list-style: none;
+  cursor: pointer;
+  color: var(--color-heading);
+  font-size: clamp(17px, 1.5vw, 22px);
+  line-height: 1.5;
+}
+.insights-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.insights-faq-item summary:hover,
+.insights-faq-item[open] summary {
+  background: #edf5c1;
+}
+.insights-faq-item summary:focus-visible {
+  outline: 2px solid var(--color-heading);
+  outline-offset: 3px;
+}
+.insights-faq-icon {
+  position: relative;
+  flex: 0 0 32px;
+  height: 32px;
+  border: 1px solid #d3e68c;
+  border-radius: 50%;
+  background: #fcfef3;
+}
+.insights-faq-icon::before,
+.insights-faq-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--color-heading);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 2px;
+}
+.insights-faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.insights-faq-item[open] .insights-faq-icon::after {
+  display: none;
+}
+.insights-faq-answer {
+  padding: 20px 12px 28px;
+  max-width: 1000px;
+}
+.insights-faq-answer p {
+  margin: 0;
+}
 /* BLOG PAGE STYLES END */
 
 /* Blog index: wide bordered cards matching the resource gallery. */

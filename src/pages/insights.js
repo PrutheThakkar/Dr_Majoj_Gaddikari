@@ -3,6 +3,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Breadcrumb from "../components/Breadcrumb";
+import spineCareFaqs from "../data/spine-care-faqs.json";
 
 const placeholderImage = "https://drmanoj.studiosentientdemo.com/wp-content/uploads/2026/05/about-hero.webp";
 
@@ -64,6 +65,26 @@ const BlogPage = ({ data }) => {
           </div>
         </section>
 
+        <section className="insights-faq-section" aria-labelledby="insights-faq-heading">
+          <div className="container">
+            <div className="blog-listing-intro">
+              <h2 id="insights-faq-heading">Frequently Asked Questions About Spine Care</h2>
+            </div>
+            <div className="insights-faq-list">
+              {spineCareFaqs.map(({ question, answer }) => (
+                <details className="insights-faq-item" key={question}>
+                  <summary>
+                    <span>{question}</span>
+                    <span className="insights-faq-icon" aria-hidden="true" />
+                  </summary>
+                  <div className="insights-faq-answer">
+                    <p>{answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
     </Layout>
   );
