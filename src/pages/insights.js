@@ -68,7 +68,7 @@ const BlogPage = ({ data }) => {
         <section className="insights-faq-section" aria-labelledby="insights-faq-heading">
           <div className="container">
             <div className="blog-listing-intro">
-              <h2 id="insights-faq-heading">Frequently Asked Questions About Spine Care</h2>
+              <h2 id="insights-faq-heading">Frequently Asked Questions</h2>
             </div>
             <div className="insights-faq-list">
               {spineCareFaqs.map(({ question, answer }) => (
