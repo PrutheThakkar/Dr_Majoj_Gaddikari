@@ -52,7 +52,7 @@ pointer-events: none;
 .about-doctor-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
-  align-items: center;
+  align-items: start;
   gap: clamp(28px, 2.6vw, 54px);
 }
 .doctor-image-wrap {
