@@ -2,7 +2,7 @@ require("dotenv").config()
 
 const wpGraphqlUrl =
   process.env.GATSBY_WPGRAPHQL_URL ||
-  "https://drmanoj.studiosentientdemo.com/graphql"
+  "https://https://app.spinecaremumbai.in/graphql"
 
 const siteUrl = process.env.GATSBY_SEO_SITE_URL || "https://spinecaremumbai.in/"
 
